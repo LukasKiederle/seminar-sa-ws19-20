@@ -1,0 +1,195 @@
+  \documentclass[twoside=true, %  doppelseitiger Druck
+    DIV=15
+    ,% 11 DIV Faktor für Satzspiegelberechnung - muss bei anderen Schriftgrößen als 11pt angepasst werden , sie Doku zu KOMA Script
+    BCOR=15mm, % Bindekorrektur
+    headinclude=true,
+    footinclude=false,
+    pagesize,%         write pagesize to DVI or PDF
+    fontsize=11pt,%             use this font size
+    paper=a4,%          use ISO A4
+%    bibliography=totoc,%         write bibliography-chapter to table of contents
+    numbers=noenddot
+  ]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{amsfonts}
+%\usepackage[slantedGreek,sc]{mathpazo}  % Schriftart Palatino
+\usepackage{lmodern}    % statt mathpazo, falls CM fonts verwendet werden sollen
+\usepackage[scaled=.95]{helvet}
+\usepackage{courier}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath}            % standard math notation (vectors/sets/...)
+\usepackage{bm}        % standard math notation (fonts)
+\usepackage{fixmath}        % standard math notation (fonts)
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{scrlayer-scrpage}
+% \usepackage{pstool}  % einbinden falls psfrag verwendet werden soll
+\usepackage{epstopdf}
+\usepackage[ngerman]{babel}
+\usepackage{ellipsis}  % Korrigiert den Weißraum um Auslassungspunkte
+\usepackage{microtype}  % optischer Randausgleich etc.
+
+%custom
+\usepackage[colorlinks=false,
+pdfborder={0 0 0},
+breaklinks=true]
+{hyperref}
+
+\usepackage{framed}			% shaded Umgebung
+\usepackage{longtable}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+\renewcommand{\lstlistingname}{Codebeispiel}
+\lstdefinelanguage{coq}{
+	basicstyle=\normalfont\ttfamily,
+	numbers=left,
+	numberstyle=\scriptsize,
+	stepnumber=1,
+	numbersep=8pt,
+	showstringspaces=false,
+	breaklines=true,
+	frame=lines,
+	backgroundcolor=\color{background},
+	literate=
+	*{0}{{{\color{numb}0}}}{1}
+	{1}{{{\color{numb}1}}}{1}
+	{2}{{{\color{numb}2}}}{1}
+	{3}{{{\color{numb}3}}}{1}
+	{4}{{{\color{numb}4}}}{1}
+	{5}{{{\color{numb}5}}}{1}
+	{6}{{{\color{numb}6}}}{1}
+	{7}{{{\color{numb}7}}}{1}
+	{8}{{{\color{numb}8}}}{1}
+	{9}{{{\color{numb}9}}}{1}
+	{:}{{{\color{punct}{:}}}}{1}
+	{,}{{{\color{punct}{,}}}}{1}
+	{\{}{{{\color{delim}{\{}}}}{1}
+	{\}}{{{\color{delim}{\}}}}}{1}
+	{[}{{{\color{delim}{[}}}}{1}
+	{]}{{{\color{delim}{]}}}}{1},
+}
+
+\definecolor{codeGray}{RGB}{240,240,240} 
+\definecolor{codeBlack}{RGB}{0,0,0} 
+\definecolor{codeRed}{RGB}{221,0,0} 
+\definecolor{codeBlue}{rgb}{0,0,187}
+\definecolor{codeYellow}{RGB}{255,128,0}  
+\definecolor{codeGreen}{RGB}{0,119,0} % … und zuweisen 
+\lstset{% language=coq,% 
+	% % Farben, diktengleiche Schrift 
+	backgroundcolor={\color{codeGray}},
+	% 
+	basicstyle={\small\ttfamily\color{codeGreen}},
+	% 
+	commentstyle={\color{codeYellow}},
+	% 
+	keywordstyle={\color{codeBlue}},
+	% 
+	stringstyle={\color{codeRed}},
+	% 
+	identifierstyle={\color{codeBlue}},
+	% 
+	% 
+	% Zeilenumbrüche aktivieren, Leerzeichen nicht hervorheben 
+	breaklines=true,
+	% 
+	showstringspaces=false,
+	% 
+	% 
+	% Listing-Caption unterhalb (bottom) 
+	captionpos=b,
+	% 
+	% 
+	% Listing einrahmen 
+	frame=single,
+	% 
+	rulecolor={\color{codeBlack}},
+	% 
+	% 
+	% winzige Zeilennummern links 
+	numbers=left,
+	% 
+	numberstyle={\tiny\color{codeBlack}}% 
+}
+
+\definecolor{lightgray}{gray}{0.9}
+\newcommand{\inlinecode}[2]{\colorbox{codeBlack}{\lstinline[language=#1]$#2$}}
+\definecolor{shadecolor}{gray}{.85}%
+
+%end custom
+
+
+\usepackage{lipsum} % kann weg, nur zur Generierung von etwas Text im Beispieldokument
+
+
+\selectlanguage{ngerman}
+
+
+\deffootnote{1em}{1em}{%
+ \makebox[1em][l]{\thefootnotemark}}
+
+\newcommand{\real}{\mathord{\mathrm{I\!R}}}
+
+\begin{document}
+\selectlanguage{ngerman}
+\def\figdir{figures}
+\def\tabledir{tables}
+
+\titlehead{
+\raggedleft
+\includegraphics[scale=0.7]{\figdir/logo-th-rosenheim-2019_master_quer_2c.eps}
+}
+
+\title{
+\vspace*{0cm}
+Open Home Automation Bus (OpenHAB)
+}
+
+\author{
+Lukas Kiederle\\
+Dominik Ampletzer\\
+Daniel \textbf{TODO!}\\
+Fakultät für Informatik}
+
+\date{WS 2019/20}
+
+\maketitle
+
+\cleardoubleemptypage
+\include{abstract}
+\cleardoubleemptypage
+
+\tableofcontents
+
+
+%\pagestyle{scrheadings}
+
+
+\addtokomafont{caption}{\small}
+
+
+\include{chapters}
+
+
+
+\appendix
+\include{append}
+
+
+\bibliographystyle{natger}
+\bibliography{thesis}
+
+
+
+\end{document}

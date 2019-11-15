@@ -1,0 +1,111 @@
+\section{Motivation}
+Sample List
+\begin{itemize}
+	\item First item
+	\item Second item
+\end{itemize}
+
+\section{Grundlagen}
+\subsection{OpenHAB}
+\subsubsection{Exemplarischer Beispielabschnitt:}
+The open Home Automation Bus (openHAB) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
+
+Some of openHAB's strengths are:
+
+Its ability to integrate a multitude of other devices and systems. openHAB includes other home automation systems, (smart) devices and other technologies into a single solution
+To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
+Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
+
+
+\section{Beispielcode}
+\begin{lstlisting}[language=coq,firstnumber=1,caption=Coq Beispiel,label=lst:api-config]
+	Inductive day : Type :=
+	| monday
+	| tuesday
+	| wednesday
+	| thursday
+	| friday
+	| saturday
+	| sunday.
+
+	Definition next_weekday (d:day) : day :=
+	match d with
+	| monday => tuesday
+	| tuesday => wednesday
+	| wednesday => thursday
+	| thursday => friday
+	| friday => monday
+	| saturday => monday
+	| sunday => monday
+	end.
+
+	Compute (next_weekday friday).
+	(* ==> monday : day *)
+	Compute (next_weekday (next_weekday saturday)).
+	(* ==> tuesday : day *)
+\end{lstlisting}
+
+
+\section{Vorlage-Einleitung}
+\label{s:intro}
+
+Hier kommt die Einleitung.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ein Abschnitt der Einleitung}
+\label{ss:intro:abc}
+
+Einen Überblick findet man z.\,B.\ in \cite{Auer00:HTF}.
+
+\begin{figure}[t]
+	\centering
+	
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{\figdir/handorig}
+		\caption{Originalbild}
+		\label{FIG:arexorig}
+	\end{subfigure}
+	%
+	\begin{subfigure}{0.45\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{\figdir/handaug}
+		\caption{erweitertes Bild}
+		\label{FIG:arexaugm}
+	\end{subfigure}
+	%
+	\caption[AR Beispiel]
+	{Beispiel eines Augmented Reality Systems: es folgt eine Beschreibung (Bilder aus \cite{Schmidt01:PAO})}
+	\label{FIG:arex}
+\end{figure}
+
+Ein Beispiel wird in Abb.\ \ref{FIG:arex} gezeigt.
+Das verwendete Objekt ist in Abb.\ \ref{FIG:arexorig} dargestellt, das Ergebnis in Abb.\ \ref{FIG:arexaugm}.
+
+Eine Formel
+\begin{equation}
+\label{eq:cvp:test}
+f(x) = \frac{1}{3} x + 5, \quad x \in \real.
+\end{equation}
+
+Und noch eine:
+\begin{equation}
+\label{eq:cvp:matvec}
+\bm{M}  = \bm{Ax} \pi, \quad \bm{A} \in \real^{2 \times 2}, \bm{x} \in \real^2.
+\end{equation}
+
+Tabelle \ref{t:CodebookOverview} gibt einen Überblick über XYZ.
+
+\begin{table}[t]
+	\centering\small
+	\input{\tabledir/CodebookOverview.tex}
+	\caption[Testtabelle]{Datenselektion für verschiedene Testdatensätze.}
+	\label{t:CodebookOverview}
+\end{table}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "thesis.tex"
+%%% End: 

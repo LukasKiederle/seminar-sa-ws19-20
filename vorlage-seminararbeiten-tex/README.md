@@ -2,9 +2,10 @@
 
 ## Installation and usage of the checked in code
 1. Install IDE TexStudio (https://www.texstudio.org/).
+[Here](https://github.com/m-entrup/LaTeX-Vorlagen/wiki/TeXstudio-einrichten) is a link for setting up TexStudio
 If you need help. Contact me please :).
 
-2. Open the **thesis.tex** file. 
+2. Open the **thesis.tex** file with TexStudio. 
 
 3. Compile the code and verify that you have every extension needed and the pdf is created without issues. (Warnings are ok)
 

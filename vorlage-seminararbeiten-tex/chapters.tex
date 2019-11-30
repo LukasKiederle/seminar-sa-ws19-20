@@ -1,13 +1,9 @@
 \section{Motivation}
-Sample List
 \begin{itemize}
-	\item First item
-	\item Second item
+	\item Open Hub im Fach Software Architektur untersuchen und praktischen Nutzen festestellen
 \end{itemize}
 
-\section{Grundlagen}
-\subsection{OpenHAB}
-\subsubsection{Exemplarischer Beispielabschnitt:}
+\section{Was ist OpenHAB?}
 The open Home Automation Bus (openHAB) is an open source, technology agnostic home automation platform which runs as the center of your smart home!
 
 Some of openHAB's strengths are:
@@ -16,45 +12,68 @@ Its ability to integrate a multitude of other devices and systems. openHAB inclu
 To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
 Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
 
+\section{OpenHAB aus technischer Sicht}
+\subsection{Was sind Geräte?}
 
-\section{Beispielcode}
-\begin{lstlisting}[language=coq,firstnumber=1,caption=Coq Beispiel,label=lst:api-config]
-	Inductive day : Type :=
-	| monday
-	| tuesday
-	| wednesday
-	| thursday
-	| friday
-	| saturday
-	| sunday.
+\subsection{Was sind Items?}
 
-	Definition next_weekday (d:day) : day :=
-	match d with
-	| monday => tuesday
-	| tuesday => wednesday
-	| wednesday => thursday
-	| thursday => friday
-	| friday => monday
-	| saturday => monday
-	| sunday => monday
-	end.
+\subsection{Geräteerkennung}
 
-	Compute (next_weekday friday).
-	(* ==> monday : day *)
-	Compute (next_weekday (next_weekday saturday)).
-	(* ==> tuesday : day *)
+\section{Exemplarische Verwendung von OpenHAB}
+\begin{itemize}
+	\item Wie ist OpenHAB installiert (OpenHAB clouder order auf raspi?)
+	\item Welche Geräte haben wir mit OpenHAB verbunden?
+	\item Wie haben wir die Geräte verbunden?
+	
+\end{itemize}
+
+\section{OpenHAB im Vergleich}
+\begin{itemize}
+	\item andere vergleichbare Software finden
+\end{itemize}
+\subsection{Stärken}
+\subsection{Schwächen}
+
+\section{Fazit}
+
+\section{Infos:}
+\textbf{Ausgangslage}
+Untersuchen Sie die Architektur und Features von OpenHAB und
+schreiben Sie ein Beispielanwendung.
+Mit myOpenHub existiert eine kostenlose Plattform die sie nutzen
+können.
+
+\textbf{Beantworten Sie dabei}
+\begin{itemize}
+ \item Aktueller Status des Projekts und  \item Integration der Big Player wie Alexa und Google Home
+ \item Welche Tools und Konzepte und APIs gibt es
+ \item Welche Deployment Modi und Betriebsmodi existieren
+ \item Untersuchen Sie auch Aspekte wie Datenintegriertät und Sicherheit
+\end{itemize}
+
+\textbf{Unterlagen Linkes}
+\begin{itemize}
+	\item \url{https://www.myopenhab.org/}
+	\item \url{https://www.openhab.org/}
+	\item \url{https://jaxenter.de/openhab-2-4-78711}
+\end{itemize}
+
+
+\section{Vorlage mit Samples}
+
+Codebeispiel:
+\begin{lstlisting}[language=java,firstnumber=1,caption=Java Beispiel,label=lst:example]
+public class JavaExample 
+{
+public static void main(String[] args) 
+{
+int test = 5;
+int result = 10;
+
+result += test;
+}
+}
 \end{lstlisting}
-
-
-\section{Vorlage-Einleitung}
-\label{s:intro}
-
-Hier kommt die Einleitung.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Ein Abschnitt der Einleitung}
-\label{ss:intro:abc}
 
 Einen Überblick findet man z.\,B.\ in \cite{Auer00:HTF}.
 

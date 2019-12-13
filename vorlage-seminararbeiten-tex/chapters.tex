@@ -6,10 +6,18 @@ Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und tech
 OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
 Sie wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. OpenHAB ist in Java geschrieben und aktuell in der Version 2.4 erhältlich.\\
 \\
-Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Ein Ziel ist plattform-unabhängig zu sein. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
+Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Ein Ziel ist die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
 Weiterhin soll es durch die Plugin-Architektur  möglich sein, fast jedes Gerät zu integrieren.
 Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unterstützt.\\
 Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser, Aktionen, Skripte und auch Voice-Kontrolle genannt.
+
+
+\section{Datenintegriertät und Sicherheit}
+\url{https://www.openhab.org/docs/installation/security.html}
+\begin{itemize}
+	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
+	\item Through HTTP(S), which we will look at in the following.
+\end{itemize}
 
 \section{OpenHAB aus technischer Sicht}
 In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tabellarisch dargestellt. Anschließend wird detaillierter auf die einzelnen Elemente eingegangen.
@@ -22,11 +30,11 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\hline
 	\centering Things & sind die erste von openHAB (Software) generierte Darstellung von Geräten. \\
 	\hline
-	\centering Channels & sind die openHAB (Software)-Verbindung zwischen "Dingen" und "Gegenständen". \\
+	\centering Channels & sind die openHAB (Software)-Verbindung zwischen "`Dingen"' und "`Gegenständen"'. \\
 	\hline
 	\centering Items & sind die von openHAB (Software) generierte Darstellung von Informationen über die Geräte.\\
 	\hline
-	\centering Rules & führen automatische Aktionen durch (im einfachster Form: wenn "dies" passiert, wird openHAB "das" tun).\\
+	\centering Rules & führen automatische Aktionen durch (in einfachster Form: wenn "`dies"' passiert, wird openHAB "`das"' tun).\\
 	\hline
 	\centering Sitemaps & ist die von openHAB (Software) generierte Benutzeroberfläche (Website), die Informationen präsentiert und Interaktionen ermöglicht.\\
 	\hline
@@ -51,11 +59,41 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 
 \subsection{Sitemaps}
 
-\section{Exemplarische Verwendung von OpenHAB}
+
+\subsection{Api}
+\url{https://www.openhab.org/docs/configuration/restdocs.html}
 \begin{itemize}
-	\item Wie ist OpenHAB installiert (OpenHAB cloud oder auf raspi?)
+	\item Item ausschalten
+	\item Eine List von allen Items, Sitemaps ausgeben lassen
+	\item \dots
+\end{itemize}
+
+\section{Verwendung von OpenHAB}
+\subsection{Integration der Big Player}
+\begin{itemize}
+	\item Amazon Alexa und Echo Dot Integration möglich
+	\begin{itemize}
+		\item \url{https://www.openhab.org/docs/ecosystem/alexa/}
+		\item \url{https://www.openhab.org/addons/bindings/amazonechocontrol/}
+	\end{itemize}
+	\item Google Home Integration möglich \url{https://www.openhab.org/docs/ecosystem/google-assistant/}
+\end{itemize}
+
+\subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
+\begin{itemize}
+	\item OpenHAB auf Raspberry Pi 3/4 installiert
 	\item Welche Geräte haben wir mit OpenHAB verbunden?
+	\begin{itemize}
+		\item Spotify
+		\item LG Smart TV
+	\end{itemize}
 	\item Wie haben wir die Geräte verbunden?
+	\begin{itemize}
+		\item \textbf{Verschiedene Binding:}
+		\item Spotify Binding
+		\item LG Smart TV Binding
+	\end{itemize}
+	\item Welche Rules haben wir angewendet und wofür?
 	\item On the server the configuration is stored somewhere in userdata (/var/lib/openhab2 for apt-get installs).
 	In an upgrade the userdata folder is preserved when using apt-get.
 \end{itemize}
@@ -65,7 +103,6 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
 	\caption{Verteilungsarchitektur \label{fig:verteilungs-architektur}}
 \end{minipage}
-
 
 \section{Fazit}
 \subsection{Stärken}
@@ -81,7 +118,7 @@ Giving you the most flexible tool available to make almost any home automation w
 	\begin{itemize}
 		\item Mikrofon an Raspberry Pi oder anderes Geräte verbinden
 		\item Input des Mikrofons über OpenHAB an ein Ausgabegerät, wie zum Beispiel eine Bluetooth Box, senden und abspielen
-		\item Raspberry hat da auch für große Probleme bei der Geräterkennung gesorgt - USB gerät wurde nicht im devices Verzeichnis aufgeführt und somit konnte auch keine Verbindung mit OpenHAB aufgebaut werden
+		\item Raspberry hat da auch für große Probleme bei der Geräteerkennung gesorgt - USB gerät wurde nicht im devices Verzeichnis aufgeführt und somit konnte auch keine Verbindung mit OpenHAB aufgebaut werden
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
 	\item Doku ist schwer verständlich
@@ -97,7 +134,8 @@ können.
 
 \textbf{Beantworten Sie dabei}
 \begin{itemize}
- \item Aktueller Status des Projekts und  \item Integration der Big Player wie Alexa und Google Home
+ \item Aktueller Status des Projekts und  
+ \item Integration der Big Player wie Alexa und Google Home
  \item Welche Tools und Konzepte und APIs gibt es
  \item Welche Deployment Modi und Betriebsmodi existieren
  \item Untersuchen Sie auch Aspekte wie Datenintegriertät und Sicherheit

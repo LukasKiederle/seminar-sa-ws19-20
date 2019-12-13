@@ -54,11 +54,19 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \subsection{Channels}
 
 \subsection{Items}
+\begin{itemize}
+	\item Items können gruppiert werden
+\end{itemize}
+\begin{lstlisting}[language=java,firstnumber=1,caption=Item-Gruppierung Beispiel,label=lst:group-items]
+	Group groundFloor
+	Switch kitchenLight (groundFloor)
+	Switch livingroomLight (groundFloor)
+\end{lstlisting}
 
 \subsection{Rules}
 
-\subsection{Sitemaps}
 
+\subsection{Sitemaps}
 
 \subsection{Api}
 \url{https://www.openhab.org/docs/configuration/restdocs.html}
@@ -85,7 +93,17 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\item Welche Geräte haben wir mit OpenHAB verbunden?
 	\begin{itemize}
 		\item Spotify
+		\begin{itemize}
+			\item Lautstärkeregler
+			\item Aktueller Song Display
+		\end{itemize}
 		\item LG Smart TV
+		\begin{itemize}
+			\item Lautstärkeregler
+			\item An- und ausschalten
+			\item One-Way-Chat
+		\end{itemize}
+		\item Lampen
 	\end{itemize}
 	\item Wie haben wir die Geräte verbunden?
 	\begin{itemize}
@@ -112,6 +130,7 @@ Its ability to integrate a multitude of other devices and systems. openHAB inclu
 To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
 Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
 \subsection{Schwächen}
+\textbf{Wollen wir das hier als SWOT Analyse aufziehen?}
 \begin{itemize}
 	\item Integration von USB-Geräten scheint eher kompliziert. Vor allem auf Raspberry Pi
 	\item Serial Binding wird nicht angezeigt
@@ -150,20 +169,6 @@ können.
 
 
 \section{Vorlage mit Samples}
-
-Codebeispiel:
-\begin{lstlisting}[language=java,firstnumber=1,caption=Java Beispiel,label=lst:example]
-public class JavaExample 
-{
-public static void main(String[] args) 
-{
-int test = 5;
-int result = 10;
-
-result += test;
-}
-}
-\end{lstlisting}
 
 Einen Überblick findet man z.\,B.\ in \cite{Auer00:HTF}.
 

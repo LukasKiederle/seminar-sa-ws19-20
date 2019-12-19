@@ -6,7 +6,7 @@ Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und tech
 OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
 Sie wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. OpenHAB ist in Java geschrieben und aktuell in der Version 2.4 erhältlich.\\
 \\
-Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Ein Ziel ist die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
+Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Dabei ist ein Ziel die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
 Weiterhin soll es durch die Plugin-Architektur  möglich sein, fast jedes Gerät zu integrieren.
 Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unterstützt.\\
 Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser, Aktionen, Skripte und auch Voice-Kontrolle genannt.
@@ -16,7 +16,13 @@ Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeit
 \url{https://www.openhab.org/docs/installation/security.html}
 \begin{itemize}
 	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
-	\item Through HTTP(S), which we will look at in the following.
+	\item Through HTTP(S) over \url{https://<ip>:8443}
+	\item Options for Secure Remote Access
+	\begin{itemize}
+		\item VPN: The most secure option is probably to create a VPN connection to your home network
+		\item myopenHAB Cloud Service with a tunnel that forwards all requests to the openHAB instance
+		\item Running openHAB Behind a Reverse Proxy: A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to \url{http://mydomain_or_myip} to your openHAB runtime.
+	\end{itemize}
 \end{itemize}
 
 \section{OpenHAB aus technischer Sicht}
@@ -50,12 +56,20 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \end{itemize}
 
 \subsection{Things}
+\begin{itemize}
+	\item 
+	\item 
+\end{itemize}
 
 \subsection{Channels}
 
 \subsection{Items}
 \begin{itemize}
+	\item Item bedeutet nicht Gerät oder Service
 	\item Items können gruppiert werden
+	\item Ein Item stellt einer der Basistypen dar: String, Number, Color oder Group.
+	\item Items werden über mit Hilfe von Bindings mit der Außenwelt verbunden
+	\item \url{https://www.openhab.org/docs/configuration/items.html#items}
 \end{itemize}
 \begin{lstlisting}[language=java,firstnumber=1,caption=Item-Gruppierung Beispiel,label=lst:group-items]
 	Group groundFloor
@@ -73,7 +87,14 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \begin{itemize}
 	\item Item ausschalten
 	\item Eine List von allen Items, Sitemaps ausgeben lassen
-	\item \dots
+	\item Mit einem Editor auf die ganzen Komponenten zugreifen:
+	\begin{itemize}
+		\item Visual Studio Code installieren
+		\item Openhab Extension installieren
+		\item Geteiltes Openhab Laufwerk als Ordner öffnen
+		\item Openhab Extension konfigurieren
+		\item Es werden auch andere Editoren unterstützt
+	\end{itemize}
 \end{itemize}
 
 \section{Verwendung von OpenHAB}
@@ -81,10 +102,26 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \begin{itemize}
 	\item Amazon Alexa und Echo Dot Integration möglich
 	\begin{itemize}
-		\item \url{https://www.openhab.org/docs/ecosystem/alexa/}
-		\item \url{https://www.openhab.org/addons/bindings/amazonechocontrol/}
+		\item Alexa:
+		\begin{itemize}
+			\item This certified Amazon Smart Home Skill allows users to control their openHAB powered smart home with natural voice commands. Lights, locks, thermostats, AV devices, sensors and many other device types can be controlled through a user's Alexa powered device like the Echo or Dot.
+			\item \url{https://www.openhab.org/docs/ecosystem/alexa/}
+			\item \url{https://www.openhab.org/addons/bindings/amazonechocontrol/}
+		\end{itemize} 
+		\item Google Home
+		\begin{itemize}
+			\item Google Home Integration möglich
+			\item With the Action you can voice control your openHAB items and it supports lights, plugs, switches and thermostats. The openHAB Action comes with multiple language support like English, German or French language.
+			\item The openHAB Action links your openHAB setup through the myopenHAB.org cloud service to the Google Assistant platform
+			\item openHAB Cloud Connector configured using myopenHAB.org . (Items DO NOT need to be exposed to and will not show up on myopenHAB.org
+			, this is only needed for the IFTTT service!)
+			Google account.
+			Google Home or Google Home mini.
+			
+			\url{https://www.openhab.org/docs/ecosystem/google-assistant/}
+		\end{itemize} 
 	\end{itemize}
-	\item Google Home Integration möglich \url{https://www.openhab.org/docs/ecosystem/google-assistant/}
+	
 \end{itemize}
 
 \subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
@@ -122,6 +159,26 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\caption{Verteilungsarchitektur \label{fig:verteilungs-architektur}}
 \end{minipage}
 
+\subsection{OpenHab Programmieren}
+\begin{itemize}
+	\item 
+\end{itemize}
+
+\begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
+rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
+when
+	Item LGWebOSTVUH620VDominik_Volume changed
+then
+logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
+if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
+	HueWhiteLamp2_Brightness.sendCommand(80)
+}
+else {
+	HueWhiteLamp2_Brightness.sendCommand(5)
+}
+end
+\end{lstlisting}
+
 \section{Fazit}
 \subsection{Stärken}
 Some of openHAB's strengths are:
@@ -140,8 +197,14 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item Raspberry hat da auch für große Probleme bei der Geräteerkennung gesorgt - USB gerät wurde nicht im devices Verzeichnis aufgeführt und somit konnte auch keine Verbindung mit OpenHAB aufgebaut werden
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
-	\item Doku ist schwer verständlich
-	erste schritte klappen leicht, aber danach wird es schwierig
+	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
+	\item Rules können auch mit eingechränkter Funktionalität über das Experimental Rules Feature zusammengeklickt werden
+	\item Implementierung von rules scheint idiotensicher, weil:
+	\begin{itemize}
+		\item einfacher Syntax
+		\item Abhängigkeiten managed Openhab
+	\end{itemize}
+	\item Bindings schreiben scheint eher schwieriger
 \end{itemize}
 
 \section{Infos:}

@@ -78,7 +78,23 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \end{lstlisting}
 
 \subsection{Rules}
-
+\begin{itemize}
+	\item 
+\end{itemize}
+\begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
+rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
+when
+Item LGWebOSTVUH620VDominik_Volume changed
+then
+logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
+if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
+HueWhiteLamp2_Brightness.sendCommand(80)
+}
+else {
+HueWhiteLamp2_Brightness.sendCommand(5)
+}
+end
+\end{lstlisting}
 
 \subsection{Sitemaps}
 
@@ -159,25 +175,17 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\caption{Verteilungsarchitektur \label{fig:verteilungs-architektur}}
 \end{minipage}
 
-\subsection{OpenHab Programmieren}
+\subsection{Umgang mit OpenHAB}
 \begin{itemize}
-	\item 
+	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
+	\item Rules können auch mit eingechränkter Funktionalität über das Experimental Rules Feature zusammengeklickt werden
+	\item Implementierung von rules scheint idiotensicher, weil:
+	\begin{itemize}
+		\item einfacher Syntax
+		\item Abhängigkeiten managed Openhab
+	\end{itemize}
+	\item Bindings schreiben scheint eher schwieriger
 \end{itemize}
-
-\begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
-rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
-when
-	Item LGWebOSTVUH620VDominik_Volume changed
-then
-logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
-if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
-	HueWhiteLamp2_Brightness.sendCommand(80)
-}
-else {
-	HueWhiteLamp2_Brightness.sendCommand(5)
-}
-end
-\end{lstlisting}
 
 \section{Fazit}
 \subsection{Stärken}
@@ -197,14 +205,6 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item Raspberry hat da auch für große Probleme bei der Geräteerkennung gesorgt - USB gerät wurde nicht im devices Verzeichnis aufgeführt und somit konnte auch keine Verbindung mit OpenHAB aufgebaut werden
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
-	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
-	\item Rules können auch mit eingechränkter Funktionalität über das Experimental Rules Feature zusammengeklickt werden
-	\item Implementierung von rules scheint idiotensicher, weil:
-	\begin{itemize}
-		\item einfacher Syntax
-		\item Abhängigkeiten managed Openhab
-	\end{itemize}
-	\item Bindings schreiben scheint eher schwieriger
 \end{itemize}
 
 \section{Infos:}

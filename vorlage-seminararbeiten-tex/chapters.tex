@@ -62,6 +62,10 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 \end{itemize}
 
 \subsection{Channels}
+\begin{itemize}
+	\item  Dient als Kommunikationsweg für von Openhab zu things.
+	\item Channel sind beispielsweise bei einer Lampe die Brightness.
+\end{itemize}
 
 \subsection{Items}
 \begin{itemize}
@@ -79,19 +83,31 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 
 \subsection{Rules}
 \begin{itemize}
-	\item 
+	\item Rules stelln wenn dann Beziehungen dar
+	\item Diese können sowohl über zusammenklicken, als auch programmatisch erstellt werden. 
+	\item Das Zusammenklicken basiert auf einem noch nicht fertigen Feature namens experimental rules. Zum Zeitpunkt dieser Arbeit können dadurch schon einige Standardrules definiert werden. Allerdings fehlt beispielsweise noch die Vergleichsoption größer oder größer-gleich
+	\item Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
+	\begin{itemize}
+		\item Eine Rule besteht immer aus einem Namen, einer when-Bedinung und einem then Abschnitt.
+		\item Name dient als Zuordnung
+		\item When ist der Trigger bzgw. Auslöser der Aktion, welche im then Block definiert ist.
+		\item Diese Rule prüft, ob die Lautstärke des Items (TV) Dominik\_volumen sich verändert hat.
+		Wenn das der Fall ist, wird eine geprüft, wiehoch denn die aktuelle Lautstärke ist.
+		Folglich wird bei unter 20 die Lampe gedimmt und bei über 20 die Lampe erhellt.
+		\item Falls etwas nicht klappen sollte, können auch Debug-Ausgaben mit dem Kommando logDebug geschrieben werden.
+	\end{itemize}
 \end{itemize}
 \begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when
-Item LGWebOSTVUH620VDominik_Volume changed
+	Item LGWebOSTVUH620VDominik_Volume changed
 then
-logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
+	logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
 if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
-HueWhiteLamp2_Brightness.sendCommand(80)
+	HueWhiteLamp2_Brightness.sendCommand(80)
 }
 else {
-HueWhiteLamp2_Brightness.sendCommand(5)
+	HueWhiteLamp2_Brightness.sendCommand(5)
 }
 end
 \end{lstlisting}
@@ -101,7 +117,7 @@ end
 \subsection{Api}
 \url{https://www.openhab.org/docs/configuration/restdocs.html}
 \begin{itemize}
-	\item Item ausschalten
+	\item Item ein-/ausschalten
 	\item Eine List von allen Items, Sitemaps ausgeben lassen
 	\item Mit einem Editor auf die ganzen Komponenten zugreifen:
 	\begin{itemize}
@@ -164,7 +180,6 @@ end
 		\item Spotify Binding
 		\item LG Smart TV Binding
 	\end{itemize}
-	\item Welche Rules haben wir angewendet und wofür?
 	\item On the server the configuration is stored somewhere in userdata (/var/lib/openhab2 for apt-get installs).
 	In an upgrade the userdata folder is preserved when using apt-get.
 \end{itemize}
@@ -178,7 +193,6 @@ end
 \subsection{Umgang mit OpenHAB}
 \begin{itemize}
 	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
-	\item Rules können auch mit eingechränkter Funktionalität über das Experimental Rules Feature zusammengeklickt werden
 	\item Implementierung von rules scheint idiotensicher, weil:
 	\begin{itemize}
 		\item einfacher Syntax

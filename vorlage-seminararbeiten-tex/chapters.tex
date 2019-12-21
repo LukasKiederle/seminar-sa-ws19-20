@@ -1,10 +1,13 @@
 \section{Motivation}
 Diese Ausarbeitung wird für das Fach Softwarearchitektur an der technischen Hochschule Rosenheim geschrieben.
-Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Dabei liegt der Fokus vor allem auf der Softwarearchitektur von OpenHAB. 
+Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Dabei liegt der Fokus vor allem auf der Softwarearchitektur von OpenHAB.
+\begin{itemize}
+	\item \url{https://de.statista.com/statistik/daten/studie/537226/umfrage/prognose-zu-den-ausgaben-fuer-das-internet-der-dinge/}
+\end{itemize}
 
 \section{Was ist OpenHAB}
 OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
-Sie wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. OpenHAB ist in Java geschrieben und aktuell in der Version 2.4 erhältlich.\\
+Sie wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. OpenHAB ist in Java geschrieben und aktuell in der Version 2.5 erhältlich.\\
 \\
 Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Dabei ist ein Ziel die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
 Weiterhin soll es durch die Plugin-Architektur  möglich sein, fast jedes Gerät zu integrieren.
@@ -12,6 +15,30 @@ Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unter
 Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser, Aktionen, Skripte und auch Voice-Kontrolle genannt.
 
 \section{Bewertung OpenHAB}
+\begin{itemize}
+	\item \url{https://www.openhub.net/p/openhab}
+	\item Was ist openhub: Website zur Katalogisierung von open-source Softwareprojekten
+	\item Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statisitk, die es ermöglicht, Codeanalyse, Projektemitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.
+	\begin{itemize}
+		\item openhub bewertet das projekt mit sehr hoher Aktivitätsrate
+		\item über 1.5 Millionen lines of code Hauptsächlich Java und XML
+		\item 31\% des Codes ist dokumentiert (was soviel wie andere durchschnittliche Java-Projekte ist)
+		\item insgesamt 1140 Contributers und 20k commits
+		\item Basierend auf dem Vergleich von Commits des Vorjahres und des jetzigen Jahres, steigt das Interesse in OpenHAB
+		\item Im letzten Jahr waren es 343 neue Contributer. Das macht OpenHAB zu einem der größten open source-teams der Welt. Sie sind unter den top 2\% von allen Projektteams auf Openhub.
+	\end{itemize}
+	\item Lizenz: freie Software Lizenz EPL-2.0: ermöglicht kommerzielle und private Nutzung, Modifizierung, Weiterverbreitung. \url{https://www.eclipse.org/legal/epl-2.0/}
+	\item Stable Release 2.5 > 1
+	\item Durschnittliche Antwortzeit in der Community > 24h? ja: wie beweisen?
+	\item OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von usecases untersucht und verglichen. Im Vergleich stellte sich folgendes Ergebnis \ref{fig:comparison-openhab}\cite{BA01:OPH}
+\end{itemize}
+
+\begin{minipage}{\textwidth}
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=0.8\textwidth]{\figdir/comparison-openhab.PNG}
+	\caption{Vergleich OpenHAB und anderen Heimautomatisierungstools von 2017/2018 \label{fig:comparison-openhab}}
+\end{minipage}
 
 
 \section{Datenintegriertät und Sicherheit}
@@ -253,58 +280,6 @@ können.
 	\item \url{https://www.openhab.org/}
 	\item \url{https://jaxenter.de/openhab-2-4-78711}
 \end{itemize}
-
-
-\section{Vorlage mit Samples}
-
-Einen Überblick findet man z.\,B.\ in \cite{Auer00:HTF}.
-
-\begin{figure}[t]
-	\centering
-	
-	\begin{subfigure}{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{\figdir/handorig}
-		\caption{Originalbild}
-		\label{FIG:arexorig}
-	\end{subfigure}
-	%
-	\begin{subfigure}{0.45\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{\figdir/handaug}
-		\caption{erweitertes Bild}
-		\label{FIG:arexaugm}
-	\end{subfigure}
-	%
-	\caption[AR Beispiel]
-	{Beispiel eines Augmented Reality Systems: es folgt eine Beschreibung (Bilder aus \cite{Schmidt01:PAO})}
-	\label{FIG:arex}
-\end{figure}
-
-Ein Beispiel wird in Abb.\ \ref{FIG:arex} gezeigt.
-Das verwendete Objekt ist in Abb.\ \ref{FIG:arexorig} dargestellt, das Ergebnis in Abb.\ \ref{FIG:arexaugm}.
-
-Eine Formel
-\begin{equation}
-\label{eq:cvp:test}
-f(x) = \frac{1}{3} x + 5, \quad x \in \real.
-\end{equation}
-
-Und noch eine:
-\begin{equation}
-\label{eq:cvp:matvec}
-\bm{M}  = \bm{Ax} \pi, \quad \bm{A} \in \real^{2 \times 2}, \bm{x} \in \real^2.
-\end{equation}
-
-Tabelle \ref{t:CodebookOverview} gibt einen Überblick über XYZ.
-
-\begin{table}[t]
-	\centering\small
-	\input{\tabledir/CodebookOverview.tex}
-	\caption[Testtabelle]{Datenselektion für verschiedene Testdatensätze.}
-	\label{t:CodebookOverview}
-\end{table}
-
 
 %%% Local Variables: 
 %%% mode: latex

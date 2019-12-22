@@ -107,14 +107,16 @@ Things sind die repräsentation von Geräten/Services innerhalb des Systems. Ber
 Things bieten verschiedene so gennante Channels an. Diese entsprechen die Funktionen/Aktionen welche das Gerät ausführen kann.
 Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 \begin{itemize}
-	\item 	per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 
+	\item per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/thing_add.png}
 		\caption{Thing per Paper-UI \label{fig:thing-add-paper-ui}}
+		
 	\item per Web-Oberfläche Manuell. Erlaubt völlige Einstellung im Vorhinein. Allerdings ist auf Statische IP-Adressen zu achten.
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.png}
 		\caption{Thing per Paper-UI Manuell \label{fig:thing-add-paper-ui-manuel}}
+		
 	\item per Code. Ermöglicht und benötigte komplette manuelle eingabe aller nötiger Infomrmationen wie IP-Adresse
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/thing_add_code.png}
@@ -122,19 +124,14 @@ Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 \end{itemize}
 
 \subsection{Channels}
-\begin{itemize}
-	\item  Dient als Kommunikationsweg für von Openhab zu things.
-	\item Channel sind beispielsweise bei einer Lampe die Brightness.
-\end{itemize}
+sind Kommunikationswege welche von den Things angeboten werden. Channels verbinden Things und Items. Und könne in openHab, bzw. den Rules genutzt werden. Sie stellen die Verbindung von externen Gerät zu openHAB aktionen dar. Über die Channels können Informationen durch PAramerter ausgetauscht werden. So wäre z.B. die Helligkeit einer Lampe ein Parameter, welcher durch einen Channel übertragen werden kann. nicht jedoch die Informationen, dass sich die Helligkeit ändern soll. Hierfür wird das Item benötigt, welches durch den Channel an das Thing verbunden wrude.
 
 \subsection{Items}
-\begin{itemize}
-	\item Item bedeutet nicht Gerät oder Service
-	\item Items können gruppiert werden
-	\item Ein Item stellt einer der Basistypen dar: String, Number, Color oder Group.
-	\item Items werden über mit Hilfe von Bindings mit der Außenwelt verbunden
-	\item \url{https://www.openhab.org/docs/configuration/items.html#items}
-\end{itemize}
+Der Begriff Item wirkt unter umständen falsch. Ein Item könnte auch als Aktion beschreiben werden. Ein Item selbst hat sehr wenig Informationen. Das Item besteht neben eine Titel noch aus eine Kategorie und eine Gruppe um es zuzuordnen und um gleichzeitig mehrere Items gleichzeitig anzusteueren.. Außerdem hat ein Item noch einen Typ, dieser Typ entspricht einer Menge von Basistypen, welche von openHAB angeboten werden. Diese sind unter anderem String, Numnber, DateTime, Location, Player usw. \url{https://www.openhab.org/docs/configuration/items.html#type}.
+Wichtig ist auch der Status. Wodoruch es doch wieder ein Item anstatt einer Aktion ist. (könnte man item als object bezeichnen mit label, kategorie, status und nur einer funktion??? memo an mich DAM)
+Items sind essentielle bestandteile um das Panel zu bauen, da die Widgets über Items mit den Geräten agieren.
+
+
 \begin{lstlisting}[language=java,firstnumber=1,caption=Item-Gruppierung Beispiel,label=lst:group-items]
 	Group groundFloor
 	Switch kitchenLight (groundFloor)

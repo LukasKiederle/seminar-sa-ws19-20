@@ -104,17 +104,18 @@ Things sind die repräsentation von Geräten/Services innerhalb des Systems. Ber
 Things bieten verschiedene so gennante Channels an. Diese entsprechen die Funktionen/Aktionen welche das Gerät ausführen kann. 
 Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 \begin{itemize}
-	\item 	per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. 
-	
+	\item 	per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/thing_add.png}
 		\caption{Thing per Paper-UI \label{fig:thing-add-paper-ui}}
-	
-	\item per Web-Oberfläche Manuell 
-	
+	\item per Web-Oberfläche Manuell. Erlaubt völlige Einstellung im Vorhinein. Allerdings ist auf Statische IP-Adressen zu achten.
 		\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.png}
-	\caption{Thing per Paper-UI Manuell \label{fig:thing-add-paper-ui-manuel}}
+		\includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.png}
+		\caption{Thing per Paper-UI Manuell \label{fig:thing-add-paper-ui-manuel}}
+	\item per Code. Ermöglicht und benötigte komplette manuelle eingabe aller nötiger Infomrmationen wie IP-Adresse
+		\captionsetup{type=figure}
+		\includegraphics[width=1\textwidth]{\figdir/thing_add_code.png}
+		\caption{Thing per Code \label{fig:thing-add-code}}
 \end{itemize}
 
 \subsection{Channels}

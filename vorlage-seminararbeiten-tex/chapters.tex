@@ -2,7 +2,7 @@
 {Die Ausgaben für das Internet der Dinge (IoT) wird weltweit, laut Statista, bis zum Jahr 2022 auf 1000 Milliarden US-Dollar steigen. Im Vergleich zum Jahr 2019 bedeutet dies, eine Steigerung von über 40\%.}\cite{STATISTA01:IOT} Bei einem solch starken Trend in der Informatik-Branche sollten sowohl Studenten, als auch Professoren dessen Grundlagen kennen.
 Deshalb ist im Rahmen des Faches Softwarearchitektur an der technischen Hochschule Rosenheim diese Ausarbeitung geschrieben worden. Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Außerdem wird dabei auf die Aspekte Markttauglichkeit und Benutzbarkeit in der Praxis eingegangen.
 
-\section{Was ist OpenHAB}
+\section{Was ist OpenHAB?}
 OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
 Das Projekt wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. Die Software ist hauptsächlich in Java und der Auszeichnungssprache XML geschrieben. Seit dem 16. Dezember 2019 ist die Version 2.5 erhältlich.\\
 \\
@@ -11,13 +11,48 @@ Weiterhin soll es durch die Plugin-Architektur möglich sein, fast jedes Gerät 
 Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unterstützt.\\
 Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser (in englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
 
-\section{Bewertung OpenHAB?}
+\section{Bewertung OpenHAB}
+In diesem Kapitel wird das open-source Projekt OpenHAB untersucht und bewertet. Die Kriterien hierfür sind orientiert an der QAware Open Source Quick-Check Liste.
+Dies beinhaltet:
+\begin{longtable}{| p{3cm} | p{12cm}|}
+	\hline
+	\textbf{Kriterium} & \textbf{Beschreibung} \\
+	\hline \hline
+	\centering Lizenz & Für welche Zwecke kann das Projekt genutzt werden? \\
+	\hline
+	\centering Reifegrad & Existiert eine stabile Version > 1.0?  \\
+	\hline
+	\centering Support & Existiert Issue-Tracking und ein Antwortzeit auf Tickets unter 24h? \\
+	\hline
+	\centering Dokumentation & Existiert?
+	\begin{itemize}
+		\item Api-Dokumentation
+		\item Getting Started Tutorial
+		\item Aktuelle Dokumentation
+	\end{itemize} \\
+	\hline
+	\centering Projekt Aktivität & Gibt es?
+	\begin{itemize}
+		\item Mindestens 1 Release im letzten Jahr
+		\item Mindestens 3 aktive Contributer
+		\item Stetige Commit-Aktivität von mindestens 1x pro Monat
+	\end{itemize}\\
+	\hline
+	\centering Bekanntheitsgrad & Vergleich von öffentlichem Interesse in Blockposts, auf Stackoverflow et cetera. \\
+	\hline
+	\caption{OpenHAB Projektbewertungskriterien}
+	\label{table:openhub-judgment-kriteria}
+\end{longtable}
+Das Projekt OpenHAB befindet sich auf Github unter \url{https://github.com/openhab/openhab-core}. 
+
+
+
 \begin{itemize}
 	\item \url{https://www.openhub.net/p/openhab}
-	\item Was ist openhub: Website zur Katalogisierung von open-source Softwareprojekten
-	\item Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statisitk, die es ermöglicht, Codeanalyse, Projektemitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.
+	\item Was ist Openhub: Website zur Katalogisierung von open-source Softwareprojekten
+	\item Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht, Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source Projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.
 	\begin{itemize}
-		\item openhub bewertet das projekt mit sehr hoher Aktivitätsrate
+		\item openhub bewertet das Projekt mit sehr hoher Aktivitätsrate
 		\item über 1.5 Millionen lines of code Hauptsächlich Java und XML
 		\item 31\% des Codes ist dokumentiert (was soviel wie andere durchschnittliche Java-Projekte ist)
 		\item insgesamt 1140 Contributers und 20k commits
@@ -26,8 +61,8 @@ Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeit
 	\end{itemize}
 	\item Lizenz: freie Software Lizenz EPL-2.0: ermöglicht kommerzielle und private Nutzung, Modifizierung, Weiterverbreitung. \url{https://www.eclipse.org/legal/epl-2.0/}
 	\item Stable Release 2.5 > 1
-	\item Durschnittliche Antwortzeit in der Community > 24h? ja: wie beweisen?
-	\item OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von usecases untersucht und verglichen. Im Vergleich stellte sich folgendes Ergebnis \ref{fig:comparison-openhab}\cite{BA01:OPH}
+	\item Durchschnittliche Antwortzeit in der Community > 24h? ja: wie beweisen?
+	\item OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von usecases untersucht und verglichen. Im Vergleich stellte sich folgende Ergebnistabelle \ref{fig:comparison-openhab}\cite{BA01:OPH} heraus.
 \end{itemize}
 
 \begin{minipage}{\textwidth}

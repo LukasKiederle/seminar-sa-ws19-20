@@ -57,7 +57,10 @@ Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeit
 
 
 \section{OpenHAB aus technischer Sicht}
-In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tabellarisch dargestellt. Anschließend wird detaillierter auf die einzelnen Elemente eingegangen und wie diese miteinander in Beziehung stehen. Ein Weiterer Aspekt von OpenHAB kommt in diesem Kapitel immer wieder zum Vorschein. OpenHAB sieht nicht den einen Weg vor etwas zu installieren/einzubinden. So kann z.B. je nach vorliebe des Nutzers eine Geräte über die Web-Oberfläche integriert werden, als auch programmatisch in dafür vorgesehen Datei-ORdner als Code. Dieses Konzept findet sich immer wieder z.B. für Bindings, Things, Items, Rules usw.
+In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tabellarisch dargestellt. Anschließend wird detaillierter auf die einzelnen Elemente eingegangen und wie diese miteinander in Beziehung stehen. Ein Weiterer Aspekt von OpenHAB kommt in diesem Kapitel immer wieder zum Vorschein. OpenHAB sieht nicht den einen Weg vor etwas zu installieren/einzubinden. So kann z.B. je nach vorliebe des Nutzers eine Geräte über die Web-Oberfläche integriert werden, als auch programmatisch in dafür vorgesehen Datei-ORdner als Code. Dieses Konzept findet sich immer wieder z.B. für Bindings, Things, Items, Rules usw. OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die von openHAB bentigte Struktur erzeugen. Für manuelles Hinzufügen von Things, Items, Rules usw. bietet openHAB bereits eine ORdnerstruktur. Diese ist so offensichtlich, dass es trivial ist zu entscheiden, wo welche Komponente hinzugefügt werde soll. Sollte dies dennoch unklar sein, wird der Nutzer noch weiter durch readme-dateien unterstützt. Siehe 
+\captionsetup{type=figure}
+\includegraphics[width=1\textwidth]{\figdir/openHab-conf-folder-structure..png}
+\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure.}}
 
 \begin{longtable}{| p{2cm} | p{13cm}|}
 	\hline
@@ -101,7 +104,7 @@ Laut openHAB gibt es aktuell über 300 Bindings und dadurch können über 2000 T
 
 \subsection{Things}
 Things sind die repräsentation von Geräten/Services innerhalb des Systems. Berachtet man die Objektorierntierung ist es ein sehr schönes Beispiel wie im einem Computersystem ein realer gegenstand beschreiben werden kann.
-Things bieten verschiedene so gennante Channels an. Diese entsprechen die Funktionen/Aktionen welche das Gerät ausführen kann. 
+Things bieten verschiedene so gennante Channels an. Diese entsprechen die Funktionen/Aktionen welche das Gerät ausführen kann.
 Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 \begin{itemize}
 	\item 	per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 

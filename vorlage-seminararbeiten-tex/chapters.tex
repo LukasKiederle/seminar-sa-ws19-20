@@ -103,9 +103,11 @@ In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tab
 	\hline
 	\centering Things & erste von openHAB (Software) generierte Darstellung von Geräten. \\
 	\hline
-	\centering Channels & openHAB (Software)-Verbindung zwischen "`Dingen"' und "`Gegenständen"'. \\
+	\centering Channels & Übertragungskanal zwischen "`Dingen"' und "`Gegenständen"'. \\
 	\hline
 	\centering Items & von openHAB (Software) generierte Darstellung von Informationen über die Geräte.\\
+	\hline
+	\centering Link & Verbindung zwischen Things und Items \\
 	\hline
 	\centering Rules & führen automatische Aktionen durch (in einfachster Form: wenn "`dies"' passiert, wird openHAB "`das"' tun).\\
 	\hline
@@ -166,13 +168,45 @@ sind Kommunikationswege welche von den Things angeboten werden. Channels verbind
 Der Begriff Item wirkt unter umständen falsch. Ein Item könnte auch als Aktion beschreiben werden. Ein Item selbst hat sehr wenig Informationen. Das Item besteht neben eine Titel noch aus eine Kategorie und eine Gruppe um es zuzuordnen und um gleichzeitig mehrere Items gleichzeitig anzusteueren.. Außerdem hat ein Item noch einen Typ, dieser Typ entspricht einer Menge von Basistypen, welche von openHAB angeboten werden. Diese sind unter anderem String, Numnber, DateTime, Location, Player usw. \url{https://www.openhab.org/docs/configuration/items.html#type}.
 Wichtig ist auch der Status. Wodoruch es doch wieder ein Item anstatt einer Aktion ist. (könnte man item als object bezeichnen mit label, kategorie, status und nur einer funktion??? memo an mich DAM)
 Items sind essentielle bestandteile um das Panel zu bauen, da die Widgets über Items mit den Geräten agieren.
-
+so schautein item aus  {
+	"type": "string",
+	"name": "string",
+	"label": "string",
+	"category": "string",
+	"tags": [
+	"string"
+	],
+	"groupNames": [
+	"string"
+	],
+	"link": "string",
+	"state": "string",
+	"transformedState": "string",
+	"stateDescription": {
+		"minimum": 0,
+		"maximum": 0,
+		"step": 0,
+		"pattern": "string",
+		"readOnly": false,
+		"options": [
+		{
+			"value": "string",
+			"label": "string"
+		}
+		]
+	},
+	"metadata": {},
+	"editable": false
+}
+]
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Item-Gruppierung Beispiel,label=lst:group-items]
 	Group groundFloor
 	Switch kitchenLight (groundFloor)
 	Switch livingroomLight (groundFloor)
 \end{lstlisting}
+
+\subsection{Link}
 
 \subsection{Rules}
 Automatisierung wir durch Rules/Scripte erreicht, welche in erster linie durch Programmieren erzeugt werden. Um Regeln zu erzeugen, wird eine einfache wenn/dann-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können die Trigger von Items, Member of, Time, System oder Things stammen. Genauer kann die Bedingung noch durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
@@ -208,8 +242,15 @@ end
 \end{lstlisting}
 
 \subsection{Sitemaps}
+Sitemaps dienen als Übersicht, Gruppierung und Visualisierung des Smart-Homes. So werde durch Sitemaps räume nachbildet um Komplette beleuchtung innerhalb eines Raums ein/auszuschalten, Temperatur o.ä. im Auge zu behalten. Neben Sitemaps können auch ander Darstellung wie Panels verwendet werden. SiteMap und Dashboards dienen wie der Name schon sagt als Dashboard (Wie blöd kann ich denn das schreiben). Und als kontrolleinheit für das Smart-Home. Die Erstellung wird durch eiditoren errleichtert, welche Programmierunkundigen Code-Snippits zur Verfüfung stellt. 
 
 \subsection{Api}
+OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, was anderen Systemen es ermöglicht die Komplette Funktionalität, welche über die Web-Oberfläche nutzbar ist ebenfalls zu integrieren. Dies ermöglicht es unter anderem Entwicklungsumgebungen wie VS-Code, Eclipse, IntelliJ Add-Ons/Extensions zu entwickeln, welche das Prgrammieren für OpenHab vereinfacht. So bieten diese 3 Extensions welche die Rest-Api nutzen um ITEMS und Things welche im System verfügbar sind anzuzeigen, was es sehr angenehm macht Rules o.ä. zu entwickeln. 
+Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
+
+
+\subsection{Entwickeln für OpenHAB??}
+ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e sunter die anderen bauch. 
 \url{https://www.openhab.org/docs/configuration/restdocs.html}
 \begin{itemize}
 	\item Item ein-/ausschalten

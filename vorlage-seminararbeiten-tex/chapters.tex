@@ -190,6 +190,10 @@ Items sind essentielle bestandteile um das Panel zu bauen, da die Widgets über 
 		\item Falls etwas nicht klappen sollte, können auch Debug-Ausgaben mit dem Kommando logDebug geschrieben werden.
 	\end{itemize}
 \end{itemize}
+
+Automatisierung wir durch Rules/Scripte erreicht, welche in erster linie durch Programmieren erzeugt werden. Um Regeln zu erzeugen, wird eine einfache wenn/dann-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können die Trigger von Items, Member of, Time, System oder Things stammen. Genauer kann die Bedingung noch durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
+Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen angesprochen werden und durch diese über Channels Informationen weitergegeben werden.
+Wie im Codebeispiel 2?? zu sehen, kann auch 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when

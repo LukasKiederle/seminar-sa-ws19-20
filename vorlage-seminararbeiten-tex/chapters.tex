@@ -206,12 +206,16 @@ so schautein item aus  {
 	Switch livingroomLight (groundFloor)
 \end{lstlisting}
 
+\subsection{Link}
+
 \subsection{Rules}
-\begin{itemize}
-	\item Rules stelln wenn dann Beziehungen dar
-	\item Diese können sowohl über zusammenklicken, als auch programmatisch erstellt werden. 
-	\item Das Zusammenklicken basiert auf einem noch nicht fertigen Feature namens experimental rules. Zum Zeitpunkt dieser Arbeit können dadurch schon einige Standardrules definiert werden. Allerdings fehlt beispielsweise noch die Vergleichsoption größer oder größer-gleich
-	\item Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
+Automatisierung wir durch Rules/Scripte erreicht, welche in erster linie durch Programmieren erzeugt werden. Um Regeln zu erzeugen, wird eine einfache wenn/dann-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können die Trigger von Items, Member of, Time, System oder Things stammen. Genauer kann die Bedingung noch durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
+Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen angesprochen werden und durch diese über Channels Informationen weitergegeben werden.
+Wie im Codebeispiel 2?? zu sehen, kann auch innerhalb dies Then-Blocks weitere Sturkturelemente eingefügt werden um z.B. aus mehrerern Rules eine zu maer Arbeit können dadurch scheon (wie im Beispiel)
+
+Alternativ zum Programmieren gibt es ein experimentelles Add-on, welches es über die Paper-UI ermöglicht Regeln zu definiert werden. Allesrdings ist hier anzumerken, dass Komplexere Regeln schwierig bis garnicht zu erzeugen sind. Dies liegt waran, dass die eingabeparameter und JSON-Format gespeichert werden und durch die konvertierung des formates sonderzeichen und komplexe strukturen schwierig bis garnicht übertragen lassen.
+
+Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
 	\begin{itemize}
 		\item Eine Rule besteht immer aus einem Namen, einer when-Bedinung und einem then Abschnitt.
 		\item Name dient als Zuordnung
@@ -221,7 +225,9 @@ so schautein item aus  {
 		Folglich wird bei unter 20 die Lampe gedimmt und bei über 20 die Lampe erhellt.
 		\item Falls etwas nicht klappen sollte, können auch Debug-Ausgaben mit dem Kommando logDebug geschrieben werden.
 	\end{itemize}
+
 \end{itemize}
+
 \begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when
@@ -238,8 +244,15 @@ end
 \end{lstlisting}
 
 \subsection{Sitemaps}
+Sitemaps dienen als Übersicht, Gruppierung und Visualisierung des Smart-Homes. So werde durch Sitemaps räume nachbildet um Komplette beleuchtung innerhalb eines Raums ein/auszuschalten, Temperatur o.ä. im Auge zu behalten. Neben Sitemaps können auch ander Darstellung wie Panels verwendet werden. SiteMap und Dashboards dienen wie der Name schon sagt als Dashboard (Wie blöd kann ich denn das schreiben). Und als kontrolleinheit für das Smart-Home. Die Erstellung wird durch eiditoren errleichtert, welche Programmierunkundigen Code-Snippits zur Verfüfung stellt.
 
 \subsection{Api}
+OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, was anderen Systemen es ermöglicht die Komplette Funktionalität, welche über die Web-Oberfläche nutzbar ist ebenfalls zu integrieren. Dies ermöglicht es unter anderem Entwicklungsumgebungen wie VS-Code, Eclipse, IntelliJ Add-Ons/Extensions zu entwickeln, welche das Prgrammieren für OpenHab vereinfacht. So bieten diese 3 Extensions welche die Rest-Api nutzen um ITEMS und Things welche im System verfügbar sind anzuzeigen, was es sehr angenehm macht Rules o.ä. zu entwickeln.
+Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
+
+
+\subsection{Entwickeln für OpenHAB??}
+ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e sunter die anderen bauch.
 \url{https://www.openhab.org/docs/configuration/restdocs.html}
 \begin{itemize}
 	\item Item ein-/ausschalten

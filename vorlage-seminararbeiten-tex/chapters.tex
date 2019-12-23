@@ -3,6 +3,7 @@
 Deshalb ist im Rahmen des Faches Softwarearchitektur an der technischen Hochschule Rosenheim diese Ausarbeitung geschrieben worden. Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Außerdem wird dabei auf die Aspekte Markttauglichkeit und Benutzbarkeit in der Praxis eingegangen.
 
 \section{Was ist OpenHAB?}
+\label{s:what-is-openhab}
 OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
 Das Projekt wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. Die Software ist hauptsächlich in Java und der Auszeichnungssprache XML geschrieben. Seit dem 16. Dezember 2019 ist die Version 2.5 erhältlich.\\
 \\
@@ -12,8 +13,8 @@ Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unter
 Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser (in englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
 
 \section{Bewertung OpenHAB}
-In diesem Kapitel wird das open-source Projekt OpenHAB untersucht und bewertet. Das Projekt OpenHAB befindet sich auf Github unter \url{https://github.com/openhab/openhab-core}. Die hierfür verwendeten Kriterien sind orientiert an der QAware Open Source Quick-Check Liste.
-Dies beinhaltet:
+In diesem Kapitel wird das open-source Projekt OpenHAB untersucht und bewertet. Es befindet sich auf Github unter \url{https://github.com/openhab/openhab-core}. Die hierfür verwendeten Kriterien sind orientiert an der QAware Open Source Quick-Check Liste.
+Diese beinhaltet:
 \begin{longtable}{| p{3cm} | p{12cm}|}
 	\hline
 	\textbf{Kriterium} & \textbf{Beschreibung} \\
@@ -41,28 +42,26 @@ Dies beinhaltet:
 	\centering Bekanntheitsgrad & Vergleich von öffentlichem Interesse in Blockposts, auf Stackoverflow et cetera. \\
 	\hline
 	\caption{OpenHAB Projektbewertungskriterien}
-	\label{table:openhub-judgement-kriteria}
+	\label{table:openhub-judgement-criteria}
 \end{longtable}
 
+Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert opensource Softwareprojekte. Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht, Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source Projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.\\
+\\
+{In der Auswertung über OpenHAB steht beispielsweise, dass im letzten Jahr 343 Entwickler aktiv am Projekt mitgearbeitet haben. Somit ist OpenHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
+Des Weiteren ist ein stetiger Anstieg von Interesse erkennbar. Dies wird durch den Vergleich von Codebeiträgen des aktuellen Jahrs und des Vorjahres begründet.\\
+Insgesamt haben über 1140 Entwickler bereits mehr als 20000 Beiträgen in Form von Programmcode zum Projekt beigetragen. Der Umfang des zu 98\% in Java geschriebenen Codes beträgt mehr als 1.5 Millionen Zeilen. Davon wurden circa 31\% dokumentiert. Dies entspricht dem durchschnittliche Wert aller Java open-source Projekte, welche auf Open Hub registriert sind.}\cite{OPENHUB01:OH}\\
+\\
+Wie bereits im Kapitel \ref{s:what-is-openhab} erwähnt, ist OpenHAB aktuell in der Version 2.5 erhältlich. Daraus lässt sich auf einen stabilen Codestand schließen.\\
+Des Weiteren ist das Projekt unter einer EPL-2.0 Lizenz veröffentlicht. Dies erlaubt sowohl die private als auch kommerzielle Nutzung. Hinzu kommt die Möglichkeit für Modifizierung und Weiterverbreitung.\cite{LICENSE01:EC}
+\\
+\\
+Zuletzt wird die Qualität des Supports evaluiert. Hierfür stellt Github einen Issue-Tracker zur Verfügung. Bei OpenHAB wurden darüber über 1250 Issues verfasst, wovon bei circa 90\% bereits die Bearbeitung abgeschlossen ist.\cite{GITHUB01:OS} Dies lässt auf eine aktive Nutzung des Issue-Trackers schließen und bietet somit eine hilfreiche Support-Möglichkeit. Hierfür ist vor allem das Label \textbf{Bug} von Bedeutung. Eine Stichprobenartige Untersuchung von Issues dieses Types hat eine durchschnittliche Antwortzeit in unter 24h ergeben. Dies wurde anhand des ersten Kommentars gemessen. Zudem wurden bereits circa 83\% der insgesamt 68 dokumentierten Bugs gelöst.
+
+\subsection{Fazit der Bewertung}
 
 
-\begin{itemize}
-	\item \url{https://www.openhub.net/p/openhab}
-	\item Was ist Openhub: Website zur Katalogisierung von open-source Softwareprojekten
-	\item Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht, Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source Projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.
-	\begin{itemize}
-		\item openhub bewertet das Projekt mit sehr hoher Aktivitätsrate
-		\item über 1.5 Millionen lines of code Hauptsächlich Java und XML
-		\item 31\% des Codes ist dokumentiert (was soviel wie andere durchschnittliche Java-Projekte ist)
-		\item insgesamt 1140 Contributers und 20k commits
-		\item Basierend auf dem Vergleich von Commits des Vorjahres und des jetzigen Jahres, steigt das Interesse in OpenHAB
-		\item Im letzten Jahr waren es 343 neue Contributer. Das macht OpenHAB zu einem der größten open source-teams der Welt. Sie sind unter den top 2\% von allen Projektteams auf Openhub.
-	\end{itemize}
-	\item Lizenz: freie Software Lizenz EPL-2.0: ermöglicht kommerzielle und private Nutzung, Modifizierung, Weiterverbreitung. \url{https://www.eclipse.org/legal/epl-2.0/}
-	\item Stable Release 2.5 > 1
-	\item Durchschnittliche Antwortzeit in der Community > 24h? ja: wie beweisen?
-	\item OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von usecases untersucht und verglichen. Im Vergleich stellte sich folgende Ergebnistabelle \ref{fig:comparison-openhab}\cite{BA01:OPH} heraus.
-\end{itemize}
+\subsection{Weiterführende Bewertungen}
+OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von usecases untersucht und verglichen. Im Vergleich stellte sich folgende Ergebnistabelle \ref{fig:comparison-openhab}\cite{BA01:OPH} heraus.
 
 \begin{minipage}{\textwidth}
 	\centering

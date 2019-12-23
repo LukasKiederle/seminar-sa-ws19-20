@@ -167,7 +167,9 @@ sind Kommunikationswege welche von den Things angeboten werden. Channels verbind
 Der Begriff Item wirkt unter umständen falsch. Ein Item könnte auch als Aktion beschreiben werden. Ein Item selbst hat sehr wenig Informationen. Das Item besteht neben eine Titel noch aus eine Kategorie und eine Gruppe um es zuzuordnen und um gleichzeitig mehrere Items gleichzeitig anzusteueren.. Außerdem hat ein Item noch einen Typ, dieser Typ entspricht einer Menge von Basistypen, welche von openHAB angeboten werden. Diese sind unter anderem String, Numnber, DateTime, Location, Player usw. \url{https://www.openhab.org/docs/configuration/items.html#type}.
 Wichtig ist auch der Status. Wodoruch es doch wieder ein Item anstatt einer Aktion ist. (könnte man item als object bezeichnen mit label, kategorie, status und nur einer funktion??? memo an mich DAM)
 Items sind essentielle bestandteile um das Panel zu bauen, da die Widgets über Items mit den Geräten agieren.
-so schautein item aus  {
+so schaut ein item aus  
+\begin{lstlisting}[language=java,firstnumber=1,caption=Item Beispiel,label=lst:sample-item]
+{
 	"type": "string",
 	"name": "string",
 	"label": "string",
@@ -198,6 +200,7 @@ so schautein item aus  {
 	"editable": false
 }
 ]
+\end{lstlisting}
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Item-Gruppierung Beispiel,label=lst:group-items]
 	Group groundFloor
@@ -215,7 +218,7 @@ Wie im Codebeispiel 2?? zu sehen, kann auch innerhalb dies Then-Blocks weitere S
 Alternativ zum Programmieren gibt es ein experimentelles Add-on, welches es über die Paper-UI ermöglicht Regeln zu definiert werden. Allesrdings ist hier anzumerken, dass Komplexere Regeln schwierig bis garnicht zu erzeugen sind. Dies liegt waran, dass die eingabeparameter und JSON-Format gespeichert werden und durch die konvertierung des formates sonderzeichen und komplexe strukturen schwierig bis garnicht übertragen lassen.
 
 Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
-	\begin{itemize}
+\begin{itemize}
 		\item Eine Rule besteht immer aus einem Namen, einer when-Bedinung und einem then Abschnitt.
 		\item Name dient als Zuordnung
 		\item When ist der Trigger bzgw. Auslöser der Aktion, welche im then Block definiert ist.
@@ -223,8 +226,6 @@ Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
 		Wenn das der Fall ist, wird eine geprüft, wiehoch denn die aktuelle Lautstärke ist.
 		Folglich wird bei unter 20 die Lampe gedimmt und bei über 20 die Lampe erhellt.
 		\item Falls etwas nicht klappen sollte, können auch Debug-Ausgaben mit dem Kommando logDebug geschrieben werden.
-	\end{itemize}
-
 \end{itemize}
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]

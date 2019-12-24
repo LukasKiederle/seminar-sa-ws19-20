@@ -146,7 +146,7 @@ In \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus 
 \end{longtable}
 
 \subsection{Add-ons}
-openHAB sich selbst als System bezeichnet welches alles Integriert, dies wird dadruch erreicht, dass es von der so konzipiert ist, dass bestimmte bereiche jederzeit erweitert werden können. OpenHAB gibt hier als verschiedene Module/Komponenten, welche neu hinzugefügt werden können vor.
+openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammen steckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "alles" zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur Benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist um erweitert zu werden sind:
 \begin{itemize}
 	\item Bindings
 	\item Automation Engine Modules
@@ -155,10 +155,13 @@ openHAB sich selbst als System bezeichnet welches alles Integriert, dies wird da
 	\item Persistence Services
 	\item Audio \& Voice
 \end{itemize}
+Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe \ref{sec:Bindings}.
+
+ da diese 
 Um nicht den Rahmen dieser ARbeit zu übersteigen wird Detailierter auf Bindings eingegangen. Was unter anderem daran liegt, dass Die Dokumentation von openHAB, welche die entwicklung von IO-, Persistence Services und Audio/Voice mit einem TODO beschreibt eher dürftig ist. Bei den Transforamtions / Profiles handelt es sich um transformationen welche genutzt werden können um zu übertragenede Werte durch einen Channel zu manipulieren/tranformieren.
 Add-ons sind in openHab das Herzstück der pluggable Architecture. Da Nutzer des Systems ihre individuellen Bedürfnisse haben und sich demnach nciht alle verfügbaren Add-ons installieren müssen, sondern nur diejenigen welche für Ihre Bedürfnisse nötig sind. Sollte es allerdings keine passendes Add-on für ein gewünschtes Gerät geben, steht der erweituerng und dem entwicklen eines eigenenen Add-ons durch das Add-on System nichts im Weg. Mehr noch, durch den OpenSource gedanken, welcher openHAB vorantreibt könnte das Gesamt-System durch ein weiteres Add-on erweitert werden. 
 
-\subsection{Bindings}
+\subsection{Bindings} \label{sec:Bindings}
 Bindings sind die Schnittstelle bzw. die Erweiterung, welche es erst ermöglicht andere Systeme mit openHAB zu integrieren. Mit einem Binding kann sowohl ein Pysisches Geräte z.B. eine LG Fernseher als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
 Ein Binding ermöglicht es dem System erst neue Geräte im System zu erkennen. Und diese als Thing im openHAB System zur weiteren Interaktion zur Verfügung zu stellen. Interessant ist hierbei, dass Bridges oder Schnittstellen wie Bluetooth es erst ermöglichen Weitere Geräte zu erkennen. So kann durch das Hue-Binding die Hue-Bridge integriert werden, welche es wiederum ermöglicht einzelne Komponenten des Hue-Systems anzusprechen (Lampen), welche nicht direkt erkannt und angesporchen werden konnten.
 Laut openHAB gibt es aktuell über 300 Bindings und dadurch können über 2000 Things angesprochen werden.

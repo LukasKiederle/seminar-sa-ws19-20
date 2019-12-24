@@ -162,10 +162,9 @@ Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit op
 Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code passieren kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten. 
 Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen.
 
-
 \subsection{Things}
-Things sind die repräsentation von Geräten/Services innerhalb des Systems. Berachtet man die Objektorierntierung ist es ein sehr schönes Beispiel wie im einem Computersystem ein realer gegenstand beschreiben werden kann.
-Things bieten verschiedene so gennante Channels an. Diese entsprechen die Funktionen/Aktionen welche das Gerät ausführen kann.
+Things stellen die Repräsentation von physischen Geräten/Services innerhalb von openHAB dar. Things bestehen neben verschiedenen Status und Konfigurationsinformationen aus Channels, welche für die Ansteuerung der Things benötigt werden und näher in Kapitel \ref{sec:channels} beschreiben werden.
+Things können auf drei verschiedene Arten openHAB hinzugefügt werden.
 Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 \begin{itemize}
 	\item per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 
@@ -184,7 +183,7 @@ Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 		\caption{Thing per Code \label{fig:thing-add-code}}
 \end{itemize}
 
-\subsection{Channels}
+\subsection{Channels} \label{sec:channels}
 sind Kommunikationswege welche von den Things angeboten werden. Channels verbinden Things und Items. Und könne in openHab, bzw. den Rules genutzt werden. Sie stellen die Verbindung von externen Gerät zu openHAB aktionen dar. Über die Channels können Informationen durch PAramerter ausgetauscht werden. So wäre z.B. die Helligkeit einer Lampe ein Parameter, welcher durch einen Channel übertragen werden kann. nicht jedoch die Informationen, dass sich die Helligkeit ändern soll. Hierfür wird das Item benötigt, welches durch den Channel an das Thing verbunden wrude.
 
 \subsection{Items}

@@ -118,15 +118,15 @@ Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf OpenHAB set
 
 
 
-\section{OpenHAB aus technischer Sicht}
-In diesem Kapitel sind die grundlegenden Komponenten, die OpenHAB verwendet, tabellarisch dargestellt. Anschließend wird detaillierter auf die einzelnen Elemente eingegangen und wie diese miteinander in Beziehung stehen. Ein Weiterer Aspekt von OpenHAB kommt in diesem Kapitel immer wieder zum Vorschein. OpenHAB sieht nicht den einen Weg vor etwas zu installieren/einzubinden. So kann z.B. je nach vorliebe des Nutzers eine Geräte über die Web-Oberfläche integriert werden, als auch programmatisch in dafür vorgesehen Datei-ORdner als Code. Dieses Konzept findet sich immer wieder z.B. für Bindings, Things, Items, Rules usw. OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die von openHAB bentigte Struktur erzeugen. Für manuelles Hinzufügen von Things, Items, Rules usw. bietet openHAB bereits eine ORdnerstruktur. Diese ist so offensichtlich, dass es trivial ist zu entscheiden, wo welche Komponente hinzugefügt werde soll. Sollte dies dennoch unklar sein, wird der Nutzer noch weiter durch readme-dateien unterstützt. Siehe 
-\captionsetup{type=figure}
-\includegraphics[width=0.25\textwidth]{\figdir/openHab-conf-folder-structure.PNG}
-\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
+\section{openHAB aus technischer Sicht}
+In diesem Kapitel werden die grundlegenden Komponenten welche openHAB verwendet dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
+Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
+In \ref{tab:openHab_Komponenten} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
 
-\begin{longtable}{| p{2cm} | p{13cm}|}
+
+\begin{longtable}{| p{2cm} | p{13cm}|} \label{tab:openHab_Komponenten}
 	\hline
-	\textbf{Konzept} & \textbf{Beschreibung} \\
+	\textbf{Komponente} & \textbf{Beschreibung} \\
 	\hline \hline
 	\centering Add-ons & Erweiterung welche von openHab ermöglicht werden. \\
 	\hline
@@ -284,6 +284,16 @@ Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktione
 
 
 \subsection{Entwickeln für OpenHAB??}
+
+OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die von openHAB bentigte Struktur erzeugen. Für manuelles Hinzufügen von Things, Items, Rules usw. bietet openHAB bereits eine ORdnerstruktur. Diese ist so offensichtlich, dass es trivial ist zu entscheiden, wo welche Komponente hinzugefügt werde soll. Sollte dies dennoch unklar sein, wird der Nutzer noch weiter durch readme-dateien unterstützt. Siehe 
+
+
+\captionsetup{type=figure}
+\includegraphics[width=0.25\textwidth]{\figdir/openHab-conf-folder-structure.PNG}
+\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
+
+
+
 ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e sunter die anderen bauch.
 \url{https://www.openhab.org/docs/configuration/restdocs.html}
 \begin{itemize}

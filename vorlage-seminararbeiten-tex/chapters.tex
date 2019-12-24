@@ -101,10 +101,13 @@ OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/
 In der Tabelle \ref{fig:comparison-openhab} sind die unterschiedlichen Gebiete der Untersuchung auf der linken Seite zu finden. In der horizontalen sind die einzelnen Heimautomatisierungs-Tools aufgelistet. In der jeweiligen Zelle, basierend auf Reihe und Spalte, sind die Bewertungen festgehalten. Dabei zeigt ein blau markiertes Feld, welches das beste Tool für ein Gebiet ist.\\
 OpenHAB sticht dabei nicht sonderlich heraus. Allerdings ist es in keinem der aufgelisteten Kategorien negativ bewertet.\\
 Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf OpenHAB setzen würde. Dies liegt einerseits daran, dass die Entwickler von OpenHAB stark an Vereinfachung von komplizierteren Komponenten arbeitet. Andererseits sollen aber auch komplexere Automationen, durch die Nähe von Framework und Java, möglich sein.\cite{BA01:OPH}
+\\
+\\
+Dadurch, dass die Bachelorarbeit von P. Gersbacher vor über einem Jahr veröffentlicht wurde, gilt diese als veraltet. 
 
 
 \section{openHAB aus technischer Sicht}
-In diesem Kapitel werden die grundlegenden Komponenten welche openHAB verwendet dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
+In diesem Kapitel werden die grundlegenden Komponenten, welche openHAB verwendet, dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
 Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
 In \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
 
@@ -295,11 +298,27 @@ ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e 
 \end{itemize}
 
 \section{Datenintegrität und Sicherheit}
+\begin{itemize}
+	 \item It is known that security breaches may have a significant economic impact on a firm, as
+	 described by Goel and Shawky [18]. Data loss or theft, tampering, and unauthorized
+	 operations are just some of the possible ocurrences led by the lack of proper security
+	 mechanisms in place. In the case of openHAB, a smart home application, it is not quite
+	 quantifiable how expensive it results to have a security breach occur at any level. The
+	 consequences may go from mere user discomfort to identity theft, or worse.
+	\item \url{https://www.owasp.org/index.php/OWASP_Internet_of_Things_Project}
+	\item \url{https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=2ahUKEwjq_c-k0s7mAhXOIVAKHS4dDYgQFjAGegQICBAC&url=https%3A%2F%2Fcomserv.cs.ut.ee%2Fhome%2Ffiles%2FSoto_computer_science_2018.pdf%3Fstudy%3DATILoputoo%26reference%3DB7FBB08D43717164067F1F9DBA92B98A65913AC9&usg=AOvVaw0631sYhHX3wKxW8kPwxpzE}
+	\item Weak, Guessable or Hardcoded Passwords: Easy to brute force (no captcha), unchangable credentials
+	\item Masterarbeit gefunden -> Status ist veraltet -> Checken, was sich seitdem bei OpenHAB getan hat -> keine wirklich relevanten security changes alexa und google home.
+	\item 2.4 hat auch nur kleine security Changes für GPS Tracker Binding
+\end{itemize}
 \subsection{Interne vorhandene Funktionalitäten}
 \url{https://www.openhab.org/docs/installation/security.html}
 \begin{itemize}
 	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
 	\item Through HTTP(S) over \url{https://<ip>:8443}
+	\item SSL Certificates
+	On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in \${USER\_DATA}etc/keystore). This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server. Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
+	\item Security Warning: It is vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!
 \end{itemize}
 \begin{minipage}{\textwidth}
 	\centering
@@ -321,6 +340,8 @@ ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e 
 \subsection{Integration der Big Player}
 \begin{itemize}
 	\item Amazon Alexa und Echo Dot Integration möglich
+	\item Changes die mit v2.5 released wurden miteinbauen in das Kapitel:
+	\url{https://www.openhab.org/blog/2019-12-14-openhab-2-5-release.html}
 	\begin{itemize}
 		\item Alexa:
 		\begin{itemize}
@@ -409,6 +430,15 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
 \end{itemize}
+
+\section{Outlook}
+Outlook
+With the 2.5 release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though. The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
+
+I would like to thank all our maintainers, contributors and users being such a fantastic community. It is awesome that we have reached another big milestone by shipping openHAB 2.5 and it has been a great journey so far - openHAB will celebrate its 10th anniversary next year! Please continue spreading the word and help growing the community.
+
+Enjoy the upcoming festive season, play with the new openHAB release and share your experiences with us, your family and your friends!
+
 
 \section{Infos:}
 \textbf{Ausgangslage}

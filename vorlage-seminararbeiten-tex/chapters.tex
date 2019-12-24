@@ -123,26 +123,23 @@ In diesem Kapitel werden die grundlegenden Komponenten welche openHAB verwendet 
 Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
 In \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
 
-
-\begin{longtable}{| p{2cm} | p{13cm}|}
+\begin{longtable}{| p{5cm} | p{10cm}|}
 	\hline
 	\textbf{Komponente} & \textbf{Beschreibung} \\
 	\hline \hline
-	\centering Add-ons & Erweiterung welche von openHab ermöglicht werden. \\
+	\centering Add-ons & Erweiterungen, welche die Funktionalitäten von openHAB erhöhen. \\
 	\hline
-	\centering Bindings & openHAB-Komponenten, welche die Schnittstelle zu fremd Systemen bereitstellen.  \\
+	\centering Bindings & openHAB-Komponenten, welche die Schnittstelle zu fremd Systemen darstellt.  \\
 	\hline
-	\centering Things & erste von openHAB (Software) generierte Darstellung von Geräten. \\
+	\centering Things & Repräsentation von physischen Geräten in openHAB. \\
 	\hline
-	\centering Channels & Übertragungskanal zwischen "`Dingen"' und "`Gegenständen"'. \\
+	\centering Items & Darstellung von Eigenschaften und Ressourcen von openHAB - Thing bezogen \\
 	\hline
-	\centering Items & von openHAB (Software) generierte Darstellung von Informationen über die Geräte.\\
+	\centering Channels & Übertragungskanal zwischen "`Items"' und "`Things"'. \\
 	\hline
-	\centering Link & Verbindung zwischen Things und Items \\
+	\centering Rules & Automatisierungsregeln, in Wenn-Dann-Struktur.\\
 	\hline
-	\centering Rules & führen automatische Aktionen durch (in einfachster Form: wenn "`dies"' passiert, wird openHAB "`das"' tun).\\
-	\hline
-	\centering Sitemaps & ist die von openHAB (Software) generierte Benutzeroberfläche (Website), die Informationen präsentiert und Interaktionen ermöglicht.\\
+	\centering Sitemaps & individuelle Benutzeroberfläche, welche Informationen präsentiert und Interaktionen ermöglicht.\\
 	\hline
 	\caption{OpenHAB Komponenten}
 	\label{table:openhub-components}
@@ -196,10 +193,13 @@ Things können auf 3 verschiedene arten openHAB hinzugefügt werden
 sind Kommunikationswege welche von den Things angeboten werden. Channels verbinden Things und Items. Und könne in openHab, bzw. den Rules genutzt werden. Sie stellen die Verbindung von externen Gerät zu openHAB aktionen dar. Über die Channels können Informationen durch PAramerter ausgetauscht werden. So wäre z.B. die Helligkeit einer Lampe ein Parameter, welcher durch einen Channel übertragen werden kann. nicht jedoch die Informationen, dass sich die Helligkeit ändern soll. Hierfür wird das Item benötigt, welches durch den Channel an das Thing verbunden wrude.
 
 \subsection{Items}
+
 Der Begriff Item wirkt unter umständen falsch. Ein Item könnte auch als Aktion beschreiben werden. Ein Item selbst hat sehr wenig Informationen. Das Item besteht neben eine Titel noch aus eine Kategorie und eine Gruppe um es zuzuordnen und um gleichzeitig mehrere Items gleichzeitig anzusteueren.. Außerdem hat ein Item noch einen Typ, dieser Typ entspricht einer Menge von Basistypen, welche von openHAB angeboten werden. Diese sind unter anderem String, Numnber, DateTime, Location, Player usw. \url{https://www.openhab.org/docs/configuration/items.html#type}.
 Wichtig ist auch der Status. Wodoruch es doch wieder ein Item anstatt einer Aktion ist. (könnte man item als object bezeichnen mit label, kategorie, status und nur einer funktion??? memo an mich DAM)
 Items sind essentielle bestandteile um das Panel zu bauen, da die Widgets über Items mit den Geräten agieren.
 so schaut ein item aus  
+
+jedes item einen channel zugeordnet. 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Item Beispiel,label=lst:sample-item]
 {
 	"type": "string",

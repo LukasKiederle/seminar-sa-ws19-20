@@ -131,7 +131,7 @@ In \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus 
 	\hline
 	\centering Bindings & openHAB-Komponenten, welche die Schnittstelle zu fremd Systemen darstellt.  \\
 	\hline
-	\centering Things & Repräsentation von physischen Geräten in openHAB. \\
+	\centering Things & Repräsentation von physischen Geräten/Services in openHAB. \\
 	\hline
 	\centering Items & Darstellung von Eigenschaften und Ressourcen von openHAB - Thing bezogen \\
 	\hline
@@ -157,18 +157,10 @@ openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammen steckbar
 \end{itemize}
 Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe \ref{sec:Bindings}. Bei den nicht näher Beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services sind ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen, dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder Abzurufen. Und bei Audio \& Voice handelt sich um Services welche genutzt werden können um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen. 
 
- da dies
-Um nicht den Rahmen dieser ARbeit zu übersteigen wird Detailierter auf Bindings eingegangen. Was unter anderem daran liegt, dass Die Dokumentation von openHAB, welche die entwicklung von IO-, Persistence Services und Audio/Voice mit einem TODO beschreibt eher dürftig ist. Bei den Transforamtions / Profiles handelt es sich um transformationen welche genutzt werden können um zu übertragenede Werte durch einen Channel zu manipulieren/tranformieren.
-Add-ons sind in openHab das Herzstück der pluggable Architecture. Da Nutzer des Systems ihre individuellen Bedürfnisse haben und sich demnach nciht alle verfügbaren Add-ons installieren müssen, sondern nur diejenigen welche für Ihre Bedürfnisse nötig sind. Sollte es allerdings keine passendes Add-on für ein gewünschtes Gerät geben, steht der erweituerng und dem entwicklen eines eigenenen Add-ons durch das Add-on System nichts im Weg. Mehr noch, durch den OpenSource gedanken, welcher openHAB vorantreibt könnte das Gesamt-System durch ein weiteres Add-on erweitert werden. 
-
 \subsection{Bindings} \label{sec:Bindings}
-Bindings sind die Schnittstelle bzw. die Erweiterung, welche es erst ermöglicht andere Systeme mit openHAB zu integrieren. Mit einem Binding kann sowohl ein Pysisches Geräte z.B. eine LG Fernseher als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
-Ein Binding ermöglicht es dem System erst neue Geräte im System zu erkennen. Und diese als Thing im openHAB System zur weiteren Interaktion zur Verfügung zu stellen. Interessant ist hierbei, dass Bridges oder Schnittstellen wie Bluetooth es erst ermöglichen Weitere Geräte zu erkennen. So kann durch das Hue-Binding die Hue-Bridge integriert werden, welche es wiederum ermöglicht einzelne Komponenten des Hue-Systems anzusprechen (Lampen), welche nicht direkt erkannt und angesporchen werden konnten.
-Laut openHAB gibt es aktuell über 300 Bindings und dadurch können über 2000 Things angesprochen werden.
-OpenHab bietet zusätzlich zur Dokumentation noch Untestützung für das Entwickeln eines Eigenen Bindings durch eine Skeletton skript, welches die Stuktur eines Bindings inklusive Beispielen und Erklärungen welche Methonde/Funktionen wie gestaltet werden müssen und was diese Tun. Siehe:
-\captionsetup{type=figure}
-\includegraphics[width=0.5\textwidth]{\figdir/own_binding_skeletton.PNG}
-\caption{Skelett für Binding \label{fig:own_binding_skeletton}}
+Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. eine LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
+Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code passieren kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten. 
+Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen.
 
 
 \subsection{Things}
@@ -286,7 +278,13 @@ OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, wa
 Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
 
 
-\subsection{Entwickeln für OpenHAB??}
+\subsection{Entwickeln für OpenHAB??} \label{sec:custom-development}
+
+
+OpenHab bietet zusätzlich zur Dokumentation noch Untestützung für das Entwickeln eines Eigenen Bindings durch eine Skeletton skript, welches die Stuktur eines Bindings inklusive Beispielen und Erklärungen welche Methonde/Funktionen wie gestaltet werden müssen und was diese Tun. Siehe:
+\captionsetup{type=figure}
+\includegraphics[width=0.5\textwidth]{\figdir/own_binding_skeletton.PNG}
+\caption{Skelett für Binding \label{fig:own_binding_skeletton}}
 
 OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die von openHAB bentigte Struktur erzeugen. Für manuelles Hinzufügen von Things, Items, Rules usw. bietet openHAB bereits eine ORdnerstruktur. Diese ist so offensichtlich, dass es trivial ist zu entscheiden, wo welche Komponente hinzugefügt werde soll. Sollte dies dennoch unklar sein, wird der Nutzer noch weiter durch readme-dateien unterstützt. Siehe 
 

@@ -103,21 +103,6 @@ OpenHAB sticht dabei nicht sonderlich heraus. Allerdings ist es in keinem der au
 Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf OpenHAB setzen würde. Dies liegt einerseits daran, dass die Entwickler von OpenHAB stark an Vereinfachung von komplizierteren Komponenten arbeitet. Andererseits sollen aber auch komplexere Automationen, durch die Nähe von Framework und Java, möglich sein.\cite{BA01:OPH}
 
 
-\section{Datenintegriertät und Sicherheit}
-\url{https://www.openhab.org/docs/installation/security.html}
-\begin{itemize}
-	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
-	\item Through HTTP(S) over \url{https://<ip>:8443}
-	\item Options for Secure Remote Access
-	\begin{itemize}
-		\item VPN: The most secure option is probably to create a VPN connection to your home network
-		\item myopenHAB Cloud Service with a tunnel that forwards all requests to the openHAB instance
-		\item Running openHAB Behind a Reverse Proxy: A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to \url{http://mydomain_or_myip} to your openHAB runtime.
-	\end{itemize}
-\end{itemize}
-
-
-
 \section{openHAB aus technischer Sicht}
 In diesem Kapitel werden die grundlegenden Komponenten welche openHAB verwendet dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
 Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
@@ -309,6 +294,29 @@ ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e 
 	\end{itemize}
 \end{itemize}
 
+\section{Datenintegrität und Sicherheit}
+\subsection{Interne vorhandene Funktionalitäten}
+\url{https://www.openhab.org/docs/installation/security.html}
+\begin{itemize}
+	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
+	\item Through HTTP(S) over \url{https://<ip>:8443}
+\end{itemize}
+\begin{minipage}{\textwidth}
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
+	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
+\end{minipage}
+\subsection{Externe Erweiterungsmöglichkeiten}
+\begin{itemize}
+	\item Options for Secure Remote Access
+	\begin{itemize}
+		\item VPN: The most secure option is probably to create a VPN connection to your home network
+		\item myopenHAB Cloud Service with a tunnel that forwards all requests to the openHAB instance
+		\item Running openHAB Behind a Reverse Proxy: A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to \url{http://mydomain_or_myip} to your openHAB runtime.
+	\end{itemize}
+\end{itemize}
+
 \section{Verwendung von OpenHAB}
 \subsection{Integration der Big Player}
 \begin{itemize}
@@ -363,12 +371,7 @@ ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e 
 	\item On the server the configuration is stored somewhere in userdata (/var/lib/openhab2 for apt-get installs).
 	In an upgrade the userdata folder is preserved when using apt-get.
 \end{itemize}
-\begin{minipage}{\textwidth}
-	\centering
-	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
-	\caption{Verteilungsarchitektur \label{fig:verteilungs-architektur}}
-\end{minipage}
+
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}

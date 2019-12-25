@@ -203,7 +203,7 @@ Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden 
 Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen von Items angesprochen werden. Hierbei wird dadurch ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
 Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen um aus mehreren Rules eine zu machen.
 
-Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format z.B. Sonderzeichen wie  \textit{>=} nicht funktionieren. Des Weiteren ist das einfügen von weiteren Strukturelementen über das experimentelle Add-on nicht möglich.
+Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format z.B. Sonderzeichen wie  \textit{>,<,=,!} nicht funktionieren. Des Weiteren ist das einfügen von weiteren Strukturelementen über das experimentelle Add-on nicht möglich.
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"

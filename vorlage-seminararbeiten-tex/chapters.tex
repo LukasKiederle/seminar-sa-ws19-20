@@ -157,27 +157,27 @@ Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese si
 \begin{itemize}
 	\item per Web-Oberfläche automatisch: Nachdem das für das Thing benötigte Binding installiert wurde, erscheint das Thing in der Inbox, siehe Abbildung \ref{fig:thing-add-paper-ui}. Von dieser Inbox aus, kann das Thing mit wenigen Klicks openHAB hinzugefügt werden. Durch diese Methode werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich bearbeitet werden z.B. die Bezeichnung. 
 \end{itemize}
-\centering
+{\centering
 \captionsetup{type=figure}
 \includegraphics[width=1\textwidth]{\figdir/thing_add.PNG}
 \caption{Thing per Web-Oberfläche \label{fig:thing-add-paper-ui}}
-	
+}	
 \begin{itemize}	
 	\item per Web-Oberfläche Manuell: Das manuelle Hinzufügen von Things ermöglicht volle Einstellungsfreiheit für Things. Dazu zählen ID, Bezeichnung, IP-Adresse und Konfigurationsparameter. Dies ist in Abbildung \ref{fig:thing-add-paper-ui-manuel} zu sehen. Diese Einstellungsfreiheit setzt allerdings auch voraus, dass der Nutzer weiß, welche Informationen er in welches Feld eintragen will/muss. Genau wie bei dem automatischen erkennen, können die Einstellungen noch nachträglich geändert werden. 
 \end{itemize}
-\centering
+{\centering
 \captionsetup{type=figure}
 \includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.PNG}
 \caption{Thing per Web-Oberfläche Manuell \label{fig:thing-add-paper-ui-manuel}}
-
+}
 \begin{itemize}	
 	\item per Code. Ermöglicht und benötigte komplette manuelle Eingabe aller nötigen Informationen im Dateiordner "openHAB-config/things/". Diese sind wie im einfachen Beispiel Abbildung \ref{fig:thing-add-code} Binding-Pfad, IP-Adresse, und ID. Um dies zu vereinfachen sind in der Dokumentation Beispiele für die verschiedenen Bindings mit zugehörigen Things zu finden.
 \end{itemize}
-\centering
+{\centering
 \captionsetup{type=figure}
 \includegraphics[width=1\textwidth]{\figdir/thing_add_code.PNG}
 \caption{Thing per Code \label{fig:thing-add-code}}
-\end{c
+}
 
 \subsection{Channels} \label{sec:channels}
 Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben Parameter übergeben. So bietet der verwendete LG Fernseher wie in Abbildung \ref{fig:channel-list} zu sehen eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren, als auch Aktionen, welche Things ausführen können. Da ein gewünschte Aktion eines Things ohne den passenden Channel diese Aktion nicht ausführen kann.

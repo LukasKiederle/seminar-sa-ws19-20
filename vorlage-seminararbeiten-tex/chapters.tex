@@ -165,27 +165,30 @@ Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese si
 \begin{itemize}	
 	\item per Web-Oberfläche Manuell: Das manuelle Hinzufügen von Things ermöglicht volle Einstellungsfreiheit für Things. Dazu zählen ID, Bezeichnung, IP-Adresse und Konfigurationsparameter. Dies ist in Abbildung \ref{fig:thing-add-paper-ui-manuel} zu sehen. Diese Einstellungsfreiheit setzt allerdings auch voraus, dass der Nutzer weiß, welche Informationen er in welches Feld eintragen will/muss. Genau wie bei dem automatischen erkennen, können die Einstellungen noch nachträglich geändert werden. 
 \end{itemize}
-{\centering
-\captionsetup{type=figure}
-\includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.PNG}
-\caption{Thing per Web-Oberfläche Manuell \label{fig:thing-add-paper-ui-manuel}}
+{
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/thing_add_manuel.PNG}
+	\caption{Thing per Web-Oberfläche Manuell \label{fig:thing-add-paper-ui-manuel}}
 }
 \begin{itemize}	
 	\item per Code. Ermöglicht und benötigte komplette manuelle Eingabe aller nötigen Informationen im Dateiordner "openHAB-config/things/". Diese sind wie im einfachen Beispiel Abbildung \ref{fig:thing-add-code} Binding-Pfad, IP-Adresse, und ID. Um dies zu vereinfachen sind in der Dokumentation Beispiele für die verschiedenen Bindings mit zugehörigen Things zu finden.
 \end{itemize}
-{\centering
-\captionsetup{type=figure}
-\includegraphics[width=1\textwidth]{\figdir/thing_add_code.PNG}
-\caption{Thing per Code \label{fig:thing-add-code}}
+{
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/thing_add_code.PNG}
+	\caption{Thing per Code \label{fig:thing-add-code}}
 }
 
 \subsection{Channels} \label{sec:channels}
 Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben Parameter übergeben. So bietet der verwendete LG Fernseher wie in Abbildung \ref{fig:channel-list} zu sehen eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren, als auch Aktionen, welche Things ausführen können. Da ein gewünschte Aktion eines Things ohne den passenden Channel diese Aktion nicht ausführen kann.
-
+{
 	\centering
 	\captionsetup{type=figure}
 	\includegraphics[width=1\textwidth]{\figdir/channel-list.PNG}
 	\caption{Channel Liste\label{fig:channel-list}}
+}
 
 \subsection{Items}
 Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden. Bei einem Item handelt es sich um alle Informationen, welche es um eine Aktion gibt. So hat ein Item u.a. Bezeichnung, Kategorie, Typ, Status als auch Konfigurationen z.B. dass nur Werte von 0 - 50 übertragen werden. Diese Informationen werden benötigt um Gruppierungen zu ermöglichen, den Status eines Gerätes abzufragen z.B. Lautstärke eines Fernsehers und auch mit einem Thing zu kommunizieren bzw. Aktionen auszuführen. Der Typ eines Items gibt an, welche Basistypen von dem Item akzeptiert/konsumiert werden können. Solche Basistypen können einfache aus der Programmierung bekannte Typen wie String, Number, DateTime usw. sein, als auch komplexere openHAB spezifische Typen wie Location, Player oder Switch. Eine komlpette Auflistung ist unter \url{https://www.openhab.org/docs/configuration/items.html#type} zu finden.

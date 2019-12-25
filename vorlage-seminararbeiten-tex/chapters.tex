@@ -203,17 +203,6 @@ Wie im Codebeispiel \ref{sample-rule} zu sehen, gibt es die Möglichkeit innerha
 
 Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format z.B. Sonderzeichen wie  \textit{>=} nicht funktionieren. Des Weiteren ist das einfügen von weiteren Strukturelementen über das experimentelle Add-on nicht möglich.
 
-Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
-\begin{itemize}
-		\item Eine Rule besteht immer aus einem Namen, einer when-Bedinung und einem then Abschnitt.
-		\item Name dient als Zuordnung
-		\item When ist der Trigger bzgw. Auslöser der Aktion, welche im then Block definiert ist.
-		\item Diese Rule prüft, ob die Lautstärke des Items (TV) Dominik\_volumen sich verändert hat.
-		Wenn das der Fall ist, wird eine geprüft, wiehoch denn die aktuelle Lautstärke ist.
-		Folglich wird bei unter 20 die Lampe gedimmt und bei über 20 die Lampe erhellt.
-		\item Falls etwas nicht klappen sollte, können auch Debug-Ausgaben mit dem Kommando logDebug geschrieben werden.
-\end{itemize}
-
 \begin{lstlisting}[language=java,firstnumber=1,caption=Beispiele Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when

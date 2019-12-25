@@ -199,7 +199,7 @@ Items sind essentielle um Aktionen auf der Web-Oberfläche dazustellen. So könn
 \subsection{Rules}
 Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden aktuell standardmäßig durch Programmieren erzeugt. Um Rules zu erzeugen, wird eine einfache WENN-DANN-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können Bedingungen (WENN) von Items, Member of (Gruppierungen), Time, System oder Things stammen. Genauer kann die Bedingung durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
 Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen von Items angesprochen werden. Hierbei wird dadurch ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
-Wie im Codebeispiel \ref{sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen um aus mehreren Rules eine zu machen.
+Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen um aus mehreren Rules eine zu machen.
 
 Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format z.B. Sonderzeichen wie  \textit{>=} nicht funktionieren. Des Weiteren ist das einfügen von weiteren Strukturelementen über das experimentelle Add-on nicht möglich.
 

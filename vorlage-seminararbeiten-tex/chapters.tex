@@ -110,7 +110,7 @@ In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen
 \section{openHAB aus technischer Sicht}
 In diesem Kapitel werden die grundlegenden Komponenten, welche openHAB verwendet, dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
 Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
-In \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
+In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
 
 \begin{longtable}{| p{4cm} | p{11cm}|}
 	\hline
@@ -144,7 +144,7 @@ openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammen steckbar
 	\item Persistence Services
 	\item Audio \& Voice
 \end{itemize}
-Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe \ref{sec:Bindings}. Bei den nicht näher Beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services sind ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen, dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder Abzurufen. Und bei Audio \& Voice handelt sich um Services welche genutzt werden können um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen. 
+Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher Beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services sind ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen, dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder Abzurufen. Und bei Audio \& Voice handelt sich um Services welche genutzt werden können um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen. 
 
 \subsection{Bindings} \label{sec:Bindings}
 Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. eine LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
@@ -152,10 +152,10 @@ Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Cod
 Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen.
 
 \subsection{Things}
-Things stellen die Repräsentation von physischen Geräten/Services innerhalb von openHAB dar. Things bestehen neben verschiedenen Status und Konfigurationsinformationen aus Channels, welche für die Ansteuerung der Things benötigt werden und näher in Kapitel \ref{sec:channels} beschreiben werden.
+Things stellen die Repräsentation von physischen Geräten/Services innerhalb von openHAB dar. Sie bestehen neben verschiedenen Status und Konfigurationsinformationen aus Channels, welche für die Ansteuerung der Things benötigt werden und näher in Kapitel \ref{sec:channels} beschrieben werden.
 Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese sind:
 \begin{itemize}
-	\item per Web-Oberfläche per Button click in der Inbox, nachdem das entsprechende Binding installiert wurde. Hierbei werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich noch bearbeitet werden z.B. Bezeichnung. 
+	\item per Web-Oberfläche: Nachdem das für das Thing benötigte Binding installiert wurde, erscheint das Thing in der Inbox. Von dieser Inbox aus, kann das Thing mit wenigen Klicks openHAB hinzugefügt werden. Durch diese Methode werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich bearbeitet werden z.B. die Bezeichnung. 
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/thing_add.PNG}
 		\caption{Thing per Paper-UI \label{fig:thing-add-paper-ui}}

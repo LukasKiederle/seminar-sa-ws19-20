@@ -196,6 +196,8 @@ Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden.
 
 Items sind essentielle um Aktionen auf der Web-Oberfläche dazustellen. So können diese in Gruppen oder Einzeln dargestellt werden um als Statusanzeige und/oder als manuelle Steuerung des Smart Home zu agieren. Für diese Steuerung ist anzumerken, dass jedem Item nur ein Channel zugeordnet werden kann, aber jedem Channel mehrere Items. Die Kardinalität ist somit Item 1 -> n Channel. 
 
+Items können wie bei openHAB üblich ebenfalls über die Web-Oberfläche als auch im Code erzeugt werden. Da dieses Prinzip schon hinreichend erklärt wurde, wird mit Ausnahme der automatischen Namensgebung nicht näher darauf eingegangen. Diese Namensgebung ist in erster Linie frei, jedoch vergibt openHAB über die Web-Oberfläche als Item-Name eine Kombination aus Thing- und Channel-Namen wodurch sehr gut ersichtlich wird, wofür ein Item steht z.B. LGWebOSTVUH620V_VolumeTV oder HueWhiteLamp1_Brightness.
+
 \subsection{Rules}
 Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden aktuell standardmäßig durch Programmieren erzeugt. Um Rules zu erzeugen, wird eine einfache WENN-DANN-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können Bedingungen (WENN) von Items, Member of (Gruppierungen), Time, System oder Things stammen. Genauer kann die Bedingung durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
 Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen von Items angesprochen werden. Hierbei wird dadurch ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
@@ -208,7 +210,7 @@ rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when
 	Item LGWebOSTVUH620VDominik_Volume changed
 then
-	logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
+	logDebug("React some changes on Volume", "current Value: " + LGWebOSTVUH620VDominik_Volume.state.toString)
 if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
 	HueWhiteLamp2_Brightness.sendCommand(80)
 }

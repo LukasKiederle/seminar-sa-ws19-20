@@ -183,6 +183,7 @@ Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese si
 
 \subsection{Channels} \label{sec:channels}
 Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben Parameter übergeben. So bietet der verwendete LG Fernseher wie in Abbildung \ref{fig:channel-list} zu sehen eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren, als auch Aktionen, welche Things ausführen können. Da ein gewünschte Aktion eines Things ohne den passenden Channel diese Aktion nicht ausführen kann.
+
 {
 	\centering
 	\captionsetup{type=figure}
@@ -196,11 +197,11 @@ Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden.
 Items sind essentielle um Aktionen auf der Web-Oberfläche dazustellen. So können diese in Gruppen oder Einzeln dargestellt werden um als Statusanzeige und/oder als manuelle Steuerung des Smart Home zu agieren. Für diese Steuerung ist anzumerken, dass jedem Item nur ein Channel zugeordnet werden kann, aber jedem Channel mehrere Items. Die Kardinalität ist somit Item 1 -> n Channel. 
 
 \subsection{Rules}
-Automatisierung wir durch Rules/Scripte erreicht, welche in erster linie durch Programmieren erzeugt werden. Um Regeln zu erzeugen, wird eine einfache wenn/dann-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können die Trigger von Items, Member of, Time, System oder Things stammen. Genauer kann die Bedingung noch durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
-Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen angesprochen werden und durch diese über Channels Informationen weitergegeben werden.
-Wie im Codebeispiel 2?? zu sehen, kann auch innerhalb dies Then-Blocks weitere Sturkturelemente eingefügt werden um z.B. aus mehrerern Rules eine zu maer Arbeit können dadurch scheon (wie im Beispiel)
+Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden aktuell standardmäßig durch Programmieren erzeugt. Um Rules zu erzeugen, wird eine einfache WENN-DANN-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können Bedingungen (WENN) von Items, Member of (Gruppierungen), Time, System oder Things stammen. Genauer kann die Bedingung durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
+Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder Ganze Gruppen von Items angesprochen werden. Hierbei wird dadurch ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
+Wie im Codebeispiel \ref{sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen um aus mehreren Rules eine zu machen.
 
-Alternativ zum Programmieren gibt es ein experimentelles Add-on, welches es über die Paper-UI ermöglicht Regeln zu definiert werden. Allesrdings ist hier anzumerken, dass Komplexere Regeln schwierig bis garnicht zu erzeugen sind. Dies liegt waran, dass die eingabeparameter und JSON-Format gespeichert werden und durch die konvertierung des formates sonderzeichen und komplexe strukturen schwierig bis garnicht übertragen lassen.
+Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format z.B. Sonderzeichen wie  \textit{>=} nicht funktionieren. Des Weiteren ist das einfügen von weiteren Strukturelementen über das experimentelle Add-on nicht möglich.
 
 Codeblock \ref{lst:sample-rule} zeigt ein programmatisch erstellte Rule.
 \begin{itemize}

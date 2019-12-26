@@ -134,7 +134,7 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 	\label{table:openhub-components}
 \end{longtable}
 
-\subsection{Add-ons}
+\subsection{Add-ons}\label{sec:add-ons}
 openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammen steckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "alles" zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur Benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist um erweitert zu werden sind:
 \begin{itemize}
 	\item Bindings
@@ -237,38 +237,21 @@ Als Nutzer kommt man bei openHAB wenn man nicht will, sehr lange ohne Programmie
 	\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
 }
 
-\subsection{eigene Add-ons}
+\subsection{offen für andere Systeme}
+openHAB bietet durch eine REST-API anderen Systemen die Möglichkeit, openHAB zu integrieren. Da diese REST-API die Funktionalität der Web-Oberfläche widerspiegelt, können andere Systemen die volle Funktionalität der openHAB Web-Oberfläche ebenfalls nutzen. Diese REST-API ermöglicht es auch für mobile Geräte openHAB Oberflächen zu entwickeln, welche bereits für Android, iOS und als Windows App angeboten werden.
 
-Sollte es allerdings keine passendes Add-on für ein gewünschtes Gerät geben, steht der erweituerng und dem entwicklen eines eigenenen Add-ons durch das Add-on System nichts im Weg. Mehr noch, durch den OpenSource gedanken, welcher openHAB vorantreibt könnte das Gesamt-System durch ein weiteres Add-on erweitert werden.
+Die REST-API ermöglicht es auch Entwicklungsumgebungen informationen aus dem openHAB System zu erhalten und dadurch das Entwickeln für openHAB zu erleichtern. Visual Studio Code, Eclipse und IntelliJ stellen Add-Ons/Extensions zur Verfügung. Diese bieten neben farblich kenntlichem Code noch Things und Items an, welche über die REST-API erhalten wurden. Dadurch können Fehler beim Abtippen von Bezeichnungen oder IDs vermieden werden und bei der Entwicklung kann ein guter Überblick über die zu verwenden Komponenten erhalten werden, ohne über openHABs Web-Oberfläche zu navigieren.
 
-OpenHab bietet zusätzlich zur Dokumentation noch Untestützung für das Entwickeln eines Eigenen Bindings durch eine Skeletton skript, welches die Stuktur eines Bindings inklusive Beispielen und Erklärungen welche Methonde/Funktionen wie gestaltet werden müssen und was diese Tun. Siehe:
-\captionsetup{type=figure}
-\includegraphics[width=0.5\textwidth]{\figdir/own_binding_skeletton.PNG}
-\caption{Skelett für Binding \label{fig:own_binding_skeletton}}
+\subsection{eigene Binding}
+Sollte es bei openHAB keine passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nicht im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für meisten Add-ons nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf das Binding eingegangen.
+Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine komplette Binding-Vorlage anlegt, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen und ändern ist.
 
-OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die von openHAB bentigte Struktur erzeugen. Für manuelles Hinzufügen von Things, Items, Rules usw. bietet openHAB bereits eine ORdnerstruktur. Diese ist so offensichtlich, dass es trivial ist zu entscheiden, wo welche Komponente hinzugefügt werde soll. Sollte dies dennoch unklar sein, wird der Nutzer noch weiter durch readme-dateien unterstützt. Siehe 
-
-entwicklung von IO-, Persistence Services und Audio/Voice mit einem TODO beschreibt eher dürftig ist.
-
-\subsection{Api}
-OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, was anderen Systemen es ermöglicht die Komplette Funktionalität, welche über die Web-Oberfläche nutzbar ist ebenfalls zu integrieren. Dies ermöglicht es unter anderem Entwicklungsumgebungen wie VS-Code, Eclipse, IntelliJ Add-Ons/Extensions zu entwickeln, welche das Prgrammieren für OpenHab vereinfacht. So bieten diese 3 Extensions welche die Rest-Api nutzen um ITEMS und Things welche im System verfügbar sind anzuzeigen, was es sehr angenehm macht Rules o.ä. zu entwickeln.
-Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
-
-
-ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e sunter die anderen bauch.
-\url{https://www.openhab.org/docs/configuration/restdocs.html}
-\begin{itemize}
-	\item Item ein-/ausschalten
-	\item Eine List von allen Items, Sitemaps ausgeben lassen
-	\item Mit einem Editor auf die ganzen Komponenten zugreifen:
-	\begin{itemize}
-		\item Visual Studio Code installieren
-		\item Openhab Extension installieren
-		\item Geteiltes Openhab Laufwerk als Ordner öffnen
-		\item Openhab Extension konfigurieren
-		\item Es werden auch andere Editoren unterstützt
-	\end{itemize}
-\end{itemize}
+{
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=0.5\textwidth]{\figdir/own_binding_skeletton.PNG}
+	\caption{Skelett für Binding \label{fig:own_binding_skeleton}}
+}
 
 \section{Datenintegrität und Sicherheit}
 \begin{itemize}

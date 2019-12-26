@@ -253,6 +253,53 @@ Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine ko
 	\caption{Skelett für Binding \label{fig:own_binding_skeleton}}
 }
 
+Die Binding-Vorlage gibt u.a. vor, dass im XML-Format beschreiben werden muss, mit welchem Gerät das Binding stattzufinden hat und welche Things inklusive Channels erzeugt werden. In JAVA werden benötigte Binding-Handler und Konfigurationen geschrieben. Abbildung \ref{lst:binding-coding} kann entnommen werden, wie intensiv die Unterstützung durch Binding-Vorlage ist. So wird nicht nur mit einem Beispiel gezeigt, wie auf Informationen, welche durch einen Channel übertragen werden reagiert, sondern auch auf Besonderheiten hingewiesen und was in welcher Funktion zu entwickeln ist. 
+
+
+\begin{lstlisting}[language=java,firstnumber=1,caption=Rule Beispiel,label=lst:binding-coding]
+
+...
+
+@Override
+public void handleCommand(ChannelUID channelUID, Command command) {
+if (CHANNEL_1.equals(channelUID.getId())) {
+if (command instanceof RefreshType) {
+// TODO: handle data refresh
+}
+
+// TODO: handle command
+
+// Note: if communication with thing fails for some reason,
+// indicate that by setting the status with detail information:
+// updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
+// "Could not control device at IP address x.x.x.x");
+}
+}
+
+@Override
+public void initialize() {
+// logger.debug("Start initializing!");
+config = getConfigAs(MyNewBindingConfiguration.class);
+
+// TODO: Initialize the handler.
+// The framework requires you to return from this method quickly. Also, before leaving this method a thing
+// status from one of ONLINE, OFFLINE or UNKNOWN must be set. This might already be the real thing status in
+// case you can decide it directly.
+// In case you can not decide the thing status directly (e.g. for long running connection handshake using WAN
+// access or similar) you should set status UNKNOWN here and then decide the real status asynchronously in the
+// background.
+
+// set the thing status to UNKNOWN temporarily and let the background task decide for the real status.
+// the framework is then able to reuse the resources from the thing handler initialization.
+// we set this upfront to reliably check status updates in unit tests.
+updateStatus(ThingStatus.UNKNOWN);
+
+...
+\end{lstlisting}
+
+
+
+
 \section{Datenintegrität und Sicherheit}
 \begin{itemize}
 	 \item It is known that security breaches may have a significant economic impact on a firm, as

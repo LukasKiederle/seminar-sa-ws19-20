@@ -107,7 +107,7 @@ Dadurch, dass die Bachelorarbeit von P. Gersbacher vor über einem Jahr veröffe
 In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen. Dabei werden die Ergebnisse von P. Gersbacher als zusätzliche Quelle genutzt.
 
 
-\section{openHAB aus technischer Sicht}
+\section{openHAB aus technischer Sicht}\label{sec:technischeSicht}
 In diesem Kapitel werden die grundlegenden Komponenten, welche openHAB verwendet, dargestellt. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
 Es wird ein Kern Aspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "einen Weg". Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können, oder über Code. Dieses Konzept ist ein Grundgedanken, welcher von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den Entsprechenden Unterkapiteln beschrieben.
@@ -224,11 +224,21 @@ end
 Eine Sitemap dient als Übersicht, Gruppierung und Visualisierung des Smart Home. So kann durch die Sitemap das Smart Home z.B. in Räume, Stockwerke oder den Außenbereich unterteilt werden und diesen Bereichen Items in Einzelform oder Gruppen zugewiesen werden. Dadurch ist es möglich manuell Items zu betätigen oder eine Übersicht über einen Bereich zu erhalten. Es gibt neben Sitemaps noch die Möglichkeit verschiedene Dashboards und Panels zu erzeugen, welche ebenfalls genutzt werden können um individuelle Übersicht oder Steuerung zu erhalten.
 Wie im ganzen openHAB ist es auch hier möglich per Code oder openHAB vorinstallierten Editoren sich seine eigenen Sitemap, Dashboard oder Panel zu erzeugen
 
-\section{Entwickeln für OpenHAB??} \label{sec:custom-development}
+\section{Programmieren in und für openHAB} \label{sec:custom-development}
+openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt an den er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
 
-\subsection{Api}
-OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, was anderen Systemen es ermöglicht die Komplette Funktionalität, welche über die Web-Oberfläche nutzbar ist ebenfalls zu integrieren. Dies ermöglicht es unter anderem Entwicklungsumgebungen wie VS-Code, Eclipse, IntelliJ Add-Ons/Extensions zu entwickeln, welche das Prgrammieren für OpenHab vereinfacht. So bieten diese 3 Extensions welche die Rest-Api nutzen um ITEMS und Things welche im System verfügbar sind anzuzeigen, was es sehr angenehm macht Rules o.ä. zu entwickeln.
-Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
+\subsection{Programmierung für den Nutzer}
+Als Nutzer kommt man bei openHAB wenn man nicht will, sehr lange ohne Programmierung aus. In Kapitel \ref{sec:technischeSicht} wird oft darauf verwiesen, dass man Bindings, Things usw. sowohl über die Web-Oberfläche als auch über den Code in das System integrieren kann. Abbildung \ref{fig:openHab-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden kann. Dies wird ebenfalls durch die \textit{readme.txt}-Dateien nochmals deutlich gemacht, was in den jeweiligen Ordner geschrieben werden muss. Da es bei allen \textit{openhab2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind, und wo Beispiele in der openHAB Dokumentation zu finden sind.
+{
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=0.25\textwidth]{\figdir/openHab-conf-folder-structure.PNG}
+	\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
+}
+
+\subsection{eigene Add-ons}
+
+Sollte es allerdings keine passendes Add-on für ein gewünschtes Gerät geben, steht der erweituerng und dem entwicklen eines eigenenen Add-ons durch das Add-on System nichts im Weg. Mehr noch, durch den OpenSource gedanken, welcher openHAB vorantreibt könnte das Gesamt-System durch ein weiteres Add-on erweitert werden.
 
 OpenHab bietet zusätzlich zur Dokumentation noch Untestützung für das Entwickeln eines Eigenen Bindings durch eine Skeletton skript, welches die Stuktur eines Bindings inklusive Beispielen und Erklärungen welche Methonde/Funktionen wie gestaltet werden müssen und was diese Tun. Siehe:
 \captionsetup{type=figure}
@@ -239,12 +249,9 @@ OpenHAB liefert für das Entwickeln von Add-Ons Skelleton-Skripte, welche die vo
 
 entwicklung von IO-, Persistence Services und Audio/Voice mit einem TODO beschreibt eher dürftig ist.
 
-
-Sollte es allerdings keine passendes Add-on für ein gewünschtes Gerät geben, steht der erweituerng und dem entwicklen eines eigenenen Add-ons durch das Add-on System nichts im Weg. Mehr noch, durch den OpenSource gedanken, welcher openHAB vorantreibt könnte das Gesamt-System durch ein weiteres Add-on erweitert werden.
-\captionsetup{type=figure}
-\includegraphics[width=0.25\textwidth]{\figdir/openHab-conf-folder-structure.PNG}
-\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
-
+\subsection{Api}
+OpenHAB nutzt um die Paper-UI zu nutzen eine REST-API. Diese ist offengelegt, was anderen Systemen es ermöglicht die Komplette Funktionalität, welche über die Web-Oberfläche nutzbar ist ebenfalls zu integrieren. Dies ermöglicht es unter anderem Entwicklungsumgebungen wie VS-Code, Eclipse, IntelliJ Add-Ons/Extensions zu entwickeln, welche das Prgrammieren für OpenHab vereinfacht. So bieten diese 3 Extensions welche die Rest-Api nutzen um ITEMS und Things welche im System verfügbar sind anzuzeigen, was es sehr angenehm macht Rules o.ä. zu entwickeln.
+Die Rest-API ermöglicht es ebenfalls unabhänigen entwicklern openHAB funktionen zu steuern, was allerdings im Mobilen bereich irrelevant sein sollte, da es android, ios und windows apps bereits gibt
 
 
 ich muss mir noch überlegen, ob ich daraus ein eigenes kapitel mach, oder ob e sunter die anderen bauch.

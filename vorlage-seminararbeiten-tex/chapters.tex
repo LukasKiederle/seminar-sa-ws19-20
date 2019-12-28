@@ -358,8 +358,26 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 \end{itemize}
 
 \subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
+	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
+
+	\subsubsection{Hardware}
+		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
+		
+	\subsubsection{Eingebundene Geräte}
+		In Openhab lassen sich eine vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus die in einem üblichen Wohnzimmer nützlich sind.
+		\begin{itemize}
+			\item Hue Bridge
+			\item  Hue Glühbirne
+			\item Osram Glühbirne
+			\item LG Smart TV
+		\end{itemize}
+		
+		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge wenn wir die Lampen ansprechen wollen.
+		
+		Bei beiden Lampen lässt sich Helligkeit und Farbtemperatur anpassen. Der Fernseher lässt sich an und ausschalten und man kann die Lautstärke und das Programm verändern.
+		
+		
 \begin{itemize}
-	\item OpenHAB auf Raspberry Pi 3/4 installiert
 	\item Welche Geräte haben wir mit OpenHAB verbunden?
 	\begin{itemize}
 		\item Spotify

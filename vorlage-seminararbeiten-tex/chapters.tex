@@ -360,21 +360,35 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 \subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
-	\subsubsection{Hardware}
+	\subsubsection{Hardware für openHAB}
 		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
 		
 	\subsubsection{Eingebundene Geräte}
 		In Openhab lassen sich eine vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus die in einem üblichen Wohnzimmer nützlich sind.
 		\begin{itemize}
 			\item Hue Bridge
-			\item  Hue Glühbirne
-			\item Osram Glühbirne
+			\item  Hue LED
+			\item Osram Lightify LED
 			\item LG Smart TV
 		\end{itemize}
-		
-		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge wenn wir die Lampen ansprechen wollen.
+		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge wenn wir die Lampen ansprechen wollen. Dies passiert allerdings im Hintergrund, In der openHAB Weboberfläche stellt uns die HUE Bridge jede Lampe aber als eigenes Item dar, wodurch wir scheinbar direkt mit ihnen kommunizieren können.
 		
 		Bei beiden Lampen lässt sich Helligkeit und Farbtemperatur anpassen. Der Fernseher lässt sich an und ausschalten und man kann die Lautstärke und das Programm verändern.
+		
+		\subsubsection{Eingebundene Services}
+		Wir wollen in unser System die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel nützlich.
+		
+		Spotify ermöglicht es uns über die Developer Webseite von Spotify eine Webanwendung zu registrieren. Damit können wir unser System autorisieren unseren Spotify Account zu steuern. Unser System schickt dabei Befehle an die Server von Spotify, welche wiederum die Befehle an den aktuellen Spotify Client weiterleiten. Wir müssen also nicht direkt Spotify auf unserem Raspberry installieren. Das steigert die Performance und ist in der Handhabung angenehmer. Wir wollen in unserem System das aktuelle Lied anzeigen und es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten und stoppen.
+		
+		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Wir wählen die kostenlose Basisversion und erhalten einen API Key um unser System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen.
+		
+		\subsubsection{Integration der Geräte und Services}
+		Die Integration der Geräte erfolgt über die Paper UI des Webfrontend unseres openHAB Systems. 
+		
+		Für die Integration der Lampen müssen wir diese zuerst über die HUE App mit der Hue Bridge verbinden. Danach wählen wir das HUE Binding. Wir konfigurieren die IP Adresse der Bridge und unser System erkennt die hue Bridge automatisch. Die Bridge kann jetzt als Thing in unser System aufgenommen werden. Dadurch erhalten wir auch automatisch die Lampen als Things. Bei allen drei Lampen erstellen wir je zwei Items um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es uns auch den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify protokoll nutzt, das die Hue Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
+		
+		
+		
 		
 		
 \begin{itemize}

@@ -10,7 +10,7 @@ Das Projekt wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile 
 Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Dabei ist ein Ziel die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das Hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
 Weiterhin soll es durch die Plugin-Architektur möglich sein, fast jedes Gerät zu integrieren.
 Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unterstützt.\\
-Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser (in Englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
+Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser (in englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
 
 \section{Bewertung OpenHAB}
 In diesem Kapitel wird das open-source Projekt OpenHAB untersucht und bewertet. Es befindet sich auf Github unter \url{https://github.com/openhab/openhab-core}. Die hierfür verwendeten Kriterien sind orientiert an der QAware Open Source Quick-Check Liste.
@@ -30,7 +30,7 @@ Diese beinhaltet:
 	\hline
 	\centering Lizenz & Für welche Zwecke kann das Projekt genutzt werden? \\
 	\hline
-	\centering Support & Existiert Issue-Tracking und eine Antwortzeit auf Tickets unter 24h? \\
+	\centering Support & Existiert Issue-Tracking und ein Antwortzeit auf Tickets unter 24h? \\
 	\hline
 	\centering Dokumentation & Existiert?
 	\begin{itemize}
@@ -47,7 +47,7 @@ Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisie
 \\
 {In der Auswertung über OpenHAB steht beispielsweise, dass im letzten Jahr 343 Entwickler aktiv an dem Projekt mitgearbeitet haben. Somit ist OpenHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
 Des Weiteren ist ein stetiger Anstieg von Interesse erkennbar. Dies wird durch den Vergleich von Codebeiträgen des aktuellen Jahrs und des Vorjahres begründet.\\
-Insgesamt haben über 1140 Entwickler bereits mehr als 20000 Beiträgen in Form von Programmcode zum Projekt beigetragen. Der Umfang des zu 98\% in Java geschriebenen Codes beträgt mehr als 1.5 Millionen Zeilen. Davon wurden circa 31\% dokumentiert. Dies entspricht dem durchschnittlichen Wert aller Java open-source Projekte, welche auf Open Hub registriert sind.}\cite{OPENHUB01:OH} Die hierbei angegeben Werte beziehen sich auf alle Projekte und Subprojekte von OpenHAB. Eine Übersicht hierfür ist unter \url{https://github.com/openhab} zu finden.\\
+Insgesamt haben über 1140 Entwickler bereits mehr als 20000 Beiträgen in Form von Programmcode zum Projekt beigetragen. Der Umfang des zu 98\% in Java geschriebenen Codes beträgt mehr als 1.5 Millionen Zeilen. Davon wurden circa 31\% dokumentiert. Dies entspricht dem durchschnittliche Wert aller Java open-source Projekte, welche auf Open Hub registriert sind.}\cite{OPENHUB01:OH} Die hierbei angegeben Werte beziehen sich auf alle Projekte und Subprojekte von OpenHAB. Eine Übersicht hierfür ist unter \url{https://github.com/openhab} zu finden.\\
 \\
 Wie bereits im Kapitel \ref{s:what-is-openhab} erwähnt, ist OpenHAB aktuell in der Version 2.5 erhältlich. Daraus lässt sich auf einen stabilen Codestand schließen.\\
 Des Weiteren ist das Projekt unter einer EPL-2.0 Lizenz veröffentlicht. Dies erlaubt sowohl die private als auch kommerzielle Nutzung. Hinzu kommt die Möglichkeit für Modifizierung und Weiterverbreitung.\cite{LICENSE01:EC}
@@ -75,7 +75,7 @@ Das Getting-started Tutorial ist ausführlich und aktuell. Die darüber hinausge
 	\hline
 	\centering Lizenz & Für welche Zwecke kann das Projekt genutzt werden? & \checkmark \\
 	\hline
-	\centering Support & Existiert Issue-Tracking und eine Antwortzeit auf Tickets unter 24h? & \checkmark \\
+	\centering Support & Existiert Issue-Tracking und ein Antwortzeit auf Tickets unter 24h? & \checkmark \\
 	\hline
 	\centering Dokumentation & Existiert?
 	\begin{itemize}
@@ -309,12 +309,17 @@ Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dies
 OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
 Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potentieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
 \\
-Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
+Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies keines Falls benötigt wird.\cite{OPENHAB03:OH}
 
 \subsection{Externe Erweiterungsmöglichkeiten}
-Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
-Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angestuert wird.\\
-Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
+\begin{itemize}
+	\item Options for Secure Remote Access
+	\begin{itemize}
+		\item VPN: The most secure option is probably to create a VPN connection to your home network
+		\item myopenHAB Cloud Service with a tunnel that forwards all requests to the openHAB instance
+		\item Running openHAB Behind a Reverse Proxy: A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to \url{http://mydomain_or_myip} to your openHAB runtime.
+	\end{itemize}
+\end{itemize}
 
 \section{Verwendung von OpenHAB}
 \subsection{Integration der Big Player}
@@ -356,6 +361,8 @@ Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser 
 
 	\subsubsection{Hardware für openHAB}
 		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
+		Damit wir unser System später leicht bedienen können, wird ein 7 Zoll Touch-Monitor verwendet um ein HAB Panel anzuzeigen. Dank Touch-Funktionalität funktioniert er als Steuersystem und unser System kann jederzeit bedient werden.
+		
 		
 	\subsubsection{Eingebundene Geräte}
 		In Openhab lassen sich eine vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus die in einem üblichen Wohnzimmer nützlich sind.
@@ -381,8 +388,35 @@ Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser 
 		
 		Für die Integration der Lampen müssen wir diese zuerst über die HUE App mit der Hue Bridge verbinden. Danach wählen wir das HUE Binding. Wir konfigurieren die IP Adresse der Bridge und unser System erkennt die hue Bridge automatisch. Die Bridge kann jetzt als Thing in unser System aufgenommen werden. Dadurch erhalten wir auch automatisch die Lampen als Things. Bei allen drei Lampen erstellen wir je zwei Items um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es uns auch den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify protokoll nutzt, das die Hue Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
 		
+		Den LG Smart TV integrieren wir mit dem LG WebOS Binding. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Wir können dann Items erzeugen um ihn an und auszuschalten und die Lautstärke zu regeln.
 		
+		Spotify integrieren wir über das Spotify Binding. Wir hinterlegen unsere ClientId und Secret Key welche wir in der Spotify Developer Console angelegt haben. Das Binding erstellt uns ein Spotify Player Bridge Thing mit welchem wir nun unseren Account steuern können. Wir erzeugen Items um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
 		
+		Um unsere Wetterdaten abrufen zu können, brauchen wir das Weather Binding. Für dieses Binding ist eine manuelle Einrichtung auf dem Raspberry nötig. Per SSH muss die services/weather.cfg angepasst werden:
+		
+		\begin{lstlisting}[language=java,firstnumber=1,caption=services/weather.cfg,label=lstweather.cfg]
+apikey.openWeatherMap=sdf7g69fdgdfg679dfg69sdgkj
+location.home.provider=openWeatherMap
+location.home.language=de
+location.home.updateInterval=10
+location.home.latitude=47.8011
+location.home.longitude=13.0448
+		\end{lstlisting}
+		
+		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
+		Danach können wir Items erzeugen. 
+		
+				\begin{lstlisting}[language=bash,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
+Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home, type=temperature, property=current"}
+Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
+Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
+		\end{lstlisting}
+		
+		Daraus erzeugt openHAB drei Items welche die Temperatur, die Niederschlagswarscheinlichkeit und die Windgeschwindikgeit beinhalten. 
+		Wir verwenden bei unseren Items die weatherId "home". Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
+		
+		\subsubsection{Erstellung des HAB Panels}
+		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Items können dabei belieb oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent (entrspicht an) oder 0 Prozent (entrspricht aus) wechselt.
 		
 		
 \begin{itemize}
@@ -420,7 +454,7 @@ Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser 
 
 \subsection{Umgang mit OpenHAB}
 \begin{itemize}
-	\item Das meiste klickt man sich zusammen: Bindings, Rules, Channels, Items, Things
+	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
 	\item Implementierung von rules scheint idiotensicher, weil:
 	\begin{itemize}
 		\item einfacher Syntax
@@ -448,17 +482,8 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
 \end{itemize}
-\subsection{Fazit Bewertung und Sicherheit}
-\begin{itemize}
-	\item aktive Community, die auch wächst
-	\item Weiterentwicklung ist zu sehen
-	\item Kann sowohl privat als auch kommerziell genutzt werden
-	
-	\item Ist prinzipiell Sicher, da HTTPS und SSH verwendet werden.
-	\item Bei Kommunikation mit Things und OpenHAB können Daten bei veralteten HTTP-nutzenden Verbindungen abgegriffen werden
-\end{itemize}
 
-\subsection{Ausblick}
+\section{Outlook}
 Outlook
 With the 2.5 release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though. The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
 

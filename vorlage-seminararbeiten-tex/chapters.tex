@@ -306,16 +306,11 @@ Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollte
 Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
 
 \subsection{Interne vorhandene Funktionalitäten}
-\url{https://www.openhab.org/docs/installation/security.html}
-\begin{itemize}
-	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
-	\item Through HTTP(S) over \url{https://<ip>:8443}
-	\item SSL Certificates
-	On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in \${USER\_DATA}etc/keystore). This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server. Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
-	\item Security Warning: It is vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!
-\end{itemize}
-
 OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
+Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potentieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
+\\
+Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies keines Falls benötigt wird.\cite{OPENHAB03:OH}
+
 \subsection{Externe Erweiterungsmöglichkeiten}
 \begin{itemize}
 	\item Options for Secure Remote Access

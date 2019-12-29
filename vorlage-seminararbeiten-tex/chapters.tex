@@ -43,7 +43,7 @@ Diese beinhaltet:
 	\label{table:openhab-judgement-criteria}
 \end{longtable}
 
-Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert opensource Softwareprojekte. Dabei werden Daten wie Projektname, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht, Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei werden auch viele weitere open source Projekte miteinander verglichen um aussagekräftige Statistiken und Aussagen treffen zu können.\\
+Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert open-source Softwareprojekte. Für jedes Projekt werden Daten wie Name, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei fließen auch Daten weiterer open-source Projekte ein, um aussagekräftige Statistiken und Aussagen treffen zu können.\\
 \\
 {In der Auswertung über OpenHAB steht beispielsweise, dass im letzten Jahr 343 Entwickler aktiv an dem Projekt mitgearbeitet haben. Somit ist OpenHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
 Des Weiteren ist ein stetiger Anstieg von Interesse erkennbar. Dies wird durch den Vergleich von Codebeiträgen des aktuellen Jahrs und des Vorjahres begründet.\\
@@ -287,37 +287,30 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 \end{lstlisting}
 
 
-
-
 \section{Datenintegrität und Sicherheit}
+
+Dieses Kapitel beinhaltet einen Überblick die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
+\\
+Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hard-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
+\\
+OpenHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Velázquez über "`Securing openHAB Smart Home through User Authentication and Authorization"', auf Sicherheit geprüft.\cite{MA01:OPH} Dabei untersucht der Autor mit Hilfe von Wireshark, wie OpenHAB kommuniziert und kommt zu dem Resultat, dass es drei verschiedene Kommunikationsszenarien gibt, die sicherheitstechnische Relevanz haben. Alle drei Szenarien nutzen Bindings als Mittel der Kommunikation. Diese sind:
 \begin{itemize}
-	 \item It is known that security breaches may have a significant economic impact on a firm, as
-	 described by Goel and Shawky [18]. Data loss or theft, tampering, and unauthorized
-	 operations are just some of the possible ocurrences led by the lack of proper security
-	 mechanisms in place. In the case of openHAB, a smart home application, it is not quite
-	 quantifiable how expensive it results to have a security breach occur at any level. The
-	 consequences may go from mere user discomfort to identity theft, or worse.
-	\item \url{https://www.owasp.org/index.php/OWASP_Internet_of_Things_Project}
-	\item \url{https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=7&ved=2ahUKEwjq_c-k0s7mAhXOIVAKHS4dDYgQFjAGegQICBAC&url=https%3A%2F%2Fcomserv.cs.ut.ee%2Fhome%2Ffiles%2FSoto_computer_science_2018.pdf%3Fstudy%3DATILoputoo%26reference%3DB7FBB08D43717164067F1F9DBA92B98A65913AC9&usg=AOvVaw0631sYhHX3wKxW8kPwxpzE}
-	\item Weak, Guessable or Hardcoded Passwords: Easy to brute force (no captcha), unchangable credentials
-	\item Masterarbeit gefunden -> Status ist veraltet -> Checken, was sich seitdem bei OpenHAB getan hat -> keine wirklich relevanten security changes alexa und google home.
-	\item 2.4 hat auch nur kleine security Changes für GPS Tracker Binding
-\end{itemize}
+	\item intern: Thing - openHAB
+	\item extern mit logischem Thing: OpenHAB-Remote Web Service
+	\item extern mit physikalischem Thing: OpenHAB-Remote Web Service Thing
+\end{itemize}	
+Interne Kommunikation zwischen Thing und OpenHAB Instanz findet typischerweise über WLAN statt, welches mit Hilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von OpenHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
+Bei den zwei externen Punkten sind laut 
+Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit OpenHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
+\\
+Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
+
 \subsection{Interne vorhandene Funktionalitäten}
-\url{https://www.openhab.org/docs/installation/security.html}
-\begin{itemize}
-	\item Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the Console documentation.
-	\item Through HTTP(S) over \url{https://<ip>:8443}
-	\item SSL Certificates
-	On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in \${USER\_DATA}etc/keystore). This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server. Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
-	\item Security Warning: It is vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!
-\end{itemize}
-\begin{minipage}{\textwidth}
-	\centering
-	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
-	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
-\end{minipage}
+OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
+Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potentieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
+\\
+Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies keines Falls benötigt wird.\cite{OPENHAB03:OH}
+
 \subsection{Externe Erweiterungsmöglichkeiten}
 \begin{itemize}
 	\item Options for Secure Remote Access
@@ -356,6 +349,12 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	\end{itemize}
 	
 \end{itemize}
+\begin{minipage}{\textwidth}
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
+	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
+\end{minipage}
 
 \subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.

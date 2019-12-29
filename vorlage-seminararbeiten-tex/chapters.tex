@@ -309,17 +309,12 @@ Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dies
 OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
 Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potentieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
 \\
-Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies keines Falls benötigt wird.\cite{OPENHAB03:OH}
+Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
 
 \subsection{Externe Erweiterungsmöglichkeiten}
-\begin{itemize}
-	\item Options for Secure Remote Access
-	\begin{itemize}
-		\item VPN: The most secure option is probably to create a VPN connection to your home network
-		\item myopenHAB Cloud Service with a tunnel that forwards all requests to the openHAB instance
-		\item Running openHAB Behind a Reverse Proxy: A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to \url{http://mydomain_or_myip} to your openHAB runtime.
-	\end{itemize}
-\end{itemize}
+Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
+Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angestuert wird.\\
+Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
 
 \section{Verwendung von OpenHAB}
 \subsection{Integration der Big Player}
@@ -411,7 +406,7 @@ Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für Open
 
 \subsection{Umgang mit OpenHAB}
 \begin{itemize}
-	\item Das meiste klickt mans ich zusammen: Bindings, Rules, Channels, Items, Things
+	\item Das meiste klickt man sich zusammen: Bindings, Rules, Channels, Items, Things
 	\item Implementierung von rules scheint idiotensicher, weil:
 	\begin{itemize}
 		\item einfacher Syntax
@@ -439,8 +434,17 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
 \end{itemize}
+\subsection{Fazit Bewertung und Sicherheit}
+\begin{itemize}
+	\item aktive Community, die auch wächst
+	\item Weiterentwicklung ist zu sehen
+	\item Kann sowohl privat als auch kommerziell genutzt werden
+	
+	\item Ist prinzipiell Sicher, da HTTPS und SSH verwendet werden.
+	\item Bei Kommunikation mit Things und OpenHAB können Daten bei veralteten HTTP-nutzenden Verbindungen abgegriffen werden
+\end{itemize}
 
-\section{Outlook}
+\subsection{Ausblick}
 Outlook
 With the 2.5 release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though. The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
 

@@ -401,8 +401,8 @@ location.home.longitude=13.0448
 		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
 		Danach können wir Items erzeugen. 
 		
-				\begin{lstlisting}[language=bash,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
-Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home, type=temperature, property=current"}
+				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
+Number   Temperature   "Temperature [%.2f (*°*)C]"   {weather="locationId=home, type=temperature, property=current"}
 Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
 Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
 		\end{lstlisting}

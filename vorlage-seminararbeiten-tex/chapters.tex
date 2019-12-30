@@ -399,7 +399,7 @@ location.home.longitude=13.0448
 		\end{lstlisting}
 		
 		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
-		Danach können wir Items erzeugen. 
+		Nach diesen EInstellungen können wir Items erzeugen. 
 		
 				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
 Number   Temperature   "Temperature [%.2f (*°*)C]"   {weather="locationId=home, type=temperature, property=current"}
@@ -411,41 +411,45 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 		Wir verwenden bei unseren Items die weatherId "home". Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
 		
 		\subsubsection{Erstellung des HAB Panels}
-		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Items können dabei belieb oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent (entrspicht an) oder 0 Prozent (entrspricht aus) wechselt.
+		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent wechselt. Damit kann die Lampe ein und ausgeschaltet werden.
 		
+		Für unser Panel greifen wir auf Standartkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
 		
-\begin{itemize}
-	\item Welche Geräte haben wir mit OpenHAB verbunden?
-	\begin{itemize}
-		\item Spotify
-		\begin{itemize}
-			\item Lautstärkeregler
-			\item Aktueller Song Display
-		\end{itemize}
-		\item LG Smart TV
-		\begin{itemize}
-			\item Lautstärkeregler
-			\item An- und ausschalten
-			\item One-Way-Chat
-		\end{itemize}
-		\item Lampen
-	\end{itemize}
-	\item Wie haben wir die Geräte verbunden?
-	\begin{itemize}
-		\item \textbf{Verschiedene Binding:}
-		\item Spotify Binding
-		\item LG Smart TV Binding
-	\end{itemize}
-	\item On the server the configuration is stored somewhere in userdata (/var/lib/openhab2 for apt-get installs).
-	In an upgrade the userdata folder is preserved when using apt-get.
-\end{itemize}
-
+	\begin{minipage}{\textwidth}
+		\centering
+		\captionsetup{type=figure}
+		\includegraphics[width=1\textwidth]{\figdir/openHabPanel.png}
+		\caption{Erstelltes OpenHab Panel \label{fig:activity-diagram}}
+	\end{minipage}
+		
+		In unserem Panel sehen wir zuerst den Namen des Dashboardes "Home" und darunter die aktuelle Uhrzeit, letzteres ist ein Standartwidget von openHab.
+		Darunter ist ein Label welcher den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller welcher Track und Lautstärke von Spotify steuern können.
+		
+		Ganz unten sehen wir ein selbst geschriebenes Widget welches die Wetterdaten anzeigt. 
+		
+		In der rechten unteren Ecke befinden sich zwei Buttons um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Commandozeile ausführen.
+		
+		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Button schaltet ihn an und aus, der Slide regelt die Lautstärke.
+		
+		Alle restlichen Widgets steuern die Lampen. Das große Widget kann alle Lampen im Zimmer an und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die Slider lässt sich die Helligkeit und Weißfarbe aller Lampen einstellen.
+		
+		\subsubsection{Kontrollstation einrichten}
+		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm auf welchem sich der Raspberry befestigen lässt und welcher direkt vom Raspberry Strom bezieht.
+		Die Kontrollstation wird dann unser HAB Panel anzeigen und uns so Zugriff auf unser System ermöglichen. 
+		
+		Um auf auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mouecursor ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
+		
+		\subsection{Verteilungsarchitektur unseres Smart Home Systems}
+		
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/activitydiagram-lg-light-rule.png}
-	\caption{Aktivitätsdiagram für eine Rule \label{fig:activity-diagram}}
+	\includegraphics[width=1\textwidth]{\figdir/VerteilungsarchitekturOpenHab.png}
+	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
+
+	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart Home fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihm so stark zu unterstützen.
+
 
 \subsection{Umgang mit OpenHAB}
 \begin{itemize}

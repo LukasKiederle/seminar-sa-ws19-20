@@ -135,7 +135,7 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 \end{longtable}
 
 \subsection{Add-ons}\label{sec:add-ons}
-openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur Benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist um erweitert zu werden sind:
+openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur Benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist um erweitert zu werden sind nach \cite{OPENHAB04:OH}:
 \begin{itemize}
 	\item Bindings
 	\item Automation Engine Modules
@@ -149,7 +149,7 @@ Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detailli
 \subsection{Bindings} \label{sec:Bindings}
 Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. eine LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
 Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code geschen kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten. 
-Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen.
+Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen \cite{OPENHUB00:OH}.
 
 \subsection{Things}
 Things stellen die Repräsentation von physischen Geräten/Services innerhalb von openHAB dar. Sie bestehen neben verschiedenen Status und Konfigurationsinformationen aus Channels, welche für die Ansteuerung der Things benötigt werden und näher in Kapitel \ref{sec:channels} beschrieben werden.
@@ -244,7 +244,7 @@ Die REST-API ermöglicht es auch Entwicklungsumgebungen informationen aus dem op
 
 \subsection{eigene Binding}
 Sollte es bei openHAB keine passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nicht im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für meisten Add-ons nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf das Binding eingegangen.
-Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine komplette Binding-Vorlage anlegt, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
+Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{OPENHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
 
 {
 	\centering

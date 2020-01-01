@@ -448,19 +448,8 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart Home fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihm so stark zu unterstützen.
+	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
 
-
-\subsection{Umgang mit OpenHAB}
-\begin{itemize}
-	\item Das meiste klickt man sich zusammen: Bindings, Rules, Channels, Items, Things
-	\item Implementierung von rules scheint idiotensicher, weil:
-	\begin{itemize}
-		\item einfacher Syntax
-		\item Abhängigkeiten managed Openhab
-	\end{itemize}
-	\item Bindings schreiben scheint eher schwieriger
-\end{itemize}
 
 \section{Fazit}
 \subsection{Stärken}
@@ -492,12 +481,8 @@ Giving you the most flexible tool available to make almost any home automation w
 \end{itemize}
 
 \subsection{Ausblick}
-Outlook
-With the 2.5 release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though. The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
+Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet. Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
 
-I would like to thank all our maintainers, contributors and users being such a fantastic community. It is awesome that we have reached another big milestone by shipping openHAB 2.5 and it has been a great journey so far - openHAB will celebrate its 10th anniversary next year! Please continue spreading the word and help growing the community.
-
-Enjoy the upcoming festive season, play with the new openHAB release and share your experiences with us, your family and your friends!
 
 
 \section{Infos:}

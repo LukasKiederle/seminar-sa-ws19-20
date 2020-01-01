@@ -439,6 +439,11 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 		
 		Um auf auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mouecursor ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
 		
+		\subsubsection{	Externer Zugriff}
+		Eine häufige Anforderung an Smart Home Systeme ist, auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
+		In myOpenHab können erstellte Dashboards angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann.
+		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich.
+		
 		\subsection{Verteilungsarchitektur unseres Smart Home Systems}
 		
 \begin{minipage}{\textwidth}

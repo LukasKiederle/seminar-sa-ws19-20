@@ -317,31 +317,6 @@ Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. 
 Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
 
 \section{Verwendung von OpenHAB}
-\subsection{Integration der Big Player}
-\begin{itemize}
-	\item Amazon Alexa und Echo Dot Integration möglich
-	\item Changes die mit v2.5 released wurden miteinbauen in das Kapitel:
-	\url{https://www.openhab.org/blog/2019-12-14-openhab-2-5-release.html}
-	\begin{itemize}
-		\item Alexa:
-		\begin{itemize}
-			\item This certified Amazon Smart Home Skill allows users to control their openHAB powered smart home with natural voice commands. Lights, locks, thermostats, AV devices, sensors and many other device types can be controlled through a user's Alexa powered device like the Echo or Dot.
-			\item \url{https://www.openhab.org/docs/ecosystem/alexa/}
-			\item \url{https://www.openhab.org/addons/bindings/amazonechocontrol/}
-		\end{itemize} 
-		\item Google Home
-		\begin{itemize}
-			\item Google Home Integration möglich
-			\item With the Action you can voice control your openHAB items and it supports lights, plugs, switches and thermostats. The openHAB Action comes with multiple language support like English, German or French language.
-			\item The openHAB Action links your openHAB setup through the myopenHAB.org cloud service to the Google Assistant platform
-			\item openHAB Cloud Connector configured using myopenHAB.org . (Items DO NOT need to be exposed to and will not show up on myopenHAB.org
-			, this is only needed for the IFTTT service!)
-			Google account.
-			Google Home or Google Home mini.
-			
-			\url{https://www.openhab.org/docs/ecosystem/google-assistant/}
-		\end{itemize} 
-	\end{itemize}
 	
 \end{itemize}
 \begin{minipage}{\textwidth}
@@ -441,8 +416,9 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 		
 		\subsubsection{	Externer Zugriff}
 		Eine häufige Anforderung an Smart Home Systeme ist, auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
-		In myOpenHab können erstellte Dashboards angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann.
-		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich.
+		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern Bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
+		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden.
+		
 		
 		\subsection{Verteilungsarchitektur unseres Smart Home Systems}
 		

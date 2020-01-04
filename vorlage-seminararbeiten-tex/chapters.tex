@@ -407,25 +407,19 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	
 \subsection{Integration der Big Player}
 Amazon Alexa und Google Home sind die bekanntesten Voice Services laut Google Trends. \cite{GOOGLET01:AG} Damit ist es möglich über verbale Kommandos bestimmte Funktionalitäten anzusteuern. Beispielsweise das abspielen eines Radiosenders oder das An- und Ausschalten einer Lampe.\\
-Sowohl der Google Home Assistent als auch Amazons Alexa sind in das Heimautomatisierungstool openHAB integrierbar. In den folgenden zwei Unterkapiteln wird dies genauer erläutert.\cite{OPENHAB02:OH}
+Sowohl der Google Home Assistent als auch Amazons Alexa sind in das Heimautomatisierungstool openHAB integrierbar.In den folgenden zwei Unterkapiteln wird dies genauer erläutert.\cite{OPENHAB02:OH}
 
 \subsubsection{Amazon Alexa}
-In openHAB kann ein zertifizierter Amazon Alexa Smart Home Skill verwendet werden. Damit ist es möglich eine ganzes Smart Home durch verbale Kommandos zu verwenden. Es können dadurch Lichter, Schlösser, Thermostate, Sensoren und viele weitere Geräte angesteuert werden. Dies ist möglich durch Alexa oder den Echo Dot.\cite{ALEXA01:AL}\cite{ALEXA02:AL} \\
+In openHAB kann ein zertifizierter Amazon Alexa Smart Home Skill verwendet werden. Damit ist es möglich eine ganzes Smart Home durch verbale Kommandos zu verwenden. Es können dadurch Lichter, Schlösser, Thermostate, Sensoren und viele weitere Geräte angesteuert werden. Dies ist möglich durch Alexa oder den Echo Dot.\cite{ALEXA01:AL}\cite{ALEXA02:AL}
+Um die Geräte von Amazon als Eingabe nutzen zu können, wird zusätzlich die Verbindung zur myopenHAB Cloud benötigt, da diese die Verarbeitung der Kommandos an Amazon weiterleitet.\\
 \\
-Seit der Version 2.5 nutzt der Alexa Skill von openHAB die neuste Smart Home Skill API V3. Dadurch können nun viele Smart Home Geräte deutlich vielseitiger und präziser angesprochen werden. Weiterhin ist Abwärtskompatibilität zu früheren Versionen gewährleistet.\cite{OPENHAB02:OH}
+Seit der Version 2.5 nutzt der Alexa Skill von openHAB die neuste Smart Home Skill API V3. Dadurch können nun viele Smart Home Geräte deutlich vielseitiger und präziser angesprochen werden. Außerdem unterstützt der Skill nun alle 15 Sprachen, in denen Alexa verwendet werden kann. Weiterhin ist Abwärtskompatibilität zu früheren Versionen gewährleistet.\cite{OPENHAB02:OH}
 
 \subsubsection{Google Home}
-\begin{itemize}
-	\item Google Home Integration möglich
-	\item With the Action you can voice control your openHAB items and it supports lights, plugs, switches and thermostats. The openHAB Action comes with multiple language support like English, German or French language.
-	\item The openHAB Action links your openHAB setup through the myopenHAB.org cloud service to the Google Assistant platform
-	\item openHAB Cloud Connector configured using myopenHAB.org . (Items DO NOT need to be exposed to and will not show up on myopenHAB.org
-	, this is only needed for the IFTTT service!)
-	Google account.
-	Google Home or Google Home mini.
-	
-	\url{https://www.openhab.org/docs/ecosystem/google-assistant/}
-\end{itemize} 
+
+Prinzipiell sind mithilfe von Google Home fast alle Optionen gegeben, die auch durch Amazons Alexa existieren. Somit können ebenfalls verschiedenste Geräte angesteuert werden. Für die Verwendung wird, wie beim Amazon Skill, eine Verbindung mit der myopenHAB Cloud benötigt.\\
+\\
+Beim letzten Update von openHAB wurde die Anwendung von Google Home ebenfalls verbessert. Dabei ist sowohl die Codequalität als auch die Sicherheit der Integration gesteigert worden. Weiterhin ist es durch die neuste Version möglich, deutlich mehr Features der Google Smart Home API zu nutzen. Dabei wurden sowohl neue Funktionen als auch der Support für alle Sprachen eingebaut.\cite{OPENHAB02:OH}\cite{GOOGLEH01:GH}
 
 \section{Datenintegrität und Sicherheit}
 

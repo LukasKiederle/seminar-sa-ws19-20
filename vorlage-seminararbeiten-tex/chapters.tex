@@ -446,19 +446,7 @@ Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt 
 \\
 \textbf{TODO !!! Hier stehen eure Teile des Fazits !!! TODO}\\
 
-\subsection{Technischer Sicht}
-\begin{itemize}
-	\item Komponenten sind klar sturkturiert.
-	\item Gute Abstraktionen
-	\item Namensgebung nicht optimial, aber ziemlich gut
-	\item Möglichkeiten der Erweiterungen sind sehr klar incl Sturktur vorgegeben, wo doku existiert. ohne Doku schiwerig
-	\item Integration in Fremdsysteme mit REST sehr einfach und gut dokumentiert mit swaggerUI
-	\item Entwickeln eigener Bindings sehr strukturiert vorgeben um integration zu ermöglichen
-	\item
-	\item Das ganze muss ich noch in Text wursteln.
-	\item
-\end{itemize}
-
+Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einen Benutzer zur Verfügung stehen, sind klar Strukturiert und besitzen eine Abstraktionsstufe, welche gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-on Architektur einige klare Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch bereitsgestellten Skripte vereinfacht, was dazu führt, dass openHAB relative einfach um neue Geräte erweitert werden kann.
 \\
 Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
 \\

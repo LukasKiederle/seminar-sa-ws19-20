@@ -301,37 +301,37 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
+		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen, um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
 		Damit wir unser System später leicht bedienen können, wird ein 7 Zoll Touch-Monitor verwendet um ein HAB Panel anzuzeigen. Dank Touch-Funktionalität funktioniert er als Steuersystem und unser System kann jederzeit bedient werden.
 		
 		
 	\subsubsection{Eingebundene Geräte}
-		In Openhab lassen sich eine vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus die in einem üblichen Wohnzimmer nützlich sind.
+		In Openhab lassen sich eine Vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus, die in einem üblichen Wohnzimmer nützlich sind.
 		\begin{itemize}
 			\item Hue Bridge
 			\item  Hue LED
 			\item Osram Lightify LED
 			\item LG Smart TV
 		\end{itemize}
-		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge wenn wir die Lampen ansprechen wollen. Dies passiert allerdings im Hintergrund, In der openHAB Weboberfläche stellt uns die HUE Bridge jede Lampe aber als eigenes Item dar, wodurch wir scheinbar direkt mit ihnen kommunizieren können.
+		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge, wenn wir die Lampen ansprechen wollen. Dies passiert allerdings im Hintergrund. In der openHAB Weboberfläche stellt uns die HUE Bridge jede Lampe aber als eigenes Item dar, wodurch wir scheinbar direkt mit ihnen kommunizieren können.
 		
 		Bei beiden Lampen lässt sich Helligkeit und Farbtemperatur anpassen. Der Fernseher lässt sich an und ausschalten und man kann die Lautstärke und das Programm verändern.
 		
 		\subsubsection{Eingebundene Services}
-		Wir wollen in unser System die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel nützlich.
+		Wir wollen in unser System die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap, um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel nützlich.
 		
 		Spotify ermöglicht es uns über die Developer Webseite von Spotify eine Webanwendung zu registrieren. Damit können wir unser System autorisieren unseren Spotify Account zu steuern. Unser System schickt dabei Befehle an die Server von Spotify, welche wiederum die Befehle an den aktuellen Spotify Client weiterleiten. Wir müssen also nicht direkt Spotify auf unserem Raspberry installieren. Das steigert die Performance und ist in der Handhabung angenehmer. Wir wollen in unserem System das aktuelle Lied anzeigen und es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten und stoppen.
 		
-		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Wir wählen die kostenlose Basisversion und erhalten einen API Key um unser System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen.
+		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Wir wählen die kostenlose Basisversion und erhalten einen API Key, um unser System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen.
 		
 		\subsubsection{Integration der Geräte und Services}
 		Die Integration der Geräte erfolgt über die Paper UI des Webfrontend unseres openHAB Systems. 
 		
 		Für die Integration der Lampen müssen wir diese zuerst über die HUE App mit der Hue Bridge verbinden. Danach wählen wir das HUE Binding. Wir konfigurieren die IP Adresse der Bridge und unser System erkennt die hue Bridge automatisch. Die Bridge kann jetzt als Thing in unser System aufgenommen werden. Dadurch erhalten wir auch automatisch die Lampen als Things. Bei allen drei Lampen erstellen wir je zwei Items um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es uns auch den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify protokoll nutzt, das die Hue Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
 		
-		Den LG Smart TV integrieren wir mit dem LG WebOS Binding. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Wir können dann Items erzeugen um ihn an und auszuschalten und die Lautstärke zu regeln.
+		Den LG Smart TV integrieren wir mit dem LG WebOS Binding. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Wir können dann Items erzeugen, um diesen an- und auszuschalten und die Lautstärke zu regeln.
 		
-		Spotify integrieren wir über das Spotify Binding. Wir hinterlegen unsere ClientId und Secret Key welche wir in der Spotify Developer Console angelegt haben. Das Binding erstellt uns ein Spotify Player Bridge Thing mit welchem wir nun unseren Account steuern können. Wir erzeugen Items um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
+		Spotify integrieren wir über das Spotify Binding. Wir hinterlegen unsere ClientId und Secret Key, welche wir in der Spotify Developer Console angelegt haben. Das Binding erstellt uns ein Spotify Player Bridge Thing mit welchem wir nun unseren Account steuern können. Wir erzeugen Items, um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
 		
 		Um unsere Wetterdaten abrufen zu können, brauchen wir das Weather Binding. Für dieses Binding ist eine manuelle Einrichtung auf dem Raspberry nötig. Per SSH muss die services/weather.cfg angepasst werden:
 		
@@ -344,22 +344,25 @@ location.home.latitude=47.8011
 location.home.longitude=13.0448
 		\end{lstlisting}
 		
-		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
-		Nach diesen EInstellungen können wir Items erzeugen. 
+		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
+		Nach diesen Einstellungen können wir Items erzeugen. 
 		
 				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
-Number   Temperature   "Temperature [%.2f (*°*)C]"   {weather="locationId=home, type=temperature, property=current"}
-Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
-Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
+Number   Temperature   "Temperature [%.2f (*°*)C]"   
+{weather="locationId=home, type=temperature, property=current"}
+Number   Precip_Probability   "Precip probability [%d %%]"   
+{weather="locationId=home, type=precipitation, property=probability"}
+Number   Wind_Speed           "Windspeed [%.2f km/h]"    
+{weather="locationId=home, type=wind, property=speed"}
 		\end{lstlisting}
 		
-		Daraus erzeugt openHAB drei Items welche die Temperatur, die Niederschlagswarscheinlichkeit und die Windgeschwindikgeit beinhalten. 
-		Wir verwenden bei unseren Items die weatherId "home". Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
+		Daraus erzeugt openHAB drei Items welche die Temperatur, die Niederschlagswahrscheinlichkeit und die Windgeschwindigkeit beinhalten. 
+		Wir verwenden bei unseren Items die weatherId "`home"'. Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
 		
 		\subsubsection{Erstellung des HAB Panels}
 		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent wechselt. Damit kann die Lampe ein und ausgeschaltet werden.
 		
-		Für unser Panel greifen wir auf Standartkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
+		Für unser Panel greifen wir auf Standardkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
 		
 	\begin{minipage}{\textwidth}
 		\centering
@@ -368,26 +371,26 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 		\caption{Erstelltes OpenHab Panel \label{fig:activity-diagram}}
 	\end{minipage}
 		
-		In unserem Panel sehen wir zuerst den Namen des Dashboardes "Home" und darunter die aktuelle Uhrzeit, letzteres ist ein Standartwidget von openHab.
-		Darunter ist ein Label welcher den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller welcher Track und Lautstärke von Spotify steuern können.
+		In unserem Panel sehen wir zuerst den Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit dargestellt. Letzteres ist ein Standardwidget von openHab.
+		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track und Lautstärke von Spotify steuern kann.
 		
-		Ganz unten sehen wir ein selbst geschriebenes Widget welches die Wetterdaten anzeigt. 
+		Ganz unten sehen wir ein selbst geschriebenes Widget, welches die Wetterdaten anzeigt. 
 		
-		In der rechten unteren Ecke befinden sich zwei Buttons um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Commandozeile ausführen.
+		In der rechten unteren Ecke befinden sich zwei Buttons, um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Kommandozeile ausführen.
 		
 		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Button schaltet ihn an und aus, der Slide regelt die Lautstärke.
 		
 		Alle restlichen Widgets steuern die Lampen. Das große Widget kann alle Lampen im Zimmer an und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die Slider lässt sich die Helligkeit und Weißfarbe aller Lampen einstellen.
 		
 		\subsubsection{Kontrollstation einrichten}
-		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm auf welchem sich der Raspberry befestigen lässt und welcher direkt vom Raspberry Strom bezieht.
+		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm, auf welchem sich der Raspberry befestigen lässt und direkt vom Raspberry Strom bezieht.
 		Die Kontrollstation wird dann unser HAB Panel anzeigen und uns so Zugriff auf unser System ermöglichen. 
 		
-		Um auf auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mouecursor ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
+		Um auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können, installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
 		
-		\subsubsection{	Externer Zugriff}
-		Eine häufige Anforderung an Smart Home Systeme ist, auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
-		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern Bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
+		\subsubsection{Externer Zugriff}
+		Eine häufige Anforderung an Smart Home Systeme ist auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab, muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
+		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
 		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden.
 		
 		
@@ -400,11 +403,11 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
+	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da. doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
 	
 \section{Datenintegrität und Sicherheit}
 
-Dieses Kapitel beinhaltet einen Überblick die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
+Dieses Kapitel bietet einen Überblick über die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
 \\
 Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hart-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
 \\

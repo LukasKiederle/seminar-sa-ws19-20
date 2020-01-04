@@ -108,8 +108,8 @@ In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen
 
 
 \section{Komponenten von openHAB}\label{sec:technischeSicht}
-In diesem Kapitel werden die grundlegenden Komponenten, welche openHAB verwendet, dargestellt. Desweiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
-Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
+In diesem Kapitel werden die grundlegenden Komponenten dargestellt, welche openHAB verwendet. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen.
+Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den entsprechenden Unterkapiteln beschrieben.
 
 \begin{longtable}{| p{4cm} | p{11cm}|}
@@ -135,7 +135,7 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 \end{longtable}
 
 \subsection{Add-ons}\label{sec:add-ons}
-openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur Benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist um erweitert zu werden sind nach \cite{OPENHAB04:OH}:
+openHAB verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{OPENHAB04:OH}:
 \begin{itemize}
 	\item Bindings
 	\item Automation Engine Modules
@@ -144,16 +144,16 @@ openHAB setzt verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbare
 	\item Persistence Services
 	\item Audio \& Voice
 \end{itemize}
-Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher Beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen, dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder Abzurufen. Und bei Audio \& Voice handelt sich um Services welche genutzt werden können um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen. 
+Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden können, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
 
 \subsection{Bindings} \label{sec:Bindings}
-Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. eine LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version eine eigenes Binding benötigt.
-Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code geschen kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten. 
+Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. ein LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version ein eigenes Binding benötigt.
+Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code geschehen kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen, z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses Ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten.
 Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen \cite{OPENHUB00:OH}.
 
 \subsection{Things}
 Things stellen die Repräsentation von physischen Geräten/Services innerhalb von openHAB dar. Sie bestehen neben verschiedenen Status und Konfigurationsinformationen aus Channels, welche für die Ansteuerung der Things benötigt werden und näher in Kapitel \ref{sec:channels} beschrieben werden.
-Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese sind:
+Things können auf drei verschiedene Arten zu openHAB hinzugefügt werden. Diese sind:
 \begin{itemize}
 	\item Per Web-Oberfläche automatisch: Nachdem das für das Thing benötigte Binding installiert wurde, erscheint das Thing in der Inbox, siehe Abbildung \ref{fig:thing-add-paper-ui}. Von dieser Inbox aus, kann das Thing mit wenigen Klicks openHAB hinzugefügt werden. Durch diese Methode werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich bearbeitet werden z.B. umbenannt werden. 
 \end{itemize}
@@ -182,7 +182,7 @@ Things können auf drei verschiedene Arten openHAB hinzugefügt werden. Diese si
 }
 
 \subsection{Channels} \label{sec:channels}
-Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben Parameter übergeben. So bietet der verwendete LG Fernseher wie in Abbildung \ref{fig:channel-list} zu sehen eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren, als auch Aktionen, welche Things ausführen können. Ein gewünschte Aktion eines Things kann ohne den passenden Channel diese Aktion nicht ausgeführt werden.
+Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben, Parameter übergeben. So bietet der verwendete LG Fernseher, wie in Abbildung \ref{fig:channel-list} zu sehen, eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren als auch Aktionen, welche Things ausführen können. Eine gewünschte Aktion eines Things kann ohne den passenden Channel diese Aktion nicht ausgeführt werden.
 
 {
 	\centering
@@ -192,18 +192,18 @@ Channels sind Kommunikationswege welche von Things angeboten werden und diese mi
 }
 
 \subsection{Items}
-Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden. Bei einem Item handelt es sich um alle Informationen, welche es über eine Aktion gibt. So hat ein Item u.a. Bezeichnung, Kategorie, Typ, Status als auch Konfigurationen z.B. dass nur Werte von 0 - 50 übertragen werden. Diese Informationen werden benötigt um Gruppierungen zu ermöglichen, den Status eines Gerätes abzufragen (z.B. Lautstärke eines Fernsehers) und auch mit einem Thing zu kommunizieren bzw. Aktionen auszuführen. Der Typ eines Items gibt an, welche Basistypen von dem Item akzeptiert/konsumiert werden können. Solche Basistypen können einfache aus der Programmierung bekannte Typen wie String, Number, DateTime usw. sein, als auch komplexere openHAB spezifische Typen wie Location, Player oder Switch. Eine komplette Auflistung ist unter \url{https://www.openhab.org/docs/configuration/items.html#type} zu finden.
+Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden. Bei einem Item handelt es sich um alle Informationen, welche es über eine Aktion gibt. So hat ein Item u.a. Bezeichnung, Kategorie, Typ, Status als auch Konfigurationen z.B. dass nur Werte von 0 - 50 übertragen werden. Diese Informationen werden benötigt, um Gruppierungen zu ermöglichen, den Status eines Gerätes abzufragen (z.B. Lautstärke eines Fernsehers) und auch mit einem Thing zu kommunizieren bzw. Aktionen auszuführen. Der Typ eines Items gibt an, welche Basistypen von dem Item akzeptiert/konsumiert werden können. Solche Basistypen können sowohl einfache, aus der Programmierung, bekannte Typen wie String, Number, DateTime usw. sein, als auch komplexere openHAB spezifische Typen wie Location, Player oder Switch. Eine komplette Auflistung ist unter \url{https://www.openhab.org/docs/configuration/items.html#type} zu finden.
 
-Items sind essentiell um Aktionen auf der Web-Oberfläche dazustellen. So können diese in Gruppen oder Einzeln dargestellt werden um als Statusanzeige und/oder als manuelle Steuerung des Smart Home zu agieren. Für diese Steuerung ist anzumerken, dass jedem Item nur ein Channel zugeordnet werden kann, aber jedem Channel mehrere Items. Die Kardinalität ist somit Item 1 -> n Channel. 
+Items sind essentiell um Aktionen auf der Web-Oberfläche dazustellen. So können diese in Gruppen oder einzeln dargestellt werden um als Statusanzeige und/oder als manuelle Steuerung des Smart Homes zu agieren. Für diese Steuerung ist anzumerken, dass jedem Item nur ein Channel zugeordnet werden kann, aber jedem Channel mehrere Items. Die Kardinalität ist somit \textbf{Item 1 -> n Channel}.
 
-Items können wie bei openHAB üblich ebenfalls über die Web-Oberfläche als auch im Code erzeugt werden. Da dieses Prinzip schon hinreichend erklärt wurde, wird mit Ausnahme der automatischen Namensgebung nicht näher darauf eingegangen. Diese Namensgebung ist in erster Linie frei, jedoch vergibt openHAB über die Web-Oberfläche als Item-Name eine Kombination aus Thing- und Channel-Namen wodurch sehr gut ersichtlich wird, wofür ein Item genutz werde kann z.B. \textit{LGWebOSTVUH620V\_VolumeTV} oder \textit{HueWhiteLamp1\_Brightness}.
+Items können wie bei openHAB üblich ebenfalls über die Web-Oberfläche sowie im Code erzeugt werden. Da dieses Prinzip schon hinreichend erklärt wurde, wird mit Ausnahme der automatischen Namensgebung nicht näher darauf eingegangen. Diese Namensgebung ist in erster Linie frei, jedoch vergibt openHAB über die Web-Oberfläche als Item-Name eine Kombination aus Thing- und Channel-Namen wodurch sehr gut ersichtlich wird, wofür ein Item genutz werde kann, z.B. \textit{LGWebOSTVUH620V\_VolumeTV} oder \textit{HueWhiteLamp1\_Brightness}.
 
 \subsection{Rules}
-Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden aktuell standardmäßig durch Programmieren erzeugt. Um Rules zu erzeugen, wird eine einfache WENN-DANN-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können Bedingungen (WENN) von Items, Member of (Gruppierungen), Time, System oder Things stammen. Genauer kann die Bedingung durch eine verschiedene Formen eingeschränkt werden wie z.B. received command [<command>],  received update [<state>] oder changed [from <state>] [to <state>] usw.
-Wenn diese Bedingung erfüllt ist wird im DANN-Pfad die Reaktion definiert. So können Item oder ganze Gruppen von Items angesprochen werden. Hierbei wird ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
-Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen um aus mehreren Rules eine zu machen.
+Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden aktuell standardmäßig durch Programmieren erzeugt. Um Rules zu erzeugen, wird eine einfache WENN-DANN-Struktur verwendet. Diese Regeln können auf verschiedene Bedingungen "lauschen". So können Bedingungen (WENN) von Items, Member of (Gruppierungen), Time, System oder Things stammen. Genauer kann die Bedingung durch eine verschiedene Formen eingeschränkt werden wie z.B. \textbf{received command [<command>]},  \textbf{received update [<state>]} oder \textbf{changed [from <state>] [to <state>]}.
+Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder ganze Gruppen von Items angesprochen werden. Hierbei wird an ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
+Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen, um aus mehreren Rules eine zu machen.
 
-Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format Sonderzeichen wie >, <, =, ! nicht funktionieren. Des Weiteren ist das einfügen von zusätzlichen Strukturelementen über das experimentelle Add-on nicht möglich.
+Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format Sonderzeichen wie \textbf{>, <, =, !} nicht funktionieren. Des Weiteren ist das Einfügen von zusätzlichen Strukturelementen über das experimentelle Add-on nicht möglich.
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
@@ -221,14 +221,14 @@ end
 \end{lstlisting}
 
 \subsection{Sitemaps}
-Eine Sitemap dient als Übersicht, Gruppierung und Visualisierung des Smart Home. So kann durch die Sitemap das Smart Home z.B. in Räume, Stockwerke oder den Außenbereich unterteilt werden und diesen Bereichen Items in Einzelform oder Gruppen zugewiesen werden. Dadurch ist es möglich manuell Items zu betätigen oder eine Übersicht über einen Bereich zu erhalten. Es gibt neben Sitemaps noch die Möglichkeit verschiedene Dashboards und Panels zu erzeugen, welche ebenfalls genutzt werden können um individuelle Übersicht oder Steuerung zu erhalten.
-Wie im ganzen openHAB ist es auch hier möglich per Code oder openHAB vorinstallierten Editoren sich seine eigenen Sitemap, Dashboard oder Panel zu erzeugen
+Eine Sitemap dient als Übersicht, Gruppierung und Visualisierung des Smart Homes. So kann durch die Sitemap das Smart Home z.B. in Räume, Stockwerke oder den Außenbereich unterteilt werden und diesen Bereichen Items in Einzelform oder Gruppen zugewiesen werden. Dadurch ist es möglich manuell Items zu betätigen oder eine Übersicht über einen Bereich zu erhalten. Es gibt neben Sitemaps noch die Möglichkeit verschiedene Dashboards und Panels zu erzeugen, welche ebenfalls genutzt werden können um individuelle Übersicht oder Steuerung zu erhalten.
+Wie im ganzen openHAB ist es auch hier möglich per Code oder openHAB vorinstallierten Editoren sich seine eigenen Sitemap, Dashboard oder Panel zu erzeugen.
 
 \section{Programmieren in und für openHAB} \label{sec:custom-development}
-openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt an dem er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
+openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt, an dem er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
 
 \subsection{Programmierung für den Nutzer}
-Als Nutzer ist es möglich viele Funktionen von openHAB zu Nutzen, ohne programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} verwiesen, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHab-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openhab2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind.
+Als Benutzer ist es möglich viele Funktionen von openHAB zu nutzen, ohne dabei programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} beschrieben, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHab-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openhab2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind.
 
 {
 	\centering
@@ -237,14 +237,14 @@ Als Nutzer ist es möglich viele Funktionen von openHAB zu Nutzen, ohne programm
 	\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
 }
 
-\subsection{offen für andere Systeme}
+\subsection{Offen für andere Systeme}
 openHAB bietet durch eine REST-API anderen Systemen die Möglichkeit, openHAB zu integrieren. Da diese REST-API die Funktionalität der Web-Oberfläche widerspiegelt, können andere Systemen die volle Funktionalität der openHAB Web-Oberfläche ebenfalls nutzen. Diese REST-API ermöglicht es auch für mobile Geräte openHAB Oberflächen zu entwickeln, welche bereits für Android, iOS und als Windows App angeboten werden.
 
-Die REST-API ermöglicht es auch Entwicklungsumgebungen informationen aus dem openHAB System zu erhalten und dadurch das Entwickeln für openHAB zu erleichtern. Visual Studio Code, Eclipse und IntelliJ stellen Add-Ons/Extensions zur Verfügung. Diese bieten neben farblich kenntlichem Code noch Things und Items an, welche über die REST-API erhalten wurden. Dadurch können Fehler beim Abtippen von Bezeichnungen oder IDs vermieden werden und bei der Entwicklung kann ein guter Überblick über die zu verwenden Komponenten erhalten werden, ohne über openHABs Web-Oberfläche zu navigieren.
+Die REST-API ermöglicht es auch Entwicklungsumgebungen Informationen aus dem openHAB System zu erhalten und dadurch das Entwickeln für openHAB zu erleichtern. Visual Studio Code, Eclipse und IntelliJ stellen Add-Ons/Extensions zur Verfügung. Diese bieten neben farblich kenntlichem Code noch Things und Items an, welche über die REST-API erhalten wurden. Dadurch können Fehler beim Abtippen von Bezeichnungen oder IDs vermieden werden und bei der Entwicklung kann ein guter Überblick über die zu verwendenden Komponenten erhalten werden, ohne über openHABs Web-Oberfläche zu navigieren.
 
-\subsection{eigene Binding}
-Sollte es bei openHAB keine passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nicht im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für meisten Add-ons nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf das Binding eingegangen.
-Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{OPENHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
+\subsection{Eigenes Binding}
+Sollte es bei openHAB kein passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nichts im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für Add-ons meisten nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf die Entwicklung von Bindings eingegangen.\\
+Um ein Binding zu entwickeln, bietet openHAB ein skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{OPENHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen, um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler Schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
 
 {
 	\centering
@@ -253,7 +253,7 @@ Um ein Binding zu entwickeln bietet openHAB eine skeleton-script welches eine ko
 	\caption{Skelett für Binding \label{fig:own_binding_skeleton}}
 }
 
-Die Binding-Vorlage gibt u.a. vor, dass im XML-Format beschreiben werden muss, mit welchem Gerät das Binding stattzufinden hat und welche Things inklusive Channels erzeugt werden. In JAVA werden benötigte Binding-Handler und Konfigurationen geschrieben. Abbildung \ref{lst:binding-coding} kann entnommen werden, wie intensiv die Unterstützung durch Binding-Vorlage ist. So wird nicht nur mit einem Beispiel gezeigt, wie auf Informationen, welche durch einen Channel übertragen werden reagiert werden kann, sondern auch auf Besonderheiten hingewiesen und was in welcher Funktion zu entwickeln ist. 
+Die Binding-Vorlage gibt u.a. vor, dass im XML-Format beschrieben werden muss zu welchem Gerät das Binding gehört und welche Things inklusive Channels erzeugt werden. In Java werden benötigte Binding-Handler und Konfigurationen geschrieben. Codebeispiel \ref{lst:binding-coding} kann entnommen werden, wie intensiv die Unterstützung durch die Binding-Vorlage ist. So wird nicht nur mit einem Beispiel gezeigt, wie auf Informationen, welche durch einen Channel übertragen werden reagiert werden kann, sondern auch auf Besonderheiten hingewiesen und was in welcher Funktion zu entwickeln ist.
 
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Handler.java Ausschnitt,label=lst:binding-coding]
@@ -301,37 +301,37 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
+		Für unser System wählen wir einen Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen, um besser mit openHAB arbeiten zu können. Damit ist unser Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können wir die meisten Einstellungen vornehmen um Geräte und Systeme einzubinden und eine UI zu Erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig.
 		Damit wir unser System später leicht bedienen können, wird ein 7 Zoll Touch-Monitor verwendet um ein HAB Panel anzuzeigen. Dank Touch-Funktionalität funktioniert er als Steuersystem und unser System kann jederzeit bedient werden.
 		
 		
 	\subsubsection{Eingebundene Geräte}
-		In Openhab lassen sich eine vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus die in einem üblichen Wohnzimmer nützlich sind.
+		In Openhab lassen sich eine Vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus, die in einem üblichen Wohnzimmer nützlich sind.
 		\begin{itemize}
 			\item Hue Bridge
 			\item  Hue LED
 			\item Osram Lightify LED
 			\item LG Smart TV
 		\end{itemize}
-		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge wenn wir die Lampen ansprechen wollen. Dies passiert allerdings im Hintergrund, In der openHAB Weboberfläche stellt uns die HUE Bridge jede Lampe aber als eigenes Item dar, wodurch wir scheinbar direkt mit ihnen kommunizieren können.
+		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leichter viele Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge, wenn wir die Lampen ansprechen wollen. Dies passiert allerdings im Hintergrund. In der openHAB Weboberfläche stellt uns die HUE Bridge jede Lampe aber als eigenes Item dar, wodurch wir scheinbar direkt mit ihnen kommunizieren können.
 		
 		Bei beiden Lampen lässt sich Helligkeit und Farbtemperatur anpassen. Der Fernseher lässt sich an und ausschalten und man kann die Lautstärke und das Programm verändern.
 		
 		\subsubsection{Eingebundene Services}
-		Wir wollen in unser System die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel nützlich.
+		Wir wollen in unser System die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap, um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel nützlich.
 		
 		Spotify ermöglicht es uns über die Developer Webseite von Spotify eine Webanwendung zu registrieren. Damit können wir unser System autorisieren unseren Spotify Account zu steuern. Unser System schickt dabei Befehle an die Server von Spotify, welche wiederum die Befehle an den aktuellen Spotify Client weiterleiten. Wir müssen also nicht direkt Spotify auf unserem Raspberry installieren. Das steigert die Performance und ist in der Handhabung angenehmer. Wir wollen in unserem System das aktuelle Lied anzeigen und es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten und stoppen.
 		
-		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Wir wählen die kostenlose Basisversion und erhalten einen API Key um unser System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen.
+		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Wir wählen die kostenlose Basisversion und erhalten einen API Key, um unser System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen.
 		
 		\subsubsection{Integration der Geräte und Services}
 		Die Integration der Geräte erfolgt über die Paper UI des Webfrontend unseres openHAB Systems. 
 		
 		Für die Integration der Lampen müssen wir diese zuerst über die HUE App mit der Hue Bridge verbinden. Danach wählen wir das HUE Binding. Wir konfigurieren die IP Adresse der Bridge und unser System erkennt die hue Bridge automatisch. Die Bridge kann jetzt als Thing in unser System aufgenommen werden. Dadurch erhalten wir auch automatisch die Lampen als Things. Bei allen drei Lampen erstellen wir je zwei Items um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es uns auch den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify protokoll nutzt, das die Hue Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
 		
-		Den LG Smart TV integrieren wir mit dem LG WebOS Binding. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Wir können dann Items erzeugen um ihn an und auszuschalten und die Lautstärke zu regeln.
+		Den LG Smart TV integrieren wir mit dem LG WebOS Binding. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Wir können dann Items erzeugen, um diesen an- und auszuschalten und die Lautstärke zu regeln.
 		
-		Spotify integrieren wir über das Spotify Binding. Wir hinterlegen unsere ClientId und Secret Key welche wir in der Spotify Developer Console angelegt haben. Das Binding erstellt uns ein Spotify Player Bridge Thing mit welchem wir nun unseren Account steuern können. Wir erzeugen Items um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
+		Spotify integrieren wir über das Spotify Binding. Wir hinterlegen unsere ClientId und Secret Key, welche wir in der Spotify Developer Console angelegt haben. Das Binding erstellt uns ein Spotify Player Bridge Thing mit welchem wir nun unseren Account steuern können. Wir erzeugen Items, um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
 		
 		Um unsere Wetterdaten abrufen zu können, brauchen wir das Weather Binding. Für dieses Binding ist eine manuelle Einrichtung auf dem Raspberry nötig. Per SSH muss die services/weather.cfg angepasst werden:
 		
@@ -344,55 +344,58 @@ location.home.latitude=47.8011
 location.home.longitude=13.0448
 		\end{lstlisting}
 		
-		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
-		Nach diesen EInstellungen können wir Items erzeugen.
+		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
+		Nach diesen Einstellungen können wir Items erzeugen.
 		
 				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
-Number   Temperature   "Temperature [%.2f (*°*)C]"   {weather="locationId=home, type=temperature, property=current"}
-Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
-Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
+Number   Temperature   "Temperature [%.2f (*°*)C]"
+{weather="locationId=home, type=temperature, property=current"}
+Number   Precip_Probability   "Precip probability [%d %%]"
+{weather="locationId=home, type=precipitation, property=probability"}
+Number   Wind_Speed           "Windspeed [%.2f km/h]"
+{weather="locationId=home, type=wind, property=speed"}
 		\end{lstlisting}
 		
-		Daraus erzeugt openHAB drei Items welche die Temperatur, die Niederschlagswarscheinlichkeit und die Windgeschwindikgeit beinhalten. 
-		Wir verwenden bei unseren Items die weatherId "home". Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
+		Daraus erzeugt openHAB drei Items welche die Temperatur, die Niederschlagswahrscheinlichkeit und die Windgeschwindigkeit beinhalten.
+		Wir verwenden bei unseren Items die weatherId "`home"'. Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
 		
 		\subsubsection{Erstellung des HAB Panels}
 		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent wechselt. Damit kann die Lampe ein und ausgeschaltet werden.
-
-		Für unser Panel greifen wir auf Standartkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
-
+		
+		Für unser Panel greifen wir auf Standardkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
+		
 	\begin{minipage}{\textwidth}
 		\centering
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/openHabPanel.png}
 		\caption{Erstelltes OpenHab Panel \label{fig:activity-diagram}}
 	\end{minipage}
+		
+		In unserem Panel sehen wir zuerst den Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit dargestellt. Letzteres ist ein Standardwidget von openHab.
+		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track und Lautstärke von Spotify steuern kann.
 
-		In unserem Panel sehen wir zuerst den Namen des Dashboardes "Home" und darunter die aktuelle Uhrzeit, letzteres ist ein Standartwidget von openHab.
-		Darunter ist ein Label welcher den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller welcher Track und Lautstärke von Spotify steuern können.
+		Ganz unten sehen wir ein selbst geschriebenes Widget, welches die Wetterdaten anzeigt.
 
-		Ganz unten sehen wir ein selbst geschriebenes Widget welches die Wetterdaten anzeigt.
-
-		In der rechten unteren Ecke befinden sich zwei Buttons um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Commandozeile ausführen.
-
+		In der rechten unteren Ecke befinden sich zwei Buttons, um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Kommandozeile ausführen.
+		
 		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Button schaltet ihn an und aus, der Slide regelt die Lautstärke.
 		
 		Alle restlichen Widgets steuern die Lampen. Das große Widget kann alle Lampen im Zimmer an und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die Slider lässt sich die Helligkeit und Weißfarbe aller Lampen einstellen.
-
+		
 		\subsubsection{Kontrollstation einrichten}
-		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm auf welchem sich der Raspberry befestigen lässt und welcher direkt vom Raspberry Strom bezieht.
+		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm, auf welchem sich der Raspberry befestigen lässt und direkt vom Raspberry Strom bezieht.
 		Die Kontrollstation wird dann unser HAB Panel anzeigen und uns so Zugriff auf unser System ermöglichen.
 
-		Um auf auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mouecursor ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
+		Um auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können, installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
 
-		\subsubsection{	Externer Zugriff}
-		Eine häufige Anforderung an Smart Home Systeme ist, auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
-		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern Bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
+		\subsubsection{Externer Zugriff}
+		Eine häufige Anforderung an Smart Home Systeme ist auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab, muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
+		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
 		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden.
-
-
+		
+		
 		\subsection{Verteilungsarchitektur unseres Smart Home Systems}
-
+		
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
@@ -400,11 +403,11 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
-
+	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da. doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
+	
 \section{Datenintegrität und Sicherheit}
 
-Dieses Kapitel beinhaltet einen Überblick die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
+Dieses Kapitel bietet einen Überblick über die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
 \\
 Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hart-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
 \\
@@ -413,9 +416,9 @@ OpenHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Vel�
 	\item intern: Thing - openHAB
 	\item extern mit logischem Thing: OpenHAB-Remote Web Service
 	\item extern mit physikalischem Thing: OpenHAB-Remote Web Service Thing
-\end{itemize}
+\end{itemize}	
 Interne Kommunikation zwischen Thing und OpenHAB Instanz findet typischerweise über WLAN statt, welches mithilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von OpenHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
-Bei den zwei externen Punkten sind laut
+Bei den zwei externen Punkten sind laut 
 Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit OpenHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
 \\
 Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
@@ -439,7 +442,7 @@ Weiterhin werden die technischen Grundlagen, Programmier-Schnittstellen und mehr
 Abschließend geht diese Arbeit auf Datenintegrität und Sicherheit ein.
 
 \subsection{Schlussfolgerung}
-Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Fachbereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das in diesem Bereich bekannte open-source Tool OpenHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass OpenHAB aktiv von der wachsenden Community weiterentwickelt wird. Weiterhin ist es möglich, OpenHAB sowohl privat als auch kommerziell einzusetzen, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
+Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Fachbereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das in diesem Bereich bekannte open-source Tool OpenHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass OpenHAB aktiv von einer wachsenden Community weiterentwickelt wird und sowohl privat als auch kommerziell eingesetzt werden kann, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
 \\
 \textbf{TODO !!! Hier stehen eure Teile des Fazits !!! TODO}\\
 
@@ -457,10 +460,9 @@ Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt 
 \end{itemize}
 
 \\
-Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die Unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
+Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
 \\
 \textbf{TODO :::: Resümee:}
-
 
 
 \subsection{Stärken}

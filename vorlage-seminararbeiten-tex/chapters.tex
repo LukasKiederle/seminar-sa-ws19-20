@@ -107,7 +107,7 @@ Dadurch, dass die Bachelorarbeit von P. Gersbacher vor über einem Jahr veröffe
 In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen. Dabei werden die Ergebnisse von P. Gersbacher als zusätzliche Quelle genutzt.
 
 
-\section{openHAB aus technischer Sicht}\label{sec:technischeSicht}
+\section{Komponenten von openHAB}\label{sec:technischeSicht}
 In diesem Kapitel werden die grundlegenden Komponenten, welche openHAB verwendet, dargestellt. Desweiteren wird auf die  Beziehung der Komponenten untereinander eingegangen. 
 Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es z.B. möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den entsprechenden Unterkapiteln beschrieben.
@@ -442,10 +442,6 @@ Abschließend geht diese Arbeit auf Datenintegrität und Sicherheit ein.
 Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Fachbereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das in diesem Bereich bekannte open-source Tool OpenHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass OpenHAB aktiv von der wachsenden Community weiterentwickelt wird. Weiterhin ist es möglich, OpenHAB sowohl privat als auch kommerziell einzusetzen, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
 \\
 \textbf{TODO !!! Hier stehen eure Teile des Fazits !!! TODO}\\
-\\
-Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die Unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
-\\
-\textbf{TODO :::: Resümee:}
 
 \subsection{Technischer Sicht}
 \begin{itemize}
@@ -459,6 +455,13 @@ Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen nutzt. Da
 	\item Das ganze muss ich noch in Text wursteln.
 	\item
 \end{itemize}
+
+\\
+Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die Unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
+\\
+\textbf{TODO :::: Resümee:}
+
+
 
 \subsection{Stärken}
 Some of openHAB's strengths are:

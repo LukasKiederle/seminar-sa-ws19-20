@@ -405,6 +405,28 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 
 	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da. doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
 	
+\subsection{Integration der Big Player}
+Amazon Alexa und Google Home sind die bekanntesten Voice Services laut Google Trends. \cite{GOOGLET01:AG} Damit ist es möglich über verbale Kommandos bestimmte Funktionalitäten anzusteuern. Beispielsweise das abspielen eines Radiosenders oder das An- und Ausschalten einer Lampe.\\
+Sowohl der Google Home Assistent als auch Amazons Alexa sind in das Heimautomatisierungstool openHAB integrierbar. In den folgenden zwei Unterkapiteln wird dies genauer erläutert.\cite{OPENHAB02:OH}
+
+\subsubsection{Amazon Alexa}
+In openHAB kann ein zertifizierter Amazon Alexa Smart Home Skill verwendet werden. Damit ist es möglich eine ganzes Smart Home durch verbale Kommandos zu verwenden. Es können dadurch Lichter, Schlösser, Thermostate, Sensoren und viele weitere Geräte angesteuert werden. Dies ist möglich durch Alexa oder den Echo Dot.\cite{ALEXA01:AL}\cite{ALEXA02:AL} \\
+\\
+Seit der Version 2.5 nutzt der Alexa Skill von openHAB die neuste Smart Home Skill API V3. Dadurch können nun viele Smart Home Geräte deutlich vielseitiger und präziser angesprochen werden. Weiterhin ist Abwärtskompatibilität zu früheren Versionen gewährleistet.\cite{OPENHAB02:OH}
+
+\subsubsection{Google Home}
+\begin{itemize}
+	\item Google Home Integration möglich
+	\item With the Action you can voice control your openHAB items and it supports lights, plugs, switches and thermostats. The openHAB Action comes with multiple language support like English, German or French language.
+	\item The openHAB Action links your openHAB setup through the myopenHAB.org cloud service to the Google Assistant platform
+	\item openHAB Cloud Connector configured using myopenHAB.org . (Items DO NOT need to be exposed to and will not show up on myopenHAB.org
+	, this is only needed for the IFTTT service!)
+	Google account.
+	Google Home or Google Home mini.
+	
+	\url{https://www.openhab.org/docs/ecosystem/google-assistant/}
+\end{itemize} 
+
 \section{Datenintegrität und Sicherheit}
 
 Dieses Kapitel bietet einen Überblick über die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
@@ -446,16 +468,15 @@ Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt 
 \\
 \textbf{TODO !!! Hier stehen eure Teile des Fazits !!! TODO}\\
 
-Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einen Benutzer zur Verfügung stehen, sind klar Strukturiert und besitzen eine Abstraktionsstufe, welche gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-on Architektur einige klare Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch bereitsgestellten Skripte vereinfacht, was dazu führt, dass openHAB relative einfach um neue Geräte erweitert werden kann.
+Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einen Benutzer zur Verfügung stehen, sind klar strukturiert und besitzen eine Abstraktionsstufe, welche gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der Zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-on Architektur einige klare Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch die bereitgestellten Skripte vereinfacht, was dazu führt, dass openHAB relative einfach um neue Geräte erweitert werden kann.
 \\
 Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
 \\
 \textbf{TODO :::: Resümee:}
 
 
-
 \subsection{Ausblick}
-Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet. Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
+Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet.\cite{OPENHAB02:OH} Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
 
 %%% Local Variables: 
 %%% mode: latex

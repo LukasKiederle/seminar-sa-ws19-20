@@ -287,63 +287,9 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 \end{lstlisting}
 
 
-\section{Datenintegrität und Sicherheit}
-
-Dieses Kapitel beinhaltet einen Überblick die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
-\\
-Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hart-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
-\\
-OpenHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Velázquez über "`Securing openHAB Smart Home through User Authentication and Authorization"', auf Sicherheit geprüft.\cite{MA01:OPH} Dabei untersucht der Autor mithilfe von Wireshark, wie OpenHAB kommuniziert und kommt zu dem Resultat, dass es drei verschiedene Kommunikationsszenarien gibt, die sicherheitstechnische Relevanz haben. Alle drei Szenarien nutzen Bindings als Mittel der Kommunikation. Diese sind:
-\begin{itemize}
-	\item intern: Thing - openHAB
-	\item extern mit logischem Thing: OpenHAB-Remote Web Service
-	\item extern mit physikalischem Thing: OpenHAB-Remote Web Service Thing
-\end{itemize}	
-Interne Kommunikation zwischen Thing und OpenHAB Instanz findet typischerweise über WLAN statt, welches mithilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von OpenHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
-Bei den zwei externen Punkten sind laut 
-Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit OpenHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
-\\
-Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
-
-\subsection{Interne vorhandene Funktionalitäten}
-OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
-Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
-\\
-Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
-
-\subsection{Externe Erweiterungsmöglichkeiten}
-Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
-Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angesteuert wird.\\
-Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
-
 \section{Verwendung von OpenHAB}
-\subsection{Integration der Big Player}
-\begin{itemize}
-	\item Amazon Alexa und Echo Dot Integration möglich
-	\item Changes die mit v2.5 released wurden miteinbauen in das Kapitel:
-	\url{https://www.openhab.org/blog/2019-12-14-openhab-2-5-release.html}
-	\begin{itemize}
-		\item Alexa:
-		\begin{itemize}
-			\item This certified Amazon Smart Home Skill allows users to control their openHAB powered smart home with natural voice commands. Lights, locks, thermostats, AV devices, sensors and many other device types can be controlled through a user's Alexa powered device like the Echo or Dot.
-			\item \url{https://www.openhab.org/docs/ecosystem/alexa/}
-			\item \url{https://www.openhab.org/addons/bindings/amazonechocontrol/}
-		\end{itemize} 
-		\item Google Home
-		\begin{itemize}
-			\item Google Home Integration möglich
-			\item With the Action you can voice control your openHAB items and it supports lights, plugs, switches and thermostats. The openHAB Action comes with multiple language support like English, German or French language.
-			\item The openHAB Action links your openHAB setup through the myopenHAB.org cloud service to the Google Assistant platform
-			\item openHAB Cloud Connector configured using myopenHAB.org . (Items DO NOT need to be exposed to and will not show up on myopenHAB.org
-			, this is only needed for the IFTTT service!)
-			Google account.
-			Google Home or Google Home mini.
-			
-			\url{https://www.openhab.org/docs/ecosystem/google-assistant/}
-		\end{itemize} 
-	\end{itemize}
-	
-\end{itemize}
+
+
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
@@ -399,10 +345,10 @@ location.home.longitude=13.0448
 		\end{lstlisting}
 		
 		Dabei wurde der API Key für openWeatherMap hinterlegt und eine Locations names "home" angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
-		Danach können wir Items erzeugen. 
+		Nach diesen EInstellungen können wir Items erzeugen.
 		
-				\begin{lstlisting}[language=bash,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
-Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home, type=temperature, property=current"}
+				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lstweather.cfg]
+Number   Temperature   "Temperature [%.2f (*°*)C]"   {weather="locationId=home, type=temperature, property=current"}
 Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
 Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
 		\end{lstlisting}
@@ -411,54 +357,109 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=ho
 		Wir verwenden bei unseren Items die weatherId "home". Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
 		
 		\subsubsection{Erstellung des HAB Panels}
-		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Items können dabei belieb oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent (entrspicht an) oder 0 Prozent (entrspricht aus) wechselt.
+		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent wechselt. Damit kann die Lampe ein und ausgeschaltet werden.
+
+		Für unser Panel greifen wir auf Standartkomponenten, Widget aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
+
+	\begin{minipage}{\textwidth}
+		\centering
+		\captionsetup{type=figure}
+		\includegraphics[width=1\textwidth]{\figdir/openHabPanel.png}
+		\caption{Erstelltes OpenHab Panel \label{fig:activity-diagram}}
+	\end{minipage}
+
+		In unserem Panel sehen wir zuerst den Namen des Dashboardes "Home" und darunter die aktuelle Uhrzeit, letzteres ist ein Standartwidget von openHab.
+		Darunter ist ein Label welcher den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller welcher Track und Lautstärke von Spotify steuern können.
+
+		Ganz unten sehen wir ein selbst geschriebenes Widget welches die Wetterdaten anzeigt.
+
+		In der rechten unteren Ecke befinden sich zwei Buttons um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Commandozeile ausführen.
+
+		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Button schaltet ihn an und aus, der Slide regelt die Lautstärke.
 		
-		
-\begin{itemize}
-	\item Welche Geräte haben wir mit OpenHAB verbunden?
-	\begin{itemize}
-		\item Spotify
-		\begin{itemize}
-			\item Lautstärkeregler
-			\item Aktueller Song Display
-		\end{itemize}
-		\item LG Smart TV
-		\begin{itemize}
-			\item Lautstärkeregler
-			\item An- und ausschalten
-			\item One-Way-Chat
-		\end{itemize}
-		\item Lampen
-	\end{itemize}
-	\item Wie haben wir die Geräte verbunden?
-	\begin{itemize}
-		\item \textbf{Verschiedene Binding:}
-		\item Spotify Binding
-		\item LG Smart TV Binding
-	\end{itemize}
-	\item On the server the configuration is stored somewhere in userdata (/var/lib/openhab2 for apt-get installs).
-	In an upgrade the userdata folder is preserved when using apt-get.
-\end{itemize}
+		Alle restlichen Widgets steuern die Lampen. Das große Widget kann alle Lampen im Zimmer an und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die Slider lässt sich die Helligkeit und Weißfarbe aller Lampen einstellen.
+
+		\subsubsection{Kontrollstation einrichten}
+		Um unser System bequem steuern zu können, wollen wir eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichten. Wir wählen dafür einen Bildschirm auf welchem sich der Raspberry befestigen lässt und welcher direkt vom Raspberry Strom bezieht.
+		Die Kontrollstation wird dann unser HAB Panel anzeigen und uns so Zugriff auf unser System ermöglichen.
+
+		Um auf auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können installieren wir PIXEL. Dabei wird der Browser Chromium mit ausgeliefert. Wir müssen verschiedene Einstellungen vornehmen damit unser Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mouecursor ausgeblendet werden und unser Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi eingestellt werden.
+
+		\subsubsection{	Externer Zugriff}
+		Eine häufige Anforderung an Smart Home Systeme ist, auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese installiert man zuerst das open Hab Cloud Connector Addon. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab muss man diesen Secret-Key und ein von openHab erzeugte UUID hinterlegen. Danach ermöglicht das Addon eine Verbindung nach außen.
+		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern Bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
+		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden.
+
+
+		\subsection{Verteilungsarchitektur unseres Smart Home Systems}
 
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/activitydiagram-lg-light-rule.png}
-	\caption{Aktivitätsdiagram für eine Rule \label{fig:activity-diagram}}
+	\includegraphics[width=1\textwidth]{\figdir/VerteilungsarchitekturOpenHab.png}
+	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-\subsection{Umgang mit OpenHAB}
+	Unsere Verteilungsarchitektur zeigt wie die verschiedenen Geräte und Services mit openHAB verbunden sind. Diese Architektur stellt das Smart Home System für einen Raum da, doch ist dies beliebig erweiterbar ohne das die Architektur komplizierter wird. Der Vorteil von openHAB ist, dass sich hier beliebig viele weitere Geräte und Services anbinden lassen. Da alle Geräte und Services über Bindings integriert werden, ist diese Schicht vom User weg abstrahiert. Dies ermöglicht in einer Umgebung, in der es viele verschiedene Anbieter von Smart-Home-Fähigen Geräten und möglicher Services gibt, dem User eine reduzierte Komplexität darzubieten und ihn so stark zu unterstützen.
+
+\section{Datenintegrität und Sicherheit}
+
+Dieses Kapitel beinhaltet einen Überblick die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
+\\
+Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hart-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
+\\
+OpenHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Velázquez über "`Securing openHAB Smart Home through User Authentication and Authorization"', auf Sicherheit geprüft.\cite{MA01:OPH} Dabei untersucht der Autor mithilfe von Wireshark, wie OpenHAB kommuniziert und kommt zu dem Resultat, dass es drei verschiedene Kommunikationsszenarien gibt, die sicherheitstechnische Relevanz haben. Alle drei Szenarien nutzen Bindings als Mittel der Kommunikation. Diese sind:
 \begin{itemize}
-	\item Das meiste klickt man sich zusammen: Bindings, Rules, Channels, Items, Things
-	\item Implementierung von rules scheint idiotensicher, weil:
-	\begin{itemize}
-		\item einfacher Syntax
-		\item Abhängigkeiten managed Openhab
-	\end{itemize}
-	\item Bindings schreiben scheint eher schwieriger
+	\item intern: Thing - openHAB
+	\item extern mit logischem Thing: OpenHAB-Remote Web Service
+	\item extern mit physikalischem Thing: OpenHAB-Remote Web Service Thing
 \end{itemize}
+Interne Kommunikation zwischen Thing und OpenHAB Instanz findet typischerweise über WLAN statt, welches mithilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von OpenHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
+Bei den zwei externen Punkten sind laut
+Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit OpenHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
+\\
+Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
+
+\subsection{Interne vorhandene Funktionalitäten}
+OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
+Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
+\\
+Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
+
+\subsection{Externe Erweiterungsmöglichkeiten}
+Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
+Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angesteuert wird.\\
+Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
+
 
 \section{Fazit}
+\subsection{Zusammenfassung}
+Diese Arbeit analysiert das open-source Heimautomatisierungstool OpenHAB auf Markttauglichkeit und Benutzbarkeit. Zu Beginn wird dafür erklärt, was OpenHAB ist und wofür es verwendet werden soll. Anschließend folgt eine Bewertung des Projektes mithilfe von Open Hub und einer Facharbeit. Das daraus resultierende Ergebnis besagt, dass OpenHAB ein gutes Heimautomatisierungstool ist und auch im Vergleich zu seinesgleichen auf dem Markt etabliert ist.\\
+Weiterhin werden die technischen Grundlagen, Programmier-Schnittstellen und mehrere Anwendungsbeispiele in den darauffolgenden Kapiteln erläutert.\\
+Abschließend geht diese Arbeit auf Datenintegrität und Sicherheit ein.
+
+\subsection{Schlussfolgerung}
+Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Fachbereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das in diesem Bereich bekannte open-source Tool OpenHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass OpenHAB aktiv von der wachsenden Community weiterentwickelt wird. Weiterhin ist es möglich, OpenHAB sowohl privat als auch kommerziell einzusetzen, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
+\\
+\textbf{TODO !!! Hier stehen eure Teile des Fazits !!! TODO}\\
+\\
+Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die Unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
+\\
+\textbf{TODO :::: Resümee:}
+
+\subsection{Technischer Sicht}
+\begin{itemize}
+	\item Komponenten sind klar sturkturiert.
+	\item Gute Abstraktionen
+	\item Namensgebung nicht optimial, aber ziemlich gut
+	\item Möglichkeiten der Erweiterungen sind sehr klar incl Sturktur vorgegeben, wo doku existiert. ohne Doku schiwerig
+	\item Integration in Fremdsysteme mit REST sehr einfach und gut dokumentiert mit swaggerUI
+	\item Entwickeln eigener Bindings sehr strukturiert vorgeben um integration zu ermöglichen
+	\item
+	\item Das ganze muss ich noch in Text wursteln.
+	\item
+\end{itemize}
+
 \subsection{Stärken}
 Some of openHAB's strengths are:
 
@@ -477,36 +478,11 @@ Giving you the most flexible tool available to make almost any home automation w
 		\item OpenHAB Serial Device Binding wurde auch nicht angezeigt, um Geräte darüber zu suchen
 	\end{itemize}
 \end{itemize}
-\subsection{Technischer Sicht}
-\begin{itemize}
-	\item Komponenten sind klar sturkturiert. 
-	\item Gute Abstraktionen
-	\item Namensgebung nicht optimial, aber ziemlich gut
-	\item Möglichkeiten der Erweiterungen sind sehr klar incl Sturktur vorgegeben, wo doku existiert. ohne Doku schiwerig
-	\item Integration in Fremdsysteme mit REST sehr einfach und gut dokumentiert mit swaggerUI
-	\item Entwickeln eigener Bindings sehr strukturiert vorgeben um integration zu ermöglichen
-	\item
-	\item Das ganze muss ich noch in Text wursteln. 
-	\item
-\end{itemize}
 
-\subsection{Fazit Bewertung und Sicherheit}
-\begin{itemize}
-	\item aktive Community, die auch wächst
-	\item Weiterentwicklung ist zu sehen
-	\item Kann sowohl privat als auch kommerziell genutzt werden
-	
-	\item Ist prinzipiell Sicher, da HTTPS und SSH verwendet werden.
-	\item Bei Kommunikation mit Things und OpenHAB können Daten bei veralteten HTTP-nutzenden Verbindungen abgegriffen werden
-\end{itemize}
 
 \subsection{Ausblick}
-Outlook
-With the 2.5 release build, our development master branch has now become 3.0.0. This means that there will most likely be no openHAB 2.6 runtime in future, while there will still be 2.x updates on the add-ons, though. The focus of the core maintainers will clearly be on openHAB 3 from now on, which will bring bigger changes that have been discussed since a while: The existing UIs will be replaced by a single one, completely implemented from scratch. The "next-generation" rule engine will become the default one, bringing powerful Python-scripting to all users. Many more changes are discussed that will bring you a fully new experience, while offering an upgrade path for all existing users - so stay tuned!
+Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet. Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
 
-I would like to thank all our maintainers, contributors and users being such a fantastic community. It is awesome that we have reached another big milestone by shipping openHAB 2.5 and it has been a great journey so far - openHAB will celebrate its 10th anniversary next year! Please continue spreading the word and help growing the community.
-
-Enjoy the upcoming festive season, play with the new openHAB release and share your experiences with us, your family and your friends!
 
 
 \section{Infos:}

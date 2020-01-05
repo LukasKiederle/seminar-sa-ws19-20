@@ -396,7 +396,7 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-	Abbildung \ref stellt die Verteilungsarchitektur des erstellten Smart Home Systems dar. Es zeigt die verschiedenen Geräte und Services und wie sie mit openHAB verbunden sind. In der Darstellung sind Hardwarekomponenten durch einfache Rechtecke dargestellt und Softwarekomponenten durch Rechtecke mit zwei vertikalen Linien.
+	Abbildung \ref stellt die Verteilungsarchitektur des erstellten Smart Home Systems dar. In der Darstellung sind Hardwarekomponenten durch einfache Rechtecke dargestellt und Softwarekomponenten durch Rechtecke mit zwei vertikalen Linien. Die Verteilungsarchitektur zeigt die verschiedenen Geräte und Services und wie sie mit openHAB verbunden sind. Dabei sind alle Services und Geräte über Bindings verbunden. Der Touch Monitor ist direkt über HDMI mit dem Raspberry pi verbunden und zeigt das HAB Panel an, welches von der Weboberfläche des open HAB Systems bereitgestellt wird. Das hue Binding spricht die hue Bridge an, welche dann die Lampen steuert.
 	
 \subsection{Integration der Big Player}
 Amazon Alexa und Google Home sind die bekanntesten Voice Services laut Google Trends. \cite{GOOGLET01:AG} Damit ist es möglich über verbale Kommandos bestimmte Funktionalitäten anzusteuern. Beispielsweise das abspielen eines Radiosenders oder das An- und Ausschalten einer Lampe.\\

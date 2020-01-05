@@ -288,14 +288,8 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 
 
 \section{Verwendung von OpenHAB}
+\label{s:usage-open-hab}
 
-
-\begin{minipage}{\textwidth}
-	\centering
-	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
-	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
-\end{minipage}
 
 \subsection{Beispiel Aufbau eines OpenHAB Smart-Homes}
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
@@ -443,13 +437,24 @@ Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dies
 OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
 Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
 \\
-Weiterhin warnt OpenHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
+Die Abbildung \ref{fig:verteilungs-architektur} zeigt eine Verteilungsarchitektur mit den verwendeten Protokolle einzelner openHAB-Komponenten aus Kapitel \ref{s:usage-open-hab}.\\
+\begin{minipage}{\textwidth}
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
+	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
+\end{minipage}
+\\
+\\
+Die darin zu sehenden Komponenten sind durch einen blauen Hintergrund markiert. Die jeweils darauf laufende Software ist durch die Farbe Gelb dargestellt. Alles bis auf Spotify ist im internen Netzwerk abgebildet (orange eingegrenzten Bereich).\\
+Die jeweiligen Komponenten kommunizieren mit der zentralen openHAB Instanz, welche auf einem Raspberry Pi gehostet wird. Dabei sind die verwendeten Protokolle für die Informationsübertragung auf den gerichteten Pfeilen zu sehen.
 
 \subsection{Externe Erweiterungsmöglichkeiten}
 Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
 Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angesteuert wird.\\
-Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.
-
+Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.\\
+\\
+Weiterhin warnt openHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
 
 \section{Fazit}
 \subsection{Zusammenfassung}

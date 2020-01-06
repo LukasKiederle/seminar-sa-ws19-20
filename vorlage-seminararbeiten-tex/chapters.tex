@@ -298,7 +298,7 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein  Smart-Home-System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für das Smart-Home-System wurde ein Raspberry Pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB, nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry Pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Oberfläche wird im Netzwerk unter \textit{https://openhab:8080} bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Smart-Home-System zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
+		Für das Smart-Home-System wurde ein Raspberry Pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB, nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen \cite{DB:openhabian}. Damit ist der Raspberry Pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Oberfläche wird im Netzwerk unter \textit{https://openhab:8080} bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Smart-Home-System zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
 		Um das Smart-Home-System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigt.
 		
 	\subsubsection{Eingebundene Geräte}
@@ -309,14 +309,14 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 			\item Osram Lightify LED
 			\item LG Smart TV mit WebOS
 		\end{itemize}
-		Beide Lampensysteme arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit bis zu 50 Geräte verwalten kann. Dadurch kommuniziert das openHAB System z.B. nur mit der Hue-Bridge, wenn die Lampen angesprochen werden sollen. Dies passiert allerdings im Hintergrund, in der openHAB Web-Oberfläche stellt die Hue-Bridge jede Lampe als eigenes Item dar.
+		Beide Lampensysteme arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit viele verwalten kann \cite{DB:zigbee}. Dadurch kommuniziert das openHAB System z.B. nur mit der H ue-Bridge, wenn die Lampen angesprochen werden sollen. Dies passiert allerdings im Hintergrund, in der openHAB Web-Oberfläche stellt die Hue-Bridge jede Lampe als eigenes Item dar.
 		
 		Bei den Lampensystemen lässt sich Helligkeit und Farbtemperatur anpassen. Der Smart TV lässt sich an-, ausschalten, Lautstärke und das Programm verändern.
 		
 		\subsubsection{Eingebundene Services}
 		Das Smart-Home-System soll Musiksteuerung und aktuelle Wetterdaten  integrieren und anzeigen. Dafür wird Spotify als Musikanbieter und openWeatherMap für Wetterdaten verwendet. Beide Dienste sind in einer kostenlosen Version nutzbar.
 		
-		Spotify ermöglicht es über die Spotify-Developer-Webseite eine Web-Anwendung zu registrieren. Durch diese kann das Smart-Home-System autorisieret werden einen Spotify Account zu steuern. Das Smart-Home-System schickt dabei Befehle an Server von Spotify, welche wiederum Befehle an den registrierten Spotify Client weiterleiten. Es muss also nicht direkt Spotify auf dem Raspberry installiert werden. Das steigert die Performance und ist in der Handhabung angenehmer. Das Smart-Home-System soll die aktuelle Wiedergabe anzeigen, es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten sowie zu stoppen.
+		Spotify ermöglicht es über die Spotify-Developer-Webseite eine Web-Anwendung zu registrieren. Durch diese kann das Smart-Home-System autorisieret werden einen Spotify Account zu steuern. Das Smart-Home-System schickt dabei Befehle an Server von Spotify, welche wiederum Befehle an den registrierten Spotify Client weiterleiten \cite{DB:spotify}. Es muss also nicht direkt Spotify auf dem Raspberry installiert werden. Das steigert die Performance und ist in der Handhabung angenehmer. Das Smart-Home-System soll die aktuelle Wiedergabe anzeigen, es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten sowie zu stoppen.
 		
 		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Für das Smart-Home-System wird die kostenlose Basisversion gewählt. Mit dem Account ist ein API-Key verknüpft, um das Smart-Home-System zu authentifizieren. Mit der Basisversion können aktuelle Wetterdaten verschiedener Standorte abrufen werden.
 		
@@ -358,9 +358,10 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		\subsubsection{Erstellung des openHAB Panels}
 		Ein openHAB Panel kann auf der Web-Oberfläche aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch einen Knopf geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent regelt, wodurch ein- und ausgeschalten erzielt wird.
 		
-		Für das Panel des Smart-Home-Systems werden Standardkomponenten, Widgets aus dem Community Store und auf selbst erstellte Widgets verwendet. Eigene Widgets können als Angular-Widget erstellt werden.
+		Für das Panel des Smart-Home-Systems werden Standardkomponenten, Widgets aus dem Community Store und auf selbst erstellte Widgets verwendet. Eigene Widgets können als Angular-Widget erstellt werden \cite{DB:widget}.
 		Abbildung \ref{fig:openhab-panel} zeigt ein erstelltest Panel. Im Detail ist links Oben der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit zu sehen. Letzteres ist ein Standard-Widget von openHAB.
-		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.\\
+		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.
+		\\
 		\begin{minipage}{\textwidth}
 			\centering
 			\captionsetup{type=figure}

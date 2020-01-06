@@ -342,10 +342,10 @@ location.home.latitude=47.8011
 location.home.longitude=13.0448
 		\end{lstlisting}
 		
-		Wie in Abbildung \ref{lst:code-weatherlocation} zu sehen ist, wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
+		Wie in Codebeispiel \ref{lst:code-weatherlocation} zu sehen ist, wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass Wetterdaten für den Ort der Smart-Home-Systems abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
 		Nach diesen Einstellungen können Items erzeugt werden.
 		
-				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=code-weatheritems]
+				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=lst:code-weatheritems]
 Number   Temperature   "Temperature [%.2f (*°*)C]"
 {weather="locationId=home, type=temperature, property=current"}
 Number   Precip_Probability   "Precip probability [%d %%]"
@@ -354,7 +354,7 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 {weather="locationId=home, type=wind, property=speed"}
 		\end{lstlisting}
 		
-		Das Item File der Wetter Items aus Abbildung \ref{fig:code-weatheritems} erzeugt drei Items welche die Temperatur, die Niederschlagswahrscheinlichkeit und die Windgeschwindigkeit beinhalten.
+		Das Item File der Wetter Items aus Abbildung \ref{lst:code-weatheritems} erzeugt drei Items welche die Temperatur, die Niederschlagswahrscheinlichkeit und die Windgeschwindigkeit beinhalten.
 		Es wird bei den Items die weatherId "`home"' verwendet. Dadurch benutzt das Binding bei der Abfrage der Daten die zuvor erzeugten Ortsdaten.
 		
 		\subsubsection{Erstellung des HAB Panels}

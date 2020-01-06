@@ -148,7 +148,7 @@ openHAB verwendet das Konzept von Add-Ons als Teil ihrer zusammensteckbaren Arch
 Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-Ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren / modfizieren. IO-Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence-Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
 
 \subsection{Bindings} \label{sec:Bindings}
-Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. ein LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version ein eigenes Binding benötigt.
+Bindings sind Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. ein LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version ein eigenes Binding benötigt.
 Nach der Installation eines Bindings, was über die Web-Oberfläche oder per Code geschehen kann, ist openHAB in der Lage Geräte/Systeme im Netzwerk zu finden. Mittels Bindings können auch Geräte/Systeme integriert werden, welche wiederum die Steuerung für andere Geräte übernehmen, z.B. Hue-Bridge oder Bluetooth. Diese Geräte/Systeme wiederum ermöglichen es i.d.R. nach dem Hinzufügen in openHAB, dass durch das Binding Kindkomponenten gefunden und ebenfalls zu openHAB hinzugefügt werden können. Dadurch ist es möglich, wie im Falle des Hue-Systems nicht nur die Hue-Bridge, sondern alle mit der Hue-Bridge verbundenen Lampen einzeln in openHAB zu integrieren und dadurch zu steuern. Dieses Ansteuern von einzelnen Kindkomponenten im Falle des Hue-Systems, wäre durch ZigBee theoretisch möglich, würde aber einen sehr hohen und unnötigen Aufwand bedeuten.
 Laut openHAB gibt es aktuell über 300 Bindings welche es ermöglichen über 2000 Things anzusprechen \cite{OPENHUB00:OH}.
 
@@ -158,13 +158,14 @@ Things können auf drei verschiedene Arten zu openHAB hinzugefügt werden. Diese
 \begin{itemize}
 	\item Per Web-Oberfläche automatisch: Nachdem das für das Thing benötigte Binding installiert wurde, erscheint das Thing in der Inbox, siehe Abbildung \ref{fig:thing-add-paper-ui}. Von dieser Inbox aus, kann das Thing mit wenigen Klicks openHAB hinzugefügt werden. Durch diese Methode werden alle nötigen Einstellungen für das Thing automatisch getroffen. Diese können nachträglich bearbeitet werden z.B. umbenannt werden. 
 \end{itemize}
-{\centering
-\captionsetup{type=figure}
-\includegraphics[width=1\textwidth]{\figdir/thing_add.PNG}
-\caption{Thing per Web-Oberfläche \label{fig:thing-add-paper-ui}}
+{
+	\centering
+	\captionsetup{type=figure}
+	\includegraphics[width=1\textwidth]{\figdir/thing_add.PNG}
+	\caption{Thing per Web-Oberfläche \label{fig:thing-add-paper-ui}}
 }	
 \begin{itemize}	
-	\item Per Web-Oberfläche Manuell: Das manuelle Hinzufügen von Things ermöglicht volle Einstellungsfreiheit für Things. Dazu zählen ID, Bezeichnung, IP-Adresse und Konfigurationsparameter. Dies ist in Abbildung \ref{fig:thing-add-paper-ui-manuel} zu sehen. Diese Einstellungsfreiheit setzt allerdings auch voraus, dass der Nutzer weiß, welche Informationen er in welches Feld eintragen will/muss. Genau wie beim automatischen Erkennen können die Einstellungen noch nachträglich geändert werden. 
+	\item Per Web-Oberfläche Manuell: Das manuelle Hinzufügen von Things ermöglicht volle Einstellungsfreiheit für Things. Dazu zählen ID, Bezeichnung, IP-Adresse und Konfigurationsparameter. Dies ist in Abbildung \ref{fig:thing-add-paper-ui-manuel} zu sehen. Diese Einstellungsfreiheit setzt allerdings auch voraus, dass der Nutzer weiß, welche Informationen er in welches Feld eintragen will/muss. Genau wie beim automatischen Erkennen können die Einstellungen nachträglich geändert werden. 
 \end{itemize}
 {
 	\centering

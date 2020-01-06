@@ -89,8 +89,6 @@ Das Getting-Started Tutorial ist ausführlich und aktuell. Die darüber hinausge
 \end{longtable}
 
 \subsection{Weiterführende Bewertungen}
-openHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von Usecases untersucht und verglichen. Dabei kam er zu folgender Ergebnis.
-
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
@@ -98,7 +96,7 @@ openHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/
 	\caption{Vergleich openHAB und anderen Heimautomatisierungstools von 2017/2018 \label{fig:comparison-openHAB}}
 \end{minipage}
 \smallskip
- 
+openHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von Usecases untersucht und verglichen. Dabei kam er zu folgender Ergebnis.
 In Tabelle \ref{fig:comparison-openHAB} sind die unterschiedlichen Gebiete der Untersuchung auf der linken Seite zu finden. In der horizontalen sind die einzelnen Heimautomatisierungs-Tools aufgelistet. In der jeweiligen Zelle, basierend auf Reihe und Spalte, sind die Bewertungen festgehalten. Dabei zeigt ein blau markiertes Feld, welches das beste Tool für ein Gebiet ist.\\
 openHAB sticht dabei nicht sonderlich heraus. Allerdings ist es in keinem der aufgelisteten Kategorien negativ bewertet.\\
 Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf openHAB setzen würde. Dies liegt einerseits daran, dass die Entwickler von openHAB stark an Vereinfachung von komplizierteren Komponenten arbeitet. Andererseits sollen aber auch komplexere Automationen, durch die Nähe von Framework und Java, möglich sein.\cite{BA01:OPH}
@@ -361,18 +359,15 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		Ein openHAB Panel kann auf der Web-Oberfläche aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch einen Knopf geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent regelt, wodurch ein- und ausgeschalten erzielt wird.
 		
 		Für das Panel des Smart-Home-Systems werden Standardkomponenten, Widgets aus dem Community Store und auf selbst erstellte Widgets verwendet. Eigene Widgets können als Angular-Widget erstellt werden.
-		
-		\smallskip
-	\begin{minipage}{\textwidth}
-		\centering
-		\captionsetup{type=figure}
-		\includegraphics[width=1\textwidth]{\figdir/openHABPanel.png}
-		\caption{Erstelltes openHAB Panel \label{fig:openhab-panel}}
-	\end{minipage}
-		
-		\smallskip
 		Abbildung \ref{fig:openhab-panel} zeigt ein erstelltest Panel. Im Detail ist links Oben der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit zu sehen. Letzteres ist ein Standard-Widget von openHAB.
-		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.
+		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.\\
+		\begin{minipage}{\textwidth}
+			\centering
+			\captionsetup{type=figure}
+			\includegraphics[width=1\textwidth]{\figdir/openHABPanel.png}
+			\caption{Erstelltes openHAB Panel \label{fig:openhab-panel}}
+		\end{minipage}
+		\smallskip
 
 		Unten Links befindet sich ein selbst geschriebenes Widget, welches Wetterdaten anzeigt.
 

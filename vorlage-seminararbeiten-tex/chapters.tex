@@ -43,7 +43,7 @@ Diese beinhaltet:
 	\label{table:openHAB-judgement-criteria}
 \end{longtable}
 
-Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert Open-Source Software-Projekte. Für jedes Projekt werden Daten wie Name, Beschreibung und Quellcode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei fließen auch Daten weiterer Open-Source Projekte ein, um aussagekräftige Statistiken zu erhalten und Aussagen treffen zu können.\\
+Der Online-Dienst \textit{Open Hub}, ehemals \textit{Ohloh} genannt, katalogisiert Open-Source Software-Projekte. Für jedes Projekt werden Daten wie Name, Beschreibung und Quellcode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei fließen auch Daten weiterer Open-Source Projekte ein, um aussagekräftige Statistiken zu erhalten und Aussagen treffen zu können.\\
 \\
 {In der Auswertung über openHAB ist zu finden, dass 2019 über 380 Entwickler aktiv an dem Projekt mitgearbeitet haben. Somit ist openHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
 Des Weiteren ist ein stetiger Anstieg von Interesse erkennbar. Dies wird durch den Vergleich von Codebeiträgen des aktuellen Jahrs und des Vorjahres begründet.\\
@@ -108,7 +108,7 @@ In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen
 
 \section{Komponenten von openHAB}\label{sec:technischeSicht}
 In diesem Kapitel werden die grundlegenden Komponenten dargestellt, welche openHAB verwendet. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen.
-Ein Kernaspekt welcher in diesem Kapitel zum Vorschein kommt ist, dass es in der Regel den "'einen Weg"'nicht gibt. openHAB bietet meist mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-On in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie ein gewünschtes Ziel erreicht werde kann.
+Ein Kernaspekt welcher in diesem Kapitel zum Vorschein kommt ist, dass es in der Regel den "'einen Weg"' nicht gibt. openHAB bietet meist mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-On in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie ein gewünschtes Ziel erreicht werde kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den entsprechenden Unterkapiteln beschrieben.
 
 \begin{longtable}{| p{4cm} | p{11cm}|}
@@ -298,7 +298,7 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein  Smart-Home-System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für das Smart-Home-System wurde ein Raspberry Pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB und nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry Pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Ooberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Smart-Home-System zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
+		Für das Smart-Home-System wurde ein Raspberry Pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB, nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry Pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Oberfläche wird im Netzwerk unter \textit{https://openhab:8080} bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Smart-Home-System zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
 		Um das Smart-Home-System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigt.
 		
 	\subsubsection{Eingebundene Geräte}
@@ -325,7 +325,7 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 		
 		Für die Integration der Lampen müssen diese zuerst über die Hue-App mit der Hue-Bridge verbunden werden. Danach wird das Hue Binding installiert. Die IP Adresse der Bridge  muss konfiguriert werden und das System erkennt dann die Hue-Bridge automatisch. Die Bridge kann nun als Thing in das System aufgenommen werden. Dadurch werden automatisch die Lampen als Things erstellt. Für drei Lampen werden je zwei Items angelegt, um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es, den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify-Protokoll nutzt, welches die Hue-Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
 		
-		Der LG Smart TV wird mit dem LG WebOS Binding integriert. Nach Installation wird der Smart TV von alleine erkannt wenn er im selben Netzwerk ist. Es können dann Items erzeugt werden, um den Fernseher an- und auszuschalten und die Lautstärke zu regeln.
+		Der LG Smart TV wird mit dem LG WebOS Binding integriert. Nach Installation wird der Smart TV von alleine erkannt, wenn er im selben Netzwerk ist. Es können dann Items erzeugt werden, um den Fernseher an- und auszuschalten und die Lautstärke zu regeln.
 		
 		Spotify wird über das Spotify Binding integriert. Es muss ClientId und Secret Key hinterlegt werden, welche in der Spotify Developer Console angelegt wurden. Das Binding erstellt ein Spotify Player Bridge Thing mit welchem nun ein Spotify Account gesteuert werden kann. Es werden Items erzeugt, um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu steuern. Der Spotify Musik Player wird dabei als Media Controller Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
 		
@@ -384,8 +384,8 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		Um auf dem Raspberry Pi eine Benutzeroberfläche anzeigen zu können, muss die Bibliothek PIXEL installiert werden. Mit PIXEL wird der Browser Chromium ausgeliefert. Es müssen verschiedene Einstellungen vorgenommen werden, damit der Raspberry Pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und das Panel im Vollbildmodus anzuzeigen. Die nötigen Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry Pi vorgenommen werden.
 
 		\subsubsection{Externer Zugriff}
-		Eine häufige Anforderung an Smart-Home-Systeme ist Extern auf das Smart-Home-System zugreifen zu können um Zustand von Geräten zu kontrolliert und diese auch zusteuern. Hierfür bietet openHAB die myopenHAB Cloud. Um diese zu nutzen, muss das openHAB Cloud Connector Add-On installiert werden. Dieses erzeugt auf dem Raspberry ein Secret-Datei mit einem Secret-Key. Registriert man einen Account bei myopenHAB, muss dieser Secret-Key und ein von openHAB erzeugte UUID hinterlegt werden. Danach ermöglicht das Add-On eine Verbindung nach außen zur myopenHAB Cloud.
-		In myopenHAB können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert wird. Das Smart-Home-System kann darauf von extern zugegriffen werden, als wäre man im selben Netzwerk.
+		Eine häufige Anforderung an Smart-Home-Systeme ist Extern auf das Smart-Home-System zugreifen zu können um Zustand von Geräten zu kontrolliert und diese auch zusteuern. Hierfür bietet openHAB die myopenHAB Cloud. Um diese zu nutzen, muss das openHAB Cloud Connector Add-On installiert werden. Dieses erzeugt auf dem Raspberry ein Secret-Datei mit einem Secret-Key. Dieser Key und eine von openHAB erzeugte UUID muss in einen myopenHAB-Account hinterlegt werden. Danach ermöglicht das Add-On eine Verbindung nach außen zur myopenHAB Cloud.
+		In myopenHAB können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert wird. Auf das Smart-Home-System kann nun von außen zugegriffen werden, wie als wäre der Benutzer im selben Netzwerk.
 		Es gibt für die myopenHAB Cloud Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myopenHAB Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden, oder eigene Panels für Mobile Geräte erstellt werden.
 		
 		
@@ -398,7 +398,8 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	\includegraphics[width=1\textwidth]{\figdir/VerteilungsarchitekturopenHAB.png}
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
-
+\\
+\\
 	Abbildung \ref{fig:activity-diagram} stellt die Verteilungsarchitektur des erstellten Smart-Home-Systems dar. In der Darstellung sind Hardwarekomponenten durch einfache Rechtecke dargestellt und Softwarekomponenten durch Rechtecke mit zwei vertikalen Linien. Die Verteilungsarchitektur zeigt die verschiedenen Geräte und Services und wie sie mit openHAB verbunden sind. Dabei sind alle Services und Geräte über Bindings verbunden. Der Touch-Monitor ist direkt über HDMI mit dem Raspberry Pi verbunden und zeigt ein erstelltes openHAB Panel an, welches von der Web-Oberfläche des openHAB Systems bereitgestellt wird. Das Hue-Binding spricht die Hue-Bridge an, welche die Lampen steuert.
 	
 \subsection{Integration der Big Player}
@@ -440,6 +441,7 @@ openHAB bietet bereits Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich
 Beim ersten Aufsetzen von openHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede openHAB-Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein openHAB System nachahmen.\\
 \\
 Die Abbildung \ref{fig:verteilungs-architektur} zeigt eine Verteilungsarchitektur mit den verwendeten Protokolle einzelner openHAB-Komponenten aus Kapitel \ref{s:usage-open-hab}.\\
+\\
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}

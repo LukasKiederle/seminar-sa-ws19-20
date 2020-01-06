@@ -110,14 +110,14 @@ In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen
 
 \section{Komponenten von openHAB}\label{sec:technischeSicht}
 In diesem Kapitel werden die grundlegenden Komponenten dargestellt, welche openHAB verwendet. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen.
-Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie ein gewünschtes Ziel erreicht werde kann.
+Ein Kernaspekt welcher in diesem Kapitel zum Vorschein kommt ist, dass es in der Regel den "'einen Weg"'nicht gibt. openHAB bietet meist mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-On in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie ein gewünschtes Ziel erreicht werde kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den entsprechenden Unterkapiteln beschrieben.
 
 \begin{longtable}{| p{4cm} | p{11cm}|}
 	\hline
 	\textbf{Komponente} & \textbf{Beschreibung} \\
 	\hline \hline
-	\centering Add-ons & Erweiterungen, welche die Funktionalitäten von openHAB erhöhen. \\
+	\centering Add-Ons & Erweiterungen, welche die Funktionalitäten von openHAB erhöhen. \\
 	\hline
 	\centering Bindings & openHAB-Komponenten, welche die Schnittstelle zu fremd Systemen darstellt.  \\
 	\hline
@@ -129,14 +129,14 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 	\hline
 	\centering Rules & Automatisierungsregeln, in Wenn-Dann-Struktur.\\
 	\hline
-	\centering Sitemaps & individuelle Benutzeroberfläche, welche Informationen präsentiert und Interaktionen ermöglicht.\\
+	\centering Sitemaps & Individuelle Benutzeroberfläche, welche Informationen präsentiert und Interaktionen ermöglicht.\\
 	\hline
 	\caption{openHAB Komponenten}
 	\label{table:openhub-components}
 \end{longtable}
 
-\subsection{Add-ons}\label{sec:add-ons}
-openHAB verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{openHAB04:OH}:
+\subsection{Add-Ons}\label{sec:add-ons}
+openHAB verwendet das Konzept von Add-Ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-Ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{openHAB04:OH}:
 \begin{itemize}
 	\item Bindings
 	\item Automation Engine Modules
@@ -145,7 +145,7 @@ openHAB verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Arch
 	\item Persistence Services
 	\item Audio \& Voice
 \end{itemize}
-Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden können, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
+Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-Ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden können, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
 
 \subsection{Bindings} \label{sec:Bindings}
 Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. ein LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version ein eigenes Binding benötigt.
@@ -204,7 +204,7 @@ Automatisierung in openHAB findet durch Rules/Scripte statt. Diese Rules werden 
 Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So können Item oder ganze Gruppen von Items angesprochen werden. Hierbei wird an ein/jedes Item Informationen an Channels weitergeben, welche eine Aktion bei dem dazu gehörigen Thing auslöst.
 Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen, um aus mehreren Rules eine zu machen.
 
-Alternativ zur Programmierung ist es mit einem experimentelles Add-on möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format Sonderzeichen wie \textbf{>, <, =, !} nicht funktionieren. Des Weiteren ist das Einfügen von zusätzlichen Strukturelementen über das experimentelle Add-on nicht möglich.
+Alternativ zur Programmierung ist es mit einem experimentelles Add-On möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format Sonderzeichen wie \textbf{>, <, =, !} nicht funktionieren. Des Weiteren ist das Einfügen von zusätzlichen Strukturelementen über das experimentelle Add-On nicht möglich.
 
 \begin{lstlisting}[language=java,firstnumber=1,caption=Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
@@ -226,7 +226,7 @@ Eine Sitemap dient als Übersicht, Gruppierung und Visualisierung des Smart Home
 Wie im ganzen openHAB ist es auch hier möglich per Code oder openHAB vorinstallierten Editoren sich seine eigenen Sitemap, Dashboard oder Panel zu erzeugen.
 
 \section{Programmieren in und für openHAB} \label{sec:custom-development}
-openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt, an dem er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
+openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-Ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt, an dem er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
 
 \subsection{Programmierung für den Nutzer}
 Als Benutzer ist es möglich viele Funktionen von openHAB zu nutzen, ohne dabei programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} beschrieben, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHAB-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openHAB2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind.
@@ -244,7 +244,7 @@ openHAB bietet durch eine REST-API anderen Systemen die Möglichkeit, openHAB zu
 Die REST-API ermöglicht es auch Entwicklungsumgebungen Informationen aus dem openHAB System zu erhalten und dadurch das Entwickeln für openHAB zu erleichtern. Visual Studio Code, Eclipse und IntelliJ stellen Add-Ons/Extensions zur Verfügung. Diese bieten neben farblich kenntlichem Code noch Things und Items an, welche über die REST-API erhalten wurden. Dadurch können Fehler beim Abtippen von Bezeichnungen oder IDs vermieden werden und bei der Entwicklung kann ein guter Überblick über die zu verwendenden Komponenten erhalten werden, ohne über openHABs Web-Oberfläche zu navigieren.
 
 \subsection{Eigenes Binding}
-Sollte es bei openHAB kein passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nichts im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für Add-ons meisten nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf die Entwicklung von Bindings eingegangen.\\
+Sollte es bei openHAB kein passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-On nichts im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-Ons ist. Da die Dokumentation für Add-Ons meisten nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf die Entwicklung von Bindings eingegangen.\\
 Um ein Binding zu entwickeln, bietet openHAB ein skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{openHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen, um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler Schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
 
 {
@@ -464,7 +464,7 @@ Abschließend geht diese Arbeit auf Datenintegrität und Sicherheit ein.
 
 \subsection{Schlussfolgerung}
 Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Bereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das bekannte open-source Tool openHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass openHAB aktiv von einer wachsenden Community weiterentwickelt wird und sowohl privat als auch kommerziell eingesetzt werden kann, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
-Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einem Benutzer zur Verfügung stehen, sind klar strukturiert und besitzen eine Abstraktionsstufe, die gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der Zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-on Architektur einige Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch die bereitgestellten Skripte vereinfacht, was dazu führt, dass openHAB relativ einfach um neue Geräte erweitert werden kann.\\
+Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einem Benutzer zur Verfügung stehen, sind klar strukturiert und besitzen eine Abstraktionsstufe, die gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der Zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-On Architektur einige Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch die bereitgestellten Skripte vereinfacht, was dazu führt, dass openHAB relativ einfach um neue Geräte erweitert werden kann.\\
 Weiterhin wurde festgestellt, dass openHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
 \\
 Die Autoren dieser Arbeit bewerten openHAB als gut gelungenes Heimautomatisierungstool. Nach einer gewissen Einarbeitungszeit ist das Zusammenbauen eines Smart Homes damit unkompliziert umsetzbar. Es erlaubt die Einbindung fast aller Geräten aus dem Iot-Bereich, erfordert jedoch an manchen Stellen Kenntnisse in der Softwareentwicklung.

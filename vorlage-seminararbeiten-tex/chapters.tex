@@ -329,11 +329,11 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 		
 		Der LG Smart TV wird mit dem LG WebOS Binding integriert. Nach Installation wird der Smart TV von alleine erkannt wenn er im selben Netzwerk ist. Es können dann Items erzeugt werden, um den Fernseher an- und auszuschalten und die Lautstärke zu regeln.
 		
-		Spotify wird über das Spotify Binding integriert. Es muss ClientId und Secret Key hinterlegt werden, welche in der Spotify Developer Console angelegt wurden. Das Binding erstellt ein Spotify Player Bridge Thing mit welchem nun ein Spotify Account gesteuert werden kann. Es werden Items erzeugt, um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu kontrollieren. Der Spotify Musik Player wird dabei als Media Controler Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
+		Spotify wird über das Spotify Binding integriert. Es muss ClientId und Secret Key hinterlegt werden, welche in der Spotify Developer Console angelegt wurden. Das Binding erstellt ein Spotify Player Bridge Thing mit welchem nun ein Spotify Account gesteuert werden kann. Es werden Items erzeugt, um den Songtitel auslesen zu können und zwei weitere um die Lautstärke und den Player zu steuern. Der Spotify Musik Player wird dabei als Media Controller Item erzeugt und kann die Wiedergabe stoppen oder starten und Lieder wechseln.
 		
-		Um Wetterdaten abrufen zu können, wird das Weather Binding benötigt. Für dieses Binding ist eine manuelle Einrichtung auf dem Raspberry nötig. Per SSH muss die services/weather.cfg angepasst werden.
+		Um Wetterdaten abzurufen, wird das Weather Binding benötigt. Für dieses Binding ist eine manuelle Einrichtung per Code auf dem Raspberry nötig. Per SSH muss die services/weather.cfg angepasst werden.
 		
-		\begin{lstlisting}[language=java,firstnumber=1,caption=services/weather.cfg,label=code-weatherlocation]
+		\begin{lstlisting}[language=java,firstnumber=1,caption=services/weather.cfg,label=lst:code-weatherlocation]
 apikey.openWeatherMap=sdf7g69fdgdfg679dfg69sdgkj
 location.home.provider=openWeatherMap
 location.home.language=de
@@ -342,7 +342,7 @@ location.home.latitude=47.8011
 location.home.longitude=13.0448
 		\end{lstlisting}
 		
-		Wie in Abbildung \ref{fig:code-weatherlocation} zu sehen ist, wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
+		Wie in Abbildung \ref{lst:code-weatherlocation} zu sehen ist, wurde der API Key für openWeatherMap hinterlegt und eine Locations names "`home"' angelegt. Für diese wurde auch die Latitude und Longitude hinterlegt, sodass unsere Wetterdaten für diesen Ort abgerufen werden können. Der updateInterval 10 gibt an, dass die Wetterdaten alle 10 Minuten erneut geladen werden.
 		Nach diesen Einstellungen können Items erzeugt werden.
 		
 				\begin{lstlisting}[language=bash, escapeinside={(*}{*)} ,firstnumber=1,caption=items/weather.items,label=code-weatheritems]

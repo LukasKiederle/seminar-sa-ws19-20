@@ -304,12 +304,12 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 		Um das System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigt.
 		
 	\subsubsection{Eingebundene Geräte}
-		In openHAB lassen sich eine Vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus, die in einem üblichen Wohnzimmer nützlich sind.
+		Für diese Arbeit wählen wir exemplarisch verschiedene Geräte aus, welche in einem Wohnzimmer üblich sein könnten.
 		\begin{itemize}
 			\item Hue Bridge
-			\item  hue LED
+			\item Uue LED
 			\item Osram Lightify LED
-			\item LG Smart TV
+			\item LG Smart TV mit WebOS
 		\end{itemize}
 		Beide Lampen arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit leicht bis zu 50 Geräte verwalten kann. Dadurch kommuniziert unser System immer nur mit der Hue Bridge, wenn die Lampen angesprochen werden sollen. Dies passiert allerdings im Hintergrund, in der openHAB Weboberfläche stellt uns die hue Bridge jede Lampe als eigenes Item dar.
 		

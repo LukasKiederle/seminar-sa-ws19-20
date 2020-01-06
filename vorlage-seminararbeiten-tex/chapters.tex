@@ -297,35 +297,35 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 
 
 \subsection{Beispiel Aufbau eines openHAB Smart-Home}
-	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein  Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
+	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein  Smart-Home-System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für das System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB und nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Ooberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Systems zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
-		Um das System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigt.
+		Für das Smart-Home-System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB und nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Ooberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Smart-Home-System zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
+		Um das Smart-Home-System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigt.
 		
 	\subsubsection{Eingebundene Geräte}
-		Für diese Arbeit wählen wir exemplarisch verschiedene Geräte aus, welche in einem Wohnzimmer üblich sein könnten.
+		Für diese Arbeit wurden exemplarisch verschiedene Geräte gewählt, welche in einem Wohnzimmer üblich sein könnten.
 		\begin{itemize}
 			\item Hue Bridge
 			\item Hue LED
 			\item Osram Lightify LED
 			\item LG Smart TV mit WebOS
 		\end{itemize}
-		Beide Lampen-Systeme arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit bis zu 50 Geräte verwalten kann. Dadurch kommuniziert das openHAB System z.B. nur mit der Hue-Bridge, wenn die Lampen angesprochen werden sollen. Dies passiert allerdings im Hintergrund, in der openHAB Web-Oberfläche stellt die Hue-Bridge jede Lampe als eigenes Item dar.
+		Beide Lampensysteme arbeiten mit dem Zigbee Protokoll welches eine eigene Frequenz verwendet und somit bis zu 50 Geräte verwalten kann. Dadurch kommuniziert das openHAB System z.B. nur mit der Hue-Bridge, wenn die Lampen angesprochen werden sollen. Dies passiert allerdings im Hintergrund, in der openHAB Web-Oberfläche stellt die Hue-Bridge jede Lampe als eigenes Item dar.
 		
-		Bei den Lampen-Systemen lässt sich Helligkeit und Farbtemperatur anpassen. Der Smart TV lässt sich an-, ausschalten, Lautstärke und das Programm verändern.
+		Bei den Lampensystemen lässt sich Helligkeit und Farbtemperatur anpassen. Der Smart TV lässt sich an-, ausschalten, Lautstärke und das Programm verändern.
 		
 		\subsubsection{Eingebundene Services}
-		Das System soll die Möglichkeit Musik zu steuern integrieren und aktuelle Wetterdaten anzeigen. Dazu wählen wir Spotify als Musikanbieter und openWeatherMap um die Wetterdaten abzurufen. Beide Dienste sind in einer kostenlosen Version nutzbar und daher als Beispiel sinnvoll.
+		Das Smart-Home-System soll Musiksteuerung und aktuelle Wetterdaten  integrieren und anzeigen. Dafür wird Spotify als Musikanbieter und openWeatherMap für Wetterdaten verwendet. Beide Dienste sind in einer kostenlosen Version nutzbar.
 		
-		Spotify ermöglicht es über die Developer Webseite von Spotify eine Webanwendung zu registrieren. Damit kann unser System sich autorisieren einen Spotify Account zu steuern. Das System schickt dabei Befehle an die Server von Spotify, welche wiederum die Befehle an den aktuellen Spotify Client weiterleiten. Es muss also nicht direkt Spotify auf dem Raspberry installiert werden. Das steigert die Performance und ist in der Handhabung angenehmer. Das System soll das aktuelle Lied anzeigen und es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten und stoppen.
+		Spotify ermöglicht es über die Spotify-Developer-Webseite eine Web-Anwendung zu registrieren. Durch diese kann das Smart-Home-System autorisieret werden einen Spotify Account zu steuern. Das Smart-Home-System schickt dabei Befehle an Server von Spotify, welche wiederum Befehle an den registrierten Spotify Client weiterleiten. Es muss also nicht direkt Spotify auf dem Raspberry installiert werden. Das steigert die Performance und ist in der Handhabung angenehmer. Das Smart-Home-System soll die aktuelle Wiedergabe anzeigen, es ermöglichen Lautstärke zu verändern, den Track zu wechseln und die Wiedergabe zu starten sowie zu stoppen.
 		
-		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Für das System wird die kostenlose Basisversion gewählt. Mit dem Account ist ein API Key verknüpft, um das System zu authentifizieren. Mit der Basisversion können wir die aktuellen Wetterdaten verschiedener Standorte abrufen werden.
+		Um die Wetterdaten abzurufen ist ein Account bei openWeatherMap nötig. Für das Smart-Home-System wird die kostenlose Basisversion gewählt. Mit dem Account ist ein API-Key verknüpft, um das Smart-Home-System zu authentifizieren. Mit der Basisversion können aktuelle Wetterdaten verschiedener Standorte abrufen werden.
 		
 		\subsubsection{Integration der Geräte und Services}
-		Die Integration der Geräte erfolgt über die Paper UI des Webfrontend, dass das openHAB System bereitstellt. 
+		Die Integration der Geräte erfolgt über die Web-Oberfläche, welche openHAB bereitstellt. 
 		
-		Für die Integration der Lampen müssen diese zuerst über die hue App mit der hue Bridge verbunden werden. Danach wird das hue Binding installiert. Die IP Adresse der Bridge  muss konfiguriert werden und das System erkennt dann die Bridge automatisch. Die Bridge kann jetzt als Thing in das System aufgenommen werden. Dadurch wird auch automatisch die Lampen als Things erstellt. Für alle drei Lampen werden je zwei Items angelegt, um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es, auch den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify protokoll nutzt, welches die hue Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
+		Für die Integration der Lampen müssen diese zuerst über die Hue-App mit der Hue-Bridge verbunden werden. Danach wird das Hue Binding installiert. Die IP Adresse der Bridge  muss konfiguriert werden und das System erkennt dann die Hue-Bridge automatisch. Die Bridge kann nun als Thing in das System aufgenommen werden. Dadurch werden automatisch die Lampen als Things erstellt. Für drei Lampen werden je zwei Items angelegt, um Helligkeit und Lampenfarbe steuern zu können. Diese Items erlauben es, den aktuellen Wert auszulesen. Da die Osram Lampe das Lightify-Protokoll nutzt, welches die Hue-Bridge ebenfalls unterstützt, funktioniert die Einrichtung dort identisch.
 		
 		Der LG Smart TV wird mit dem LG WebOS Binding integriert. Nach Installation wird der Fernseher von alleine erkannt wenn er im selben Netzwerk ist. Es können dann Items erzeugt werden, um den Fernseher an- und auszuschalten und die Lautstärke zu regeln.
 		

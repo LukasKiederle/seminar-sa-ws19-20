@@ -1,19 +1,19 @@
 \section{Motivation}
 {Die Ausgaben für das Internet der Dinge (IoT) wird weltweit, laut Statista, bis zum Jahr 2022 auf 1000 Milliarden US-Dollar steigen. Im Vergleich zum Jahr 2019 bedeutet dies, eine Steigerung von über 40\%.}\cite{STATISTA01:IOT} Bei einem solch starken Trend in der Informatik-Branche sollten sowohl Studenten, als auch Professoren dessen Grundlagen kennen.
-Deshalb ist im Rahmen des Faches Softwarearchitektur an der technischen Hochschule Rosenheim diese Ausarbeitung geschrieben worden. Das Ziel ist es OpenHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Außerdem wird dabei auf die Aspekte Markttauglichkeit und Benutzbarkeit in der Praxis eingegangen.
+Deshalb ist im Rahmen des Faches Softwarearchitektur an der technischen Hochschule Rosenheim diese Ausarbeitung geschrieben worden. Das Ziel ist es openHAB, ein Heimautomatisierungs-Tool, aus praktischer und technischer Sicht zu untersuchen. Außerdem wird dabei auf die Aspekte Markttauglichkeit und Benutzbarkeit in der Praxis eingegangen.
 
-\section{Was ist OpenHAB?}
-\label{s:what-is-openhab}
-OpenHAB ist eine technologie-unabhängige Open-Source-Automatisierungssoftware für Smart-Homes.
+\section{Was ist openHAB?}
+\label{s:what-is-openHAB}
+openHAB ist eine technologie unabhängige Open-Source-Automatisierungs-Software für das Smart-Home.
 Das Projekt wurde von Kai Kreuzer 2010 erstmals initiiert und wird mittlerweile durch die Community weiterentwickelt. Die Software ist hauptsächlich in Java und der Auszeichnungssprache XML geschrieben. Seit dem 16. Dezember 2019 ist die Version 2.5 erhältlich.\\
 \\
-Auf der offiziellen Website von OpenHAB \url{https://www.openhab.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Dabei ist ein Ziel die Plattformunabhängigkeit. Somit kann OpenHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das Hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
+Auf der offiziellen Website von openHAB \url{https://www.openHAB.org/} sind drei klare Hauptziele definiert, die diese Software erreichen soll. Dabei ist ein Ziel die Plattformunabhängigkeit. Somit kann openHAB sowohl auf Linux, MacOS oder Windows betrieben werden. Auch das Hosten mit Docker oder einem Raspberry Pi wird unterstützt.\\
 Weiterhin soll es durch die Plugin-Architektur möglich sein, fast jedes Gerät zu integrieren.
 Es werden über 200 Technologien und mehrere tausende verschiedene Geräte unterstützt.\\
-Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die OpenHAB zu bieten hat. Dabei werden Auslöser (in Englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
+Das dritte Ziel weißt auf die vielen verschiedenen Automatisierungsmöglichkeiten hin, die openHAB zu bieten hat. Dabei werden Auslöser (in Englisch: Trigger), Aktionen, Skripte und auch Voice-Kontrolle genannt.
 
-\section{Bewertung OpenHAB}
-In diesem Kapitel wird das open-source Projekt OpenHAB untersucht und bewertet. Es befindet sich auf Github unter \url{https://github.com/openhab/openhab-core}. Die hierfür verwendeten Kriterien sind orientiert an der QAware Open Source Quick-Check Liste.
+\section{Bewertung von openHAB}
+In diesem Kapitel wird das Open-Source Projekt openHAB untersucht und bewertet. Es befindet sich auf Github unter \url{https://github.com/openHAB/openHAB-core}. Die hierfür verwendeten Kriterien sind orientiert an der \textit{QAware Open Source Quick-Check Liste}.
 Diese beinhaltet:
 \begin{longtable}{| p{3cm} | p{12cm}|}
 	\hline
@@ -39,25 +39,25 @@ Diese beinhaltet:
 		\item Aktuelle Dokumentation
 	\end{itemize} \\
 	\hline
-	\caption{OpenHAB Projektbewertungskriterien}
-	\label{table:openhab-judgement-criteria}
+	\caption{openHAB Projektbewertungskriterien}
+	\label{table:openHAB-judgement-criteria}
 \end{longtable}
 
-Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert open-source Softwareprojekte. Für jedes Projekt werden Daten wie Name, Beschreibung und Sourcecode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei fließen auch Daten weiterer open-source Projekte ein, um aussagekräftige Statistiken und Aussagen treffen zu können.\\
+Der Online-Dienst \textbf{Open Hub}, ehemals \textbf{Ohloh} genannt, katalogisiert Open-Source Software-Projekte. Für jedes Projekt werden Daten wie Name, Beschreibung und Quellcode erfasst. Basierend auf diesen Daten erstellt Open Hub eine Statistik, die es ermöglicht Codeanalyse, Projektmitarbeiter, Aktivitäten und eine Übersicht zu erhalten. Dabei fließen auch Daten weiterer Open-Source Projekte ein, um aussagekräftige Statistiken zu erhalten und Aussagen treffen zu können.\\
 \\
-{In der Auswertung über OpenHAB steht beispielsweise, dass im letzten Jahr 343 Entwickler aktiv an dem Projekt mitgearbeitet haben. Somit ist OpenHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
+{In der Auswertung über openHAB ist zu finden, dass 2019 über 380 Entwickler aktiv an dem Projekt mitgearbeitet haben. Somit ist openHAB unter den top 2\% der größten Projektteams auf Open Hub.\\
 Des Weiteren ist ein stetiger Anstieg von Interesse erkennbar. Dies wird durch den Vergleich von Codebeiträgen des aktuellen Jahrs und des Vorjahres begründet.\\
-Insgesamt haben über 1140 Entwickler bereits mehr als 20000 Beiträgen in Form von Programmcode zum Projekt beigetragen. Der Umfang des zu 98\% in Java geschriebenen Codes beträgt mehr als 1.5 Millionen Zeilen. Davon wurden circa 31\% dokumentiert. Dies entspricht dem durchschnittlichen Wert aller Java open-source Projekte, welche auf Open Hub registriert sind.}\cite{OPENHUB01:OH} Die hierbei angegeben Werte beziehen sich auf alle Projekte und Subprojekte von OpenHAB. Eine Übersicht hierfür ist unter \url{https://github.com/openhab} zu finden.\\
+Insgesamt haben über 1140 Entwickler bereits mehr als 20000 Beiträgen in Form von Programmcode zum Projekt beigetragen. Der Umfang des zu 98\% in Java geschriebenen Codes beträgt mehr als 1.5 Millionen Zeilen. Davon wurden circa 31\% dokumentiert. Dies entspricht dem durchschnittlichen Wert aller Java Open-Source Projekte, welche auf Open Hub registriert sind.}\cite{OPENHUB01:OH} Die hierbei angegeben Werte beziehen sich auf alle Projekte und Subprojekte von openHAB. Eine Übersicht hierfür ist unter \url{https://github.com/openHAB} zu finden.\\
 \\
-Wie bereits im Kapitel \ref{s:what-is-openhab} erwähnt, ist OpenHAB aktuell in der Version 2.5 erhältlich. Daraus lässt sich auf einen stabilen Codestand schließen.\\
+Wie bereits im Kapitel \ref{s:what-is-openHAB} erwähnt, ist openHAB aktuell in der Version 2.5 erhältlich. Daraus lässt sich auf einen stabilen Codestand schließen.\\
 Des Weiteren ist das Projekt unter einer EPL-2.0 Lizenz veröffentlicht. Dies erlaubt sowohl die private als auch kommerzielle Nutzung. Hinzu kommt die Möglichkeit für Modifizierung und Weiterverbreitung.\cite{LICENSE01:EC}
 \\
 \\
-Des Weiteren wird die Qualität des Supports evaluiert. Hierfür stellt Github einen Issue-Tracker zur Verfügung. Beim Teilprojekt openhab-core wurden darüber über 1250 Issues verfasst, wovon bei circa 90\% bereits die Bearbeitung abgeschlossen ist.\cite{GITHUB01:OS} Dies lässt auf eine aktive Nutzung des Issue-Trackers schließen und bietet somit eine hilfreiche Support-Möglichkeit. Hierfür ist vor allem das Label \textbf{Bug} von Bedeutung. Eine Stichprobenartige Untersuchung von Issues dieses Types hat eine durchschnittliche Antwortzeit in unter 24h ergeben. Dies wurde anhand des ersten Kommentars gemessen. Zudem wurden bereits circa 83\% der insgesamt 68 dokumentierten Bugs gelöst.
+Des Weiteren wird die Qualität des Supports evaluiert. Hierfür stellt Github einen Issue-Tracker zur Verfügung. Beim Teilprojekt openHAB-core wurden über 1250 Issues verfasst, wovon bei circa 90\% bereits die Bearbeitung abgeschlossen ist.\cite{GITHUB01:OS} Dies lässt auf eine aktive Nutzung des Issue-Trackers schließen und bietet somit eine hilfreiche Support-Möglichkeit. Hierfür ist vor allem das Label \textbf{Bug} von Bedeutung. Eine Stichprobenartige Untersuchung von Issues dieses Types hat eine durchschnittliche Antwortzeit in unter 24h ergeben. Dies wurde anhand des ersten Kommentars gemessen. Zudem wurden bereits circa 83\% der insgesamt 68 dokumentierten Bugs gelöst.
 \\
 \\
 Abschließend wird der Zustand der Dokumentation untersucht.
-Das Getting-started Tutorial ist ausführlich und aktuell. Die darüber hinausgehende Basisdokumentation ist vollständig. Nur in Spezialfällen, wie beispielsweise der Implementierung von Services, ist die Dokumentation lückenhaft.\cite{OPENHAB01:OH}
+Das Getting-Started Tutorial ist ausführlich und aktuell. Die darüber hinausgehende Basisdokumentation ist vollständig. Nur in Spezialfällen, wie beispielsweise der Implementierung von Services, ist die Dokumentation lückenhaft.\cite{openHAB01:OH}
 
 \subsection{Fazit der Bewertung}
 \begin{longtable}{| p{3cm} | p{10cm}| c |}
@@ -84,32 +84,33 @@ Das Getting-started Tutorial ist ausführlich und aktuell. Die darüber hinausge
 		\item Aktuelle Dokumentation
 	\end{itemize} & X/\checkmark \\
 	\hline
-	\caption{OpenHAB Projektbewertungskriterien Ergebnis}
-	\label{table:openhab-judgement-criteria-result}
+	\caption{openHAB Projektbewertungskriterien Ergebnis}
+	\label{table:openHAB-judgement-criteria-result}
 \end{longtable}
 
 \subsection{Weiterführende Bewertungen}
-OpenHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von Usecases untersucht und verglichen. Dabei kam er zu folgender Ergebnis.
+openHAB wurde bereits in der Bachelorarbeit von Pirmin Gersbacher vom Jahr 2017/2018 anhand von Usecases untersucht und verglichen. Dabei kam er zu folgender Ergebnis.
 
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
-	\includegraphics[width=0.8\textwidth]{\figdir/comparison-openhab.PNG}
-	\caption{Vergleich OpenHAB und anderen Heimautomatisierungstools von 2017/2018 \label{fig:comparison-openhab}}
+	\includegraphics[width=0.8\textwidth]{\figdir/comparison-openHAB.PNG}
+	\caption{Vergleich openHAB und anderen Heimautomatisierungstools von 2017/2018 \label{fig:comparison-openHAB}}
 \end{minipage}
-
-In der Tabelle \ref{fig:comparison-openhab} sind die unterschiedlichen Gebiete der Untersuchung auf der linken Seite zu finden. In der horizontalen sind die einzelnen Heimautomatisierungs-Tools aufgelistet. In der jeweiligen Zelle, basierend auf Reihe und Spalte, sind die Bewertungen festgehalten. Dabei zeigt ein blau markiertes Feld, welches das beste Tool für ein Gebiet ist.\\
-OpenHAB sticht dabei nicht sonderlich heraus. Allerdings ist es in keinem der aufgelisteten Kategorien negativ bewertet.\\
-Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf OpenHAB setzen würde. Dies liegt einerseits daran, dass die Entwickler von OpenHAB stark an Vereinfachung von komplizierteren Komponenten arbeitet. Andererseits sollen aber auch komplexere Automationen, durch die Nähe von Framework und Java, möglich sein.\cite{BA01:OPH}
+\smallskip
+ 
+In der Tabelle \ref{fig:comparison-openHAB} sind die unterschiedlichen Gebiete der Untersuchung auf der linken Seite zu finden. In der horizontalen sind die einzelnen Heimautomatisierungs-Tools aufgelistet. In der jeweiligen Zelle, basierend auf Reihe und Spalte, sind die Bewertungen festgehalten. Dabei zeigt ein blau markiertes Feld, welches das beste Tool für ein Gebiet ist.\\
+openHAB sticht dabei nicht sonderlich heraus. Allerdings ist es in keinem der aufgelisteten Kategorien negativ bewertet.\\
+Der Autor schreibt in seiner Bachelorarbeit, dass er persönlich auf openHAB setzen würde. Dies liegt einerseits daran, dass die Entwickler von openHAB stark an Vereinfachung von komplizierteren Komponenten arbeitet. Andererseits sollen aber auch komplexere Automationen, durch die Nähe von Framework und Java, möglich sein.\cite{BA01:OPH}
 \\
 \\
-Dadurch, dass die Bachelorarbeit von P. Gersbacher vor über einem Jahr veröffentlicht wurde, stellt diese nicht mehr aktuellen Stand dar. Seitdem wurde die neuere Version 2.5 entwickelt. Diese beinhaltet einige fundamentale Veränderungen. Dabei sind Anpassungen, um eine leichtere Nutzung sicherzustellen. Auf diese Weise können sowohl OpenHAB-Entwickler, als auch Entwickler, die OpenHAB als Basis verwenden, deutlich einfacher programmieren, sagt Kai Kreuzer in seinem Online Blog Post über das OpenHAB 2.5 Release.\cite{OPENHAB02:OH}\\
+Dadurch, dass die Bachelorarbeit von P. Gersbacher vor über einem Jahr veröffentlicht wurde, stellt diese nicht mehr aktuellen Stand dar. Seitdem wurde die neuere Version 2.5 entwickelt. Diese beinhaltet einige fundamentale Veränderungen. Dabei sind Anpassungen, um eine leichtere Nutzung sicherzustellen. Auf diese Weise können sowohl openHAB-Entwickler, als auch Entwickler, die openHAB als Basis verwenden, deutlich einfacher programmieren, sagt Kai Kreuzer in seinem Online Blog Post über das openHAB 2.5 Release.\cite{openHAB02:OH}\\
 In dieser Arbeit wird auf die speziellen Änderungen der Version 2.5 eingegangen. Dabei werden die Ergebnisse von P. Gersbacher als zusätzliche Quelle genutzt.
 
 
 \section{Komponenten von openHAB}\label{sec:technischeSicht}
 In diesem Kapitel werden die grundlegenden Komponenten dargestellt, welche openHAB verwendet. Des Weiteren wird auf die  Beziehung der Komponenten untereinander eingegangen.
-Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie man sein gewünschtes Ziel erreichen kann.
+Es wird ein Kernaspekt von openHAB vorgestellt. openHAB bietet in der Regel nicht den "'einen Weg"'. Es bietet mehrere Wege ein Ziel zu erreichen, je nach Vorlieben des Nutzers. So ist es zum Beispiel möglich ein Gerät über die Web-Oberfläche als auch über geschriebenen Code zu integrieren. Das gleiche ist auch bei Rules zu sehen, welche entweder über ein Add-on in der Web-Oberfläche definiert werden können oder über Code. Dieses Konzept ist ein Grundgedanke, der von openHAB verfolgt wird, welcher allerdings zu Verwirrung führen kann, da bei anfänglichen Umgang mit openHAB nicht unbedingt klar ist, wie ein gewünschtes Ziel erreicht werde kann.
 In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponenten aus openHAB zur schnellen Übersicht aufgeführt. Detailliert werden diese in den entsprechenden Unterkapiteln beschrieben.
 
 \begin{longtable}{| p{4cm} | p{11cm}|}
@@ -130,12 +131,12 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 	\hline
 	\centering Sitemaps & individuelle Benutzeroberfläche, welche Informationen präsentiert und Interaktionen ermöglicht.\\
 	\hline
-	\caption{OpenHAB Komponenten}
+	\caption{openHAB Komponenten}
 	\label{table:openhub-components}
 \end{longtable}
 
 \subsection{Add-ons}\label{sec:add-ons}
-openHAB verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{OPENHAB04:OH}:
+openHAB verwendet das Konzept von Add-ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{openHAB04:OH}:
 \begin{itemize}
 	\item Bindings
 	\item Automation Engine Modules
@@ -192,7 +193,7 @@ Channels sind Kommunikationswege welche von Things angeboten werden und diese mi
 }
 
 \subsection{Items}
-Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden. Bei einem Item handelt es sich um alle Informationen, welche es über eine Aktion gibt. So hat ein Item u.a. Bezeichnung, Kategorie, Typ, Status als auch Konfigurationen z.B. dass nur Werte von 0 - 50 übertragen werden. Diese Informationen werden benötigt, um Gruppierungen zu ermöglichen, den Status eines Gerätes abzufragen (z.B. Lautstärke eines Fernsehers) und auch mit einem Thing zu kommunizieren bzw. Aktionen auszuführen. Der Typ eines Items gibt an, welche Basistypen von dem Item akzeptiert/konsumiert werden können. Solche Basistypen können sowohl einfache, aus der Programmierung, bekannte Typen wie String, Number, DateTime usw. sein, als auch komplexere openHAB spezifische Typen wie Location, Player oder Switch. Eine komplette Auflistung ist unter \url{https://www.openhab.org/docs/configuration/items.html#type} zu finden.
+Der Begriff Item oder zu deutsch Ding, kann missverständlich aufgefasst werden. Bei einem Item handelt es sich um alle Informationen, welche es über eine Aktion gibt. So hat ein Item u.a. Bezeichnung, Kategorie, Typ, Status als auch Konfigurationen z.B. dass nur Werte von 0 - 50 übertragen werden. Diese Informationen werden benötigt, um Gruppierungen zu ermöglichen, den Status eines Gerätes abzufragen (z.B. Lautstärke eines Fernsehers) und auch mit einem Thing zu kommunizieren bzw. Aktionen auszuführen. Der Typ eines Items gibt an, welche Basistypen von dem Item akzeptiert/konsumiert werden können. Solche Basistypen können sowohl einfache, aus der Programmierung, bekannte Typen wie String, Number, DateTime usw. sein, als auch komplexere openHAB spezifische Typen wie Location, Player oder Switch. Eine komplette Auflistung ist unter \url{https://www.openHAB.org/docs/configuration/items.html#type} zu finden.
 
 Items sind essentiell um Aktionen auf der Web-Oberfläche dazustellen. So können diese in Gruppen oder einzeln dargestellt werden um als Statusanzeige und/oder als manuelle Steuerung des Smart Homes zu agieren. Für diese Steuerung ist anzumerken, dass jedem Item nur ein Channel zugeordnet werden kann, aber jedem Channel mehrere Items. Die Kardinalität ist somit \textbf{Item 1 -> n Channel}.
 
@@ -228,13 +229,13 @@ Wie im ganzen openHAB ist es auch hier möglich per Code oder openHAB vorinstall
 openHAB sieht verschiedene Formen der Programmierung vor. Es wird Fremdsystemen die Möglichkeit gegeben openHAB zu integrieren. Die Community wird dazu angehalten, openHAB selbst weiterzuentwickeln als auch neue Add-ons zu entwickeln. Aber auch der normale openHAB Nutzer kommt schnell an den Punkt, an dem er geringe Programmierungen vornehmen muss. Spätestens wenn er komplexere Automatisierungen vornehmen will.
 
 \subsection{Programmierung für den Nutzer}
-Als Benutzer ist es möglich viele Funktionen von openHAB zu nutzen, ohne dabei programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} beschrieben, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHab-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openhab2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind.
+Als Benutzer ist es möglich viele Funktionen von openHAB zu nutzen, ohne dabei programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} beschrieben, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHAB-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openHAB2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind.
 
 {
 	\centering
 	\captionsetup{type=figure}
-	\includegraphics[width=0.25\textwidth]{\figdir/openHab-conf-folder-structure.PNG}
-	\caption{openHAB-conf Ordnerstruktur \label{fig:openHab-conf-folder-structure}}
+	\includegraphics[width=0.25\textwidth]{\figdir/openHAB-conf-folder-structure.PNG}
+	\caption{openHAB-conf Ordnerstruktur \label{fig:openHAB-conf-folder-structure}}
 }
 
 \subsection{Offen für andere Systeme}
@@ -244,7 +245,7 @@ Die REST-API ermöglicht es auch Entwicklungsumgebungen Informationen aus dem op
 
 \subsection{Eigenes Binding}
 Sollte es bei openHAB kein passendes Binding für ein gewünschtes Gerät geben, steht der Erweiterung durch ein selbst entwickeltes Add-on nichts im Weg. Bereits im Kapitel \ref{sec:add-ons} wurde darauf verwiesen, dass openHAB offen für Add-ons ist. Da die Dokumentation für Add-ons meisten nur mit einem \textit{TODO} beschreiben ist, wird hier nur auf die Entwicklung von Bindings eingegangen.\\
-Um ein Binding zu entwickeln, bietet openHAB ein skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{OPENHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen, um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler Schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
+Um ein Binding zu entwickeln, bietet openHAB ein skeleton-script welches eine komplette Binding-Vorlage anlegt \cite{openHAB05:OH}, siehe Abbildung \ref{fig:own_binding_skeleton}. Diese Vorlage enthält alle Funktionen und Dateien, welche geändert werden müssen, um ein funktionsfähiges Binding zu entwickeln. Dadurch wird nicht nur die von openHAB vorgegebene Struktur erzielt und dem erfahren Entwickler Schreibarbeit abgenommen, sondern auch unerfahren Entwicklern innerhalb der Dateien nochmal erklärt, was in jeder Funktion prinzipiell zu machen bzw. zu ändern ist.
 
 {
 	\centering
@@ -295,7 +296,7 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für das System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openhabian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openhabian kommt die neuste Version von openhab und nützliche Systemlibraries und Einstellungen, um besser mit openHAB arbeiten zu können. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openhab:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Systems zu erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig, die den Raspberry selbst betreffen oder nicht über die Bereitgestellte Weboberfläche umsetzbar sind.
+		Für das System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openHABian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openHABian kommt die neuste Version von openHAB und nützliche Systemlibraries und Einstellungen, um besser mit openHAB arbeiten zu können. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Systems zu erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig, die den Raspberry selbst betreffen oder nicht über die Bereitgestellte Weboberfläche umsetzbar sind.
 		Damit das System später leicht bedienbar ist, wird ein 7 Zoll Touch-Monitor verwendet um ein HAB Panel anzuzeigen. Dank Touch-Funktionalität funktioniert er als Steuersystem und das System kann jederzeit bedient werden.
 		
 	\subsubsection{Eingebundene Geräte}
@@ -360,8 +361,8 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	\begin{minipage}{\textwidth}
 		\centering
 		\captionsetup{type=figure}
-		\includegraphics[width=1\textwidth]{\figdir/openHabPanel.png}
-		\caption{Erstelltes OpenHab Panel \label{fig:activity-diagram}}
+		\includegraphics[width=1\textwidth]{\figdir/openHABPanel.png}
+		\caption{Erstelltes openHAB Panel \label{fig:activity-diagram}}
 	\end{minipage}
 		
 		In Abbildung /ref{} sehen wir das erstellte Panel. Darauf ist zuerst der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit dargestellt. Letzteres ist ein Standardwidget von openHAB.
@@ -382,9 +383,9 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		Um auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können, PIXEL installiert werden. Dabei wird der Browser Chromium mit ausgeliefert. Es müssen verschiedene Einstellungen vorgenommen werden, damit der Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und das Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi vorgenommen werden.
 
 		\subsubsection{Externer Zugriff}
-		Eine häufige Anforderung an Smart Home Systeme ist auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myOpenHab Cloud. Für diese muss das open Hab Cloud Connector Addon installiert werden. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myOpenHab, muss dieser Secret-Key und ein von openHab erzeugte UUID hinterlegt werden. Danach ermöglicht das Addon eine Verbindung nach außen zur myOpenHab Cloud.
-		In myOpenHab können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern bearbeitet werden. MyOpenHab gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
-		Es gibt für die myOpenHab Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myOpenHab Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden, oder eigene Panels für Mobile Geräte erstellt werden.
+		Eine häufige Anforderung an Smart Home Systeme ist auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myopenHAB Cloud. Für diese muss das open Hab Cloud Connector Addon installiert werden. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myopenHAB, muss dieser Secret-Key und ein von openHAB erzeugte UUID hinterlegt werden. Danach ermöglicht das Addon eine Verbindung nach außen zur myopenHAB Cloud.
+		In myopenHAB können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern bearbeitet werden. MyopenHAB gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
+		Es gibt für die myopenHAB Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myopenHAB Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden, oder eigene Panels für Mobile Geräte erstellt werden.
 		
 		
 		\subsection{Verteilungsarchitektur des Smart Home Systems}
@@ -392,7 +393,7 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
-	\includegraphics[width=1\textwidth]{\figdir/VerteilungsarchitekturOpenHab.png}
+	\includegraphics[width=1\textwidth]{\figdir/VerteilungsarchitekturopenHAB.png}
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
@@ -400,48 +401,48 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	
 \subsection{Integration der Big Player}
 Amazon Alexa und Google Home sind die bekanntesten Voice Services laut Google Trends. \cite{GOOGLET01:AG} Damit ist es möglich über verbale Kommandos bestimmte Funktionalitäten anzusteuern. Beispielsweise das abspielen eines Radiosenders oder das An- und Ausschalten einer Lampe.\\
-Sowohl der Google Home Assistent als auch Amazons Alexa sind in das Heimautomatisierungstool openHAB integrierbar.In den folgenden zwei Unterkapiteln wird dies genauer erläutert.\cite{OPENHAB02:OH}
+Sowohl der Google Home Assistent als auch Amazons Alexa sind in das Heimautomatisierungstool openHAB integrierbar.In den folgenden zwei Unterkapiteln wird dies genauer erläutert.\cite{openHAB02:OH}
 
 \subsubsection{Amazon Alexa}
 In openHAB kann ein zertifizierter Amazon Alexa Smart Home Skill verwendet werden. Damit ist es möglich eine ganzes Smart Home durch verbale Kommandos zu verwenden. Es können dadurch Lichter, Schlösser, Thermostate, Sensoren und viele weitere Geräte angesteuert werden. Dies ist möglich durch Alexa oder den Echo Dot.\cite{ALEXA01:AL}\cite{ALEXA02:AL}
 Um die Geräte von Amazon als Eingabe nutzen zu können, wird zusätzlich die Verbindung zur myopenHAB Cloud benötigt, da diese die Verarbeitung der Kommandos an Amazon weiterleitet.\\
 \\
-Seit der Version 2.5 nutzt der Alexa Skill von openHAB die neuste Smart Home Skill API V3. Dadurch können nun viele Smart Home Geräte deutlich vielseitiger und präziser angesprochen werden. Außerdem unterstützt der Skill nun alle 15 Sprachen, in denen Alexa verwendet werden kann. Weiterhin ist Abwärtskompatibilität zu früheren Versionen gewährleistet.\cite{OPENHAB02:OH}
+Seit der Version 2.5 nutzt der Alexa Skill von openHAB die neuste Smart Home Skill API V3. Dadurch können nun viele Smart Home Geräte deutlich vielseitiger und präziser angesprochen werden. Außerdem unterstützt der Skill nun alle 15 Sprachen, in denen Alexa verwendet werden kann. Weiterhin ist Abwärtskompatibilität zu früheren Versionen gewährleistet.\cite{openHAB02:OH}
 
 \subsubsection{Google Home}
 
 Prinzipiell sind mithilfe von Google Home fast alle Optionen gegeben, die auch durch Amazons Alexa existieren. Somit können ebenfalls verschiedenste Geräte angesteuert werden. Für die Verwendung wird, wie beim Amazon Skill, eine Verbindung mit der myopenHAB Cloud benötigt.\\
 \\
-Beim letzten Update von openHAB wurde die Anwendung von Google Home ebenfalls verbessert. Dabei ist sowohl die Codequalität als auch die Sicherheit der Integration gesteigert worden. Weiterhin ist es durch die neuste Version möglich, deutlich mehr Features der Google Smart Home API zu nutzen. Dabei wurden sowohl neue Funktionen als auch der Support für alle Sprachen eingebaut.\cite{OPENHAB02:OH}\cite{GOOGLEH01:GH}
+Beim letzten Update von openHAB wurde die Anwendung von Google Home ebenfalls verbessert. Dabei ist sowohl die Codequalität als auch die Sicherheit der Integration gesteigert worden. Weiterhin ist es durch die neuste Version möglich, deutlich mehr Features der Google Smart Home API zu nutzen. Dabei wurden sowohl neue Funktionen als auch der Support für alle Sprachen eingebaut.\cite{openHAB02:OH}\cite{GOOGLEH01:GH}
 
 \section{Datenintegrität und Sicherheit}
 
-Dieses Kapitel bietet einen Überblick über die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in OpenHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
+Dieses Kapitel bietet einen Überblick über die Sicherheit im Internet-of-Things-Bereich (IoT).  Anschließend wird auf die Sicherheit in openHAB selbst und dafür verwendbare Erweiterungen eingegangen. Dies beinhaltet außerdem mögliche Sicherheitslücken und dazugehörige Gegenmaßnahmen.\\
 \\
 Open Web Appliation Security Projekt (OWASP), eine Community, die frei erhältliche Artikel zur Sicherheit im Internet bereitstellt, veröffentlichte 2019 eine Liste der Top Sicherheitsbedrohungen aus dem Jahr 2018 im Iot-Bereich.\cite{OWASP01:IOT} Das dabei größte Sicherheitsrisiko besteht bei schwachen, einfach erratbaren oder hart-kodierten Passwörtern. Dies wird von OWASP beschrieben mit "`Use of easily bruteforced, publicly available, or unchangeable credentials, including backdoors in firmware or client software that grants unauthorized access to deployed systems"'.\cite{OWASP01:IOT} Auf Platz 2 und 3 befinden sich unsichere Netzwerk Services und Ecosystem Interfaces. Damit sind indirekte Zugriffsmöglichkeiten durch ungesicherte Services gemeint, die entweder von innerhalb oder außerhalb des IoT-Netzwerks erreichbar sind. Sobald ein Angreifer diesen Service "`übernommen"' hat, kann dieser problemlos Zugriff erlangen, wenn keine Sicherheitsvorkehrungen diesbezüglich getroffen wurden.\\
 \\
-OpenHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Velázquez über "`Securing openHAB Smart Home through User Authentication and Authorization"', auf Sicherheit geprüft.\cite{MA01:OPH} Dabei untersucht der Autor mithilfe von Wireshark, wie OpenHAB kommuniziert und kommt zu dem Resultat, dass es drei verschiedene Kommunikationsszenarien gibt, die sicherheitstechnische Relevanz haben. Alle drei Szenarien nutzen Bindings als Mittel der Kommunikation. Diese sind:
+openHAB in der Version 2.4 wird in der Masterarbeit von Jesús Antonio Soto Velázquez über "`Securing openHAB Smart Home through User Authentication and Authorization"', auf Sicherheit geprüft.\cite{MA01:OPH} Dabei untersucht der Autor mithilfe von Wireshark, wie openHAB kommuniziert und kommt zu dem Resultat, dass es drei verschiedene Kommunikationsszenarien gibt, die sicherheitstechnische Relevanz haben. Alle drei Szenarien nutzen Bindings als Mittel der Kommunikation. Diese sind:
 \begin{itemize}
 	\item intern: Thing - openHAB
-	\item extern mit logischem Thing: OpenHAB-Remote Web Service
-	\item extern mit physikalischem Thing: OpenHAB-Remote Web Service Thing
+	\item extern mit logischem Thing: openHAB-Remote Web Service
+	\item extern mit physikalischem Thing: openHAB-Remote Web Service Thing
 \end{itemize}	
-Interne Kommunikation zwischen Thing und OpenHAB Instanz findet typischerweise über WLAN statt, welches mithilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von OpenHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
+Interne Kommunikation zwischen Thing und openHAB Instanz findet typischerweise über WLAN statt, welches mithilfe von AES verschlüsselt ist. Um in das System einzudringen, müsste ein Angreifer entweder AES entschlüsseln können oder das Passwort anderweitig herausfinden. AES gilt als nicht entschlüsselbar in einer annehmbaren Zeit. Daraus lässt sich schließen, dass die interne Kommunikation von openHAB und Things nur so sicher ist, wie das ganze WLAN-Netzwerk selbst.\\
 Bei den zwei externen Punkten sind laut 
-Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit OpenHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
+Jesús Antonio Soto Velázquez nur Lauschangriffe möglich. Normalerweise sollten externe Thing's mit openHAB und Cloud ausschließlich über das Hyper Transfer Protocol Secure (HTTPS) miteinander kommunizieren. Dabei hängt es von der jeweiligen Implementierung von Binding und Aufrufen für die Datenübermittlung ab, ob HTTPS oder dessen unverschlüsselte Form HTTP eingesetzt wird. Weiterhin weißt der Autor darauf hin, dass sobald ein Binding Daten unverschlüsselt über das Internet verschickt, andere Bindings davon nicht betroffen sind. Diese gelten weiterhin als sicher, solange der Angreifer nicht über andere Wege in das System eingedrungen ist.\\
 \\
-Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{OPENHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von OpenHAB detaillierter eingegangen.
+Trotz der Untersuchung der nicht ganz aktuellen Version 2.4, ist der Inhalt dieser Masterarbeit aktuell, denn mit der Version 2.5 wurden kaum Updates bezüglich Sicherheit integriert.\cite{openHAB02:OH} Folglich wird auf die sowohl internen als auch externen Sicherheits-Features von openHAB detaillierter eingegangen.
 
 \subsection{Interne vorhandene Funktionalitäten}
-OpenHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die OpenHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
-Beim ersten Aufsetzen von OpenHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede OpenHAB Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein OpenHAB System nachahmen.\\
+openHAB bietet bereits ein paar Sicherheitsvorkehrungen "`out-of-box"' an. Grundsätzlich kann die openHAB Instanz nur über Secure Shell (SSH) oder HTTP/HTTPS erreicht werden. Bei der Kommunikation über SSH wird, wie bereits erwähnt, das als sicher geltende AES verwendet. HTTPS hingegen nutzt Zertifikate und wird zur Herstellung von Integrität und Vertraulichkeit der Kommunikation zwischen Client und Server im Internet verwendet. Es gilt ebenfalls als sicher.\\
+Beim ersten Aufsetzen von openHAB wird ein selbst-signiertes SSL-Zertifikat (256-bit ECC) erstellt und im Jetty (Webservice) Keystore gespeichert. Dadurch kann sichergestellt werden, dass jede openHAB Instanz eindeutig ist. Ein potenzieller Angreifer kann demzufolge keinen Evil-Twin (Böser Zwilling) aufbauen und ein openHAB System nachahmen.\\
 \\
 Die Abbildung \ref{fig:verteilungs-architektur} zeigt eine Verteilungsarchitektur mit den verwendeten Protokolle einzelner openHAB-Komponenten aus Kapitel \ref{s:usage-open-hab}.\\
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
 	\includegraphics[width=1\textwidth]{\figdir/verteilungsarchitektur.png}
-	\caption{Übersicht einer exemplarischen Anwendung von OpenHAB \label{fig:verteilungs-architektur}}
+	\caption{Übersicht einer exemplarischen Anwendung von openHAB \label{fig:verteilungs-architektur}}
 \end{minipage}
 \\
 \\
@@ -449,28 +450,28 @@ Die darin zu sehenden Komponenten sind durch einen blauen Hintergrund markiert. 
 Die jeweiligen Komponenten kommunizieren mit der zentralen openHAB Instanz, welche auf einem Raspberry Pi gehostet wird. Dabei sind die verwendeten Protokolle für die Informationsübertragung auf den gerichteten Pfeilen zu sehen.
 
 \subsection{Externe Erweiterungsmöglichkeiten}
-Ein weiterer Weg der Benutzung einer OpenHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der OpenHAB Dokumentation erläutert.\\
-Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den OpenHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch OpenHAB durch die Cloud angesteuert wird.\\
-Schlussendlich kann OpenHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt OpenHAB-Instanz über eine bestimmte Domain zuzugreifen.\\
+Ein weiterer Weg der Benutzung einer openHAB-Instanz wäre dies von außerhalb des Heimnetzwerks über beispielsweise das Smartphone zu erreichen. Hierfür werden die "`Best Practices"' in der openHAB Dokumentation erläutert.\\
+Dabei wird eine VPN Verbindung in das Heimnetzwerk als sicherster Weg bewertet. Den openHAB Cloud Service zu nutzen, ist eine weitere Möglichkeit. Dabei wird ebenfalls eine Tunnelverbindung aufbaut, wodurch openHAB durch die Cloud angesteuert wird.\\
+Schlussendlich kann openHAB hinter einem Reverse Proxy betrieben werden. Dieser leitet Client-Anfragen weiter an den gewünschten Server. Damit ist es möglich über den Proxy auf die im Heimnetzwerk eingesetzt openHAB-Instanz über eine bestimmte Domain zuzugreifen.\\
 \\
-Weiterhin warnt openHAB auf ihrer Website davor, Ports an der Firewall für OpenHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{OPENHAB03:OH}
+Weiterhin warnt openHAB auf ihrer Website davor, Ports an der Firewall für openHAB zu öffnen. Es wird ausdrücklich gesagt, dass dies in keinem Fall benötigt wird.\cite{openHAB03:OH}
 
 \section{Fazit}
 \subsection{Zusammenfassung}
-Diese Arbeit analysiert das open-source Heimautomatisierungstool OpenHAB auf Markttauglichkeit und Benutzbarkeit. Zu Beginn wird dafür erklärt, was OpenHAB ist und wofür es verwendet werden soll. Anschließend folgt eine Bewertung des Projektes mithilfe von Open Hub und einer Facharbeit. Das daraus resultierende Ergebnis besagt, dass OpenHAB ein gutes Heimautomatisierungstool ist und auch im Vergleich zu seinesgleichen auf dem Markt etabliert ist.\\
+Diese Arbeit analysiert das open-source Heimautomatisierungstool openHAB auf Markttauglichkeit und Benutzbarkeit. Zu Beginn wird dafür erklärt, was openHAB ist und wofür es verwendet werden soll. Anschließend folgt eine Bewertung des Projektes mithilfe von Open Hub und einer Facharbeit. Das daraus resultierende Ergebnis besagt, dass openHAB ein gutes Heimautomatisierungstool ist und auch im Vergleich zu seinesgleichen auf dem Markt etabliert ist.\\
 Weiterhin werden die technischen Grundlagen, Programmier-Schnittstellen und mehrere Anwendungsbeispiele in den darauffolgenden Kapiteln erläutert.\\
 Abschließend geht diese Arbeit auf Datenintegrität und Sicherheit ein.
 
 \subsection{Schlussfolgerung}
 Heimautomatisierungstools werden immer notwendiger, um mit dem wachsenden Markt im Bereich Iot mithalten zu können.\cite{STATISTA01:IOT} Das bekannte open-source Tool openHAB bietet die fundamentalen Funktionalitäten für Heimautomatisierung. Dies bekräftigt auch das Ergebnis dieser Arbeit. Dabei wurde festgestellt, dass openHAB aktiv von einer wachsenden Community weiterentwickelt wird und sowohl privat als auch kommerziell eingesetzt werden kann, da das Projekt unter einer EPL-2.0 Lizenz steht.\\
 Die Komponenten aus denen openHAB besteht, bzw. die Teile, welche einem Benutzer zur Verfügung stehen, sind klar strukturiert und besitzen eine Abstraktionsstufe, die gut verständlich ist. Auch wenn die Namensgebung der Items nicht optimal ist, wird ersichtlich wie der Zusammenhang zwischen Bindings, Things, Channels und Items ist. openHAB bietet durch die Add-on Architektur einige Möglichkeiten der Erweiterung. Dies wird im Falle von Bindings noch durch die bereitgestellten Skripte vereinfacht, was dazu führt, dass openHAB relativ einfach um neue Geräte erweitert werden kann.\\
-Weiterhin wurde festgestellt, dass OpenHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
+Weiterhin wurde festgestellt, dass openHAB selbst sichere Verbindungen beim Austausch von Informationen über Geräte nutzt. Dabei wird für Zugriffe von innerhalb und außerhalb des Netzwerks auf die Technologien HTTPS und SSH gesetzt. Das einzige aktuelle Sicherheitsproblem ist, dass ältere integrierbare Bindings, welche meist durch Dritte geschrieben wurde, HTTP verwenden. Da sowohl HTTPS als auch SSH als sicher gelten, sind nur über die unsicheren HTTP Verbindungen Lauschangriffe möglich, sofern sich keine anderen Lücken im System befinden.
 \\
 Die Autoren dieser Arbeit bewerten openHAB als gut gelungenes Heimautomatisierungstool. Nach einer gewissen Einarbeitungszeit ist das Zusammenbauen eines Smart Homes damit unkompliziert umsetzbar. Es erlaubt die Einbindung fast aller Geräten aus dem Iot-Bereich, erfordert jedoch an manchen Stellen Kenntnisse in der Softwareentwicklung.
 
 
 \subsection{Ausblick}
-Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet.\cite{OPENHAB02:OH} Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
+Mit dem Release 2.5 Ende 2019 ist offiziell die Entwicklung an Version 3.0 gestartet. Version 2.5 wird allerdings weiter gepflegt werden. Für die Version 3 sind einige Breaking Changes geplant. So soll vor allem die verschiedenen UI's (Paper UI, Basic UI, und mehr) zusammengeführt werden und das erstellen von Rules wird überarbeitet.\cite{openHAB02:OH} Da das Projekt Open Source von der Community entwickelt wird kann sich an diesem Plan etwas ändern. Der Ausblick lässt aber vermuten, dass bereits jetzt ein gute Schwerpunkt gelegt wurde und openHAB mit der nächsten Version einen weiteren Schritt nach vorne machen wird. Es steht derzeit noch kein Release Datum fest. Da wichtige Releases in der Vergangenheit oft am Ende des Jahres zur Weihnachtszeit veröffentlicht wurden, liegt es nahe, dass frühestens Ende 2020 damit zu rechnen ist.
 
 %%% Local Variables: 
 %%% mode: latex

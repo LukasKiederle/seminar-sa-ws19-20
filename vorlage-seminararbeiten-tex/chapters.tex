@@ -136,16 +136,16 @@ In Tabelle \ref{table:openhub-components} sind einige der Grundlegenden Komponen
 \end{longtable}
 
 \subsection{Add-Ons}\label{sec:add-ons}
-openHAB verwendet das Konzept von Add-Ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-Ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{openHAB04:OH}:
+openHAB verwendet das Konzept von Add-Ons als Teil ihrer zusammensteckbaren Architektur (pluggable architecture). Dadurch, dass vordefinierte Bereiche von openHAB erweitert werden können, wird openHAB der Anforderung gerecht "'alles"' zu Integrieren. Das Konzept der Add-Ons ermöglicht es außerdem nur benötigte Module zu installieren bzw. zu verwenden wodurch openHAB schlank, leicht und überschaubar bleibt. Die Bereiche in denen openHAB offen ist, um erweitert zu werden sind nach \cite{openHAB04:OH}:
 \begin{itemize}
 	\item Bindings
-	\item Automation Engine Modules
+	\item Automation-Engine-Modules
 	\item Transformations / Profiles
-	\item IO Services
-	\item Persistence Services
+	\item IO-Services
+	\item Persistence-Services
 	\item Audio \& Voice
 \end{itemize}
-Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-Ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren/modfizieren. IO Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden können, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
+Um den Rahmen dieser Arbeit nicht zu übersteigen wird nur auf Bindings detaillierter eingegangen, siehe Kapitel \ref{sec:Bindings}. Bei den nicht näher beschriebenen Add-Ons handelt es bei Automation-Engine-Modules um Bedingungen oder Aktionen, welche für Rules oder Scripte verwendet werden können. Transformations / Profiles können genutzt werden um Werte welche durch Channels übertragen werden zu tranformieren / modfizieren. IO-Services ermöglichen es interne Schnittstellen von openHAB nach außen aufzumachen. Dies geschieht z.B. bei der REST-Api, dem HomeKit für Apple oder dem Hue Emulation Service für Philips. Persistence-Services können genutzt werden um den Status von Items z.B. in Datenbanken abzuspeichern und wieder abzurufen. Und bei Audio \& Voice handelt es sich um Services, welche genutzt werden, um Audioquellen abzuspielen oder Stimminteraktionen mit Nutzern zu ermöglichen.
 
 \subsection{Bindings} \label{sec:Bindings}
 Bindings sind die Komponenten, welche es ermöglicht Systeme oder Geräte mit openHAB zu integrieren. Mit einem Binding kann sowohl ein physisches Geräte wie z.B. ein LG Fernseher mit WebOS als auch eine Service z.B. Spotify angebunden werden. Die Bindings sind dabei meist soweit abstrahiert, dass nicht jedes einzelne Model bzw. Version ein eigenes Binding benötigt.

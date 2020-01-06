@@ -296,12 +296,12 @@ config = getConfigAs(MyNewBindingConfiguration.class);
 \label{s:usage-open-hab}
 
 
-\subsection{Beispiel Aufbau eines openHAB Smart-Homes}
-	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein eigenes Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
+\subsection{Beispiel Aufbau eines openHAB Smart-Home}
+	Um mit openHAB Erfahrungen zu sammeln wurde für das Projekt ein  Smart-Home System erstellt. Dabei wurde darauf geachtet ein praktisches System zu erstellen, dass die üblichen Anforderungen an ein Smart-Home erfüllt und zudem eine gute Übersicht über die Grenzen und Möglichkeiten von openHAB geben kann.
 
 	\subsubsection{Hardware für openHAB}
-		Für das System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wird openHABian installiert. Dies ist ein an openHAB angepasstes Linux Buster Betriebssystem. Mit openHABian kommt die neuste Version von openHAB und nützliche Systemlibraries und Einstellungen, um besser mit openHAB arbeiten zu können. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch beim Systemstart. Die Weboberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Systems zu erstellen. Über SSH ist ein Zugriff direkt auf den Raspberry pi möglich. Ein SSH Zugriff ist für verschiedene Anpassungen nötig, die den Raspberry selbst betreffen oder nicht über die Bereitgestellte Weboberfläche umsetzbar sind.
-		Damit das System später leicht bedienbar ist, wird ein 7 Zoll Touch-Monitor verwendet um ein HAB Panel anzuzeigen. Dank Touch-Funktionalität funktioniert er als Steuersystem und das System kann jederzeit bedient werden.
+		Für das System wurde ein Raspberry pi der vierten Generation mit 2gb Arbeitsspeicher gewählt. Der Raspberry ist mit Wlan und Bluetooth ausgestattet. Darauf wurde openHABian installiert, wobei es sich um ein an openHAB angepasstes Linux Buster Betriebssystem handelt. In openHABian ist die neuste Version von openHAB und nützliche System-Libraries und Einstellungen integriert, um openHAB best möglich zu unterstützen. Damit ist der Raspberry pi bereits fertig eingerichtet und openHAB startet automatisch bei Systemstart des Raspberry. Die Web-Ooberfläche wird im Netzwerk unter https://openHAB:8080 bereitgestellt. Dort können die meisten Einstellungen vorgenommen werden, um Geräte und Systeme einzubinden und eine Benutzeroberfläche zum Steuern des Systems zu erstellen. Per SSH kann direkt auf den Raspberry zugegriffen werden, was für Anpassungen nötig sind, welche Raspberry bezogen sind und somit nicht über die openHAB Web-Oberfläche möglich sind.
+		Um das System leichter und jederzeit zu steuern, wird ein 7 Zoll Touch-Monitor verwendet welcher er openHAB-Panel anzuzeigen.
 		
 	\subsubsection{Eingebundene Geräte}
 		In openHAB lassen sich eine Vielzahl an Geräten und Services einbinden. Für unsere Arbeit wählen wir exemplarisch verschiedene Geräte aus, die in einem üblichen Wohnzimmer nützlich sind.

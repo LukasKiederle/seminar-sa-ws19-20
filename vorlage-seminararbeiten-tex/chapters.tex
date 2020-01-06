@@ -183,11 +183,12 @@ Things können auf drei verschiedene Arten zu openHAB hinzugefügt werden. Diese
 	\caption{Thing per Code \label{fig:thing-add-code}}
 }
 
+
 \subsection{Channels} \label{sec:channels}
 {
 Channels sind Kommunikationswege welche von Things angeboten werden und diese mit Items verbinden. Mit Hilfe der Channels werden Aktionen, welche Things auszuführen haben, Parameter übergeben. So bietet der verwendete LG Fernseher, wie in Abbildung \ref{fig:channel-list} zu sehen, eine Liste von Channels an, welche Daten für Aktionen übertragen um diese Auszuführen. Das heißt, dass Channels sowohl die Kommunikationswege mit zugehörigen Parameter repräsentieren als auch Aktionen, welche Things ausführen können. Eine gewünschte Aktion eines Things kann ohne den passenden Channel diese Aktion nicht ausgeführt werden.
 }
-\smallskip
+
 {
 	\centering
 	\captionsetup{type=figure}
@@ -208,7 +209,8 @@ Wenn diese Bedingung erfüllt ist, wird im DANN-Pfad die Reaktion definiert. So 
 Wie im Codebeispiel \ref{lst:sample-rule} zu sehen, gibt es die Möglichkeit innerhalb des DANN-Blocks weitere Strukturelemente einzufügen, um aus mehreren Rules eine zu machen.
 
 Alternativ zur Programmierung ist es mit einem experimentelles Add-On möglich, über die Web-Oberfläche Rules zu definiert. Allerdings ist hier anzumerken, dass komplexere Regeln schwierig bis gar nicht zu erzeugen sind. Dies liegt daran, dass die Eingabemöglichkeiten beschränkt sind und durch das Konvertieren in das JSON-Format Sonderzeichen wie \textbf{>, <, =, !} nicht funktionieren. Des Weiteren ist das Einfügen von zusätzlichen Strukturelementen über das experimentelle Add-On nicht möglich.
-\smallskip
+
+
 \begin{lstlisting}[language=java,firstnumber=1,caption=Rule Beispiel,label=lst:sample-rule]
 rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change"
 when
@@ -233,7 +235,9 @@ openHAB sieht verschiedene Formen der Programmierung vor. Einerseits stößt der
 
 \subsection{Programmierung für den Nutzer}
 Als Benutzer ist es möglich viele Funktionen von openHAB zu nutzen, ohne dabei programmieren zu müssen. Dennoch ist es, wie im Kapitel \ref{sec:technischeSicht} beschrieben, auch über Code machbar Bindings, Things usw. zu integrieren. Abbildung \ref{fig:openHAB-conf-folder-structure} kann entnommen werden, wie die Ordnerstruktur aussieht, welche dem Nutzer für die Programmierung unter dem Dateiordner \textit{openHAB2-conf} zur Verfügung steht. Aus der Abbildung wird schnell klar, wo welche Komponente hinzugefügt werden können. In den entsprechenden \textit{readme.txt}-Dateien wird nochmals darauf hingewiesen, was in den jeweiligen Ordner geschrieben werden muss. Da es sich bei allen \textit{openHAB2-conf}-Dateien um Textdateien handelt wird in den \textit{readme.txt}-Dateien darauf hingewiesen, welche Dateiendungen in dem jeweiligen Ordner zu verwenden sind und wo Beispiele in der openHAB Dokumentation zu finden sind. Diese sehr einfache und klare Struktur ermöglicht es auch nicht Programmieren sich schnell zurechtzufinden und in Kombination mit den \textit{readme.txt}-Dateien bzw. der Dokumentation in den richtigen Ordner lauffähigen Code zu schreiben.
-\smallskip
+
+
+
 {
 	\centering
 	\captionsetup{type=figure}

@@ -366,11 +366,11 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		\centering
 		\captionsetup{type=figure}
 		\includegraphics[width=1\textwidth]{\figdir/openHABPanel.png}
-		\caption{Erstelltes openHAB Panel \label{fig:activity-diagram}}
+		\caption{Erstelltes openHAB Panel \label{fig:openhab-panel}}
 	\end{minipage}
 		
 		\smallskip
-		Abbildung \ref{fig:activity-diagram} zeigt ein erstelltest Panel. Im Detail ist links Oben der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit zu sehen. Letzteres ist ein Standard-Widget von openHAB.
+		Abbildung \ref{fig:openhab-panel} zeigt ein erstelltest Panel. Im Detail ist links Oben der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit zu sehen. Letzteres ist ein Standard-Widget von openHAB.
 		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.
 
 		Unten Links befindet sich ein selbst geschriebenes Widget, welches Wetterdaten anzeigt.
@@ -382,19 +382,20 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		Die restlichen Widgets steuern die Lampen. Das große Widget oben mittig kann alle Lampen im Zimmer an- und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die verschiedenen Slider lassen sich Helligkeit und Weißfarbe der Lampen steuern.
 		
 		\subsubsection{Kontrollstation einrichten}
-		Um das System bequem steuern zu können, wird eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichtet. Es wird dafür ein Bildschirm gewählt, auf welchem sich der Raspberry befestigen lässt und direkt vom Raspberry Strom bezieht.
-		Die Kontrollstation wird dann das erstellte HAB Panel anzeigen und so Zugriff auf das System ermöglichen.
+		Um das Smart-Home-System zu steuern, wird eine Kontrollstation aus dem Raspberry pi selbst und einem 7-Zoll Bildschirm errichtet. Es wird dafür ein Bildschirm gewählt, auf welchem sich der Raspberry befestigen lässt und direkt vom Raspberry Strom zu beziehen.
+		Die Kontrollstation soll das erstellte openHAB Panel aus Abbildung \ref{fig:openhab-panel} anzeigen und so Zugriff auf das System ermöglichen.
 
-		Um auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können, PIXEL installiert werden. Dabei wird der Browser Chromium mit ausgeliefert. Es müssen verschiedene Einstellungen vorgenommen werden, damit der Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und das Panel im Vollbildmodus anzeigen. Alle Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi vorgenommen werden.
+		Um auf dem Raspberry pi eine Benutzeroberfläche anzeigen zu können, muss die Bibliothek PIXEL installiert werden. Mit PIXEL wird der Browser Chromium ausgeliefert. Es müssen verschiedene Einstellungen vorgenommen werden, damit der Raspberry pi ohne Login startet und direkt Chromium öffnet. Gleichzeitig soll der Mauszeiger ausgeblendet werden und das Panel im Vollbildmodus anzuzeigen. Die nötigen Einstellungen können nicht mit openHAB erledigt werden. Per SSH müssen diese direkt auf dem Raspberry pi vorgenommen werden.
 
 		\subsubsection{Externer Zugriff}
-		Eine häufige Anforderung an Smart Home Systeme ist auch extern auf das System zugreifen zu können. So kann auch von unterwegs der Zustand der Geräte kontrolliert werden und diese auch gesteuert werden. Für openHAB gibt es die myopenHAB Cloud. Für diese muss das open Hab Cloud Connector Addon installiert werden. Dieses erzeugt auf dem Pi ein Secret File mit einem Secret Key. Registriert man einen Account bei myopenHAB, muss dieser Secret-Key und ein von openHAB erzeugte UUID hinterlegt werden. Danach ermöglicht das Addon eine Verbindung nach außen zur myopenHAB Cloud.
-		In myopenHAB können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert werden kann. Das ganze System kann jetzt auch extern bearbeitet werden. MyopenHAB gibt dabei die Möglichkeit auf das System zuzugreifen als wäre man im selben Netzwerk.
-		Es gibt für die myopenHAB Cloud auch Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myopenHAB Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items direkt gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden, oder eigene Panels für Mobile Geräte erstellt werden.
+		Eine häufige Anforderung an Smart-Home-Systeme ist Extern auf das Smart-Home-System zugreifen zu können um Zustand von Geräten zu kontrolliert und diese auch zusteuern. Hierfür bietet openHAB die myopenHAB Cloud. Um diese zu nutzen, muss das openHAB Cloud Connector Add-On installiert werden. Dieses erzeugt auf dem Raspberry ein Secret-Datei mit einem Secret-Key. Registriert man einen Account bei myopenHAB, muss dieser Secret-Key und ein von openHAB erzeugte UUID hinterlegt werden. Danach ermöglicht das Add-On eine Verbindung nach außen zur myopenHAB Cloud.
+		In myopenHAB können erstellte Panels angezeigt werden mit denen das Gerät wie gewohnt gesteuert wird. Das Smart-Home-System kann darauf von extern zugegriffen werden, als wäre man im selben Netzwerk.
+		Es gibt für die myopenHAB Cloud Smartphone Apps für Android und iOS. Nach der Anmeldung mit dem myopenHAB Account ist ein sichere Zugriff auf das System auch von unterwegs möglich. Dabei kann auf Panels zugriffen werden und Items gesteuert werden. Allerdings sollte das Panel auf die Größe des Smartphone Bildschirms angepasst werden, oder eigene Panels für Mobile Geräte erstellt werden.
 		
 		
 		\subsection{Verteilungsarchitektur des Smart Home Systems}
 		
+		\smallskip
 \begin{minipage}{\textwidth}
 	\centering
 	\captionsetup{type=figure}
@@ -402,7 +403,7 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 	\caption{Verteilungsarchitektur des Smart Home Systems \label{fig:activity-diagram}}
 \end{minipage}
 
-	Abbildung \ref stellt die Verteilungsarchitektur des erstellten Smart Home Systems dar. In der Darstellung sind Hardwarekomponenten durch einfache Rechtecke dargestellt und Softwarekomponenten durch Rechtecke mit zwei vertikalen Linien. Die Verteilungsarchitektur zeigt die verschiedenen Geräte und Services und wie sie mit openHAB verbunden sind. Dabei sind alle Services und Geräte über Bindings verbunden. Der Touch Monitor ist direkt über HDMI mit dem Raspberry pi verbunden und zeigt das HAB Panel an, welches von der Weboberfläche des open HAB Systems bereitgestellt wird. Das hue Binding spricht die hue Bridge an, welche dann die Lampen steuert.
+	Abbildung \ref{fig:activity-diagram} stellt die Verteilungsarchitektur des erstellten Smart Home Systems dar. In der Darstellung sind Hardwarekomponenten durch einfache Rechtecke dargestellt und Softwarekomponenten durch Rechtecke mit zwei vertikalen Linien. Die Verteilungsarchitektur zeigt die verschiedenen Geräte und Services und wie sie mit openHAB verbunden sind. Dabei sind alle Services und Geräte über Bindings verbunden. Der Touch Monitor ist direkt über HDMI mit dem Raspberry pi verbunden und zeigt das HAB Panel an, welches von der Weboberfläche des open HAB Systems bereitgestellt wird. Das hue Binding spricht die hue Bridge an, welche dann die Lampen steuert.
 	
 \subsection{Integration der Big Player}
 Amazon Alexa und Google Home sind die bekanntesten Voice Services laut Google Trends. \cite{GOOGLET01:AG} Damit ist es möglich über verbale Kommandos bestimmte Funktionalitäten anzusteuern. Beispielsweise das abspielen eines Radiosenders oder das An- und Ausschalten einer Lampe.\\

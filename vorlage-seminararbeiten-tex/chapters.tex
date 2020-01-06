@@ -357,10 +357,10 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		Die Item-Datei der Wetter Items aus Codebeispiel \ref{lst:code-weatheritems} erzeugt drei Items welche die Temperatur, die Niederschlagswahrscheinlichkeit und die Windgeschwindigkeit beinhalten.
 		Es wird bei den Items die weatherId "`home"' verwendet. Dadurch benutzt das Binding bei der Abfrage der Wetterdaten die zuvor erzeugten Ortsdaten.
 		
-		\subsubsection{Erstellung des HAB Panels}
-		Ein HAB Panel kann auf der Web UI aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch noch einen Button geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent wechselt. Damit kann die Lampe ein und ausgeschaltet werden.
+		\subsubsection{Erstellung des openHAB Panels}
+		Ein openHAB Panel kann auf der Web-Oberfläche aus verschiedenen Widgets und Items zusammengestellt werden. Dabei werden einzelne Widgets auf Dashboards angeordnet und dann mit verschiedenen Items verknüpft. Es kann z.B. ein Slider angelegt werden, welche die Helligkeit der Lampen regelt. Einzelne Items können dabei beliebig oft verwendet werden. So kann es neben dem Slider z.B. auch einen Knopf geben, der die Helligkeit zwischen 100 Prozent oder 0 Prozent regelt, wodurch ein- und ausgeschalten erzielt wird.
 		
-		Für das Panel des Smart Home Systems werden Standardkomponenten, Widgets aus dem Community Store und auf selbst erstellte Widgets zurück. Eigene Widgets können als Angular Widget erstellt werden.
+		Für das Panel des Smart-Home-Systems werden Standardkomponenten, Widgets aus dem Community Store und auf selbst erstellte Widgets verwendet. Eigene Widgets können als Angular-Widget erstellt werden.
 		
 	\begin{minipage}{\textwidth}
 		\centering
@@ -369,16 +369,17 @@ Number   Wind_Speed           "Windspeed [%.2f km/h]"
 		\caption{Erstelltes openHAB Panel \label{fig:activity-diagram}}
 	\end{minipage}
 		
-		In Abbildung /ref{} sehen wir das erstellte Panel. Darauf ist zuerst der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit dargestellt. Letzteres ist ein Standardwidget von openHAB.
-		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track und Lautstärke von Spotify steuern kann.
+		\smallskip
+		Abbildung \ref{fig:activity-diagram} zeigt ein erstelltest Panel. Im Detail ist links Oben der Namen des Dashboardes "`Home"' und darunter die aktuelle Uhrzeit zu sehen. Letzteres ist ein Standard-Widget von openHAB.
+		Darunter ist ein Label, welches den aktuellen Songtitel von Spotify anzeigt und ein vom Community Store eingebundener Music Controller, welcher Track sowie Lautstärke steuert.
 
-		Ganz unten befindet sich ein selbst geschriebenes Widget, welches die Wetterdaten anzeigt.
+		Unten Links befindet sich ein selbst geschriebenes Widget, welches Wetterdaten anzeigt.
 
-		In der rechten unteren Ecke befinden sich zwei Buttons, um den Raspberry neuzustarten oder auszuschalten. Diese können über das Exec Binding Befehle in der Kommandozeile ausführen.
+		In der rechten unteren Ecke befinden sich zwei Schalter, welche den Raspberry neu starten und auszuschalten. Diese können über das Exec-Binding Befehle in der Kommandozeile ausführen.
 		
-		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Button schaltet ihn an und aus, der Slide regelt die Lautstärke.
+		Unten in der Mitte befindet sich die Steuerung des Fernsehers. Der Linke Knopf schaltet ihn an und aus, der Slider regelt die Lautstärke.
 		
-		Alle restlichen Widgets steuern die Lampen. Das große Widget kann alle Lampen im Zimmer an und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die Slider lässt sich die Helligkeit und Weißfarbe aller Lampen einstellen.
+		Die restlichen Widgets steuern die Lampen. Das große Widget oben mittig kann alle Lampen im Zimmer an- und ausschalten. Die kleinen Widget präsentieren die einzelnen Lampen. Über die verschiedenen Slider lassen sich Helligkeit und Weißfarbe der Lampen steuern.
 		
 		\subsubsection{Kontrollstation einrichten}
 		Um das System bequem steuern zu können, wird eine Kontrollstation aus dem Raspberry pi selbst und einem 7 Zoll Bildschirm errichtet. Es wird dafür ein Bildschirm gewählt, auf welchem sich der Raspberry befestigen lässt und direkt vom Raspberry Strom bezieht.

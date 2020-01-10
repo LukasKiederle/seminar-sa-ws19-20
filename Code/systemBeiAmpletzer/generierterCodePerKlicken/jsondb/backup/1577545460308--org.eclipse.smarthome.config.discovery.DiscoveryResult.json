@@ -1,0 +1,28 @@
+{
+  "lgwebos:WebOSTV:d62c714c-73d2-4d95-9cfa-873eeaed2dfd": {
+    "class": "org.eclipse.smarthome.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d62c714c-73d2-4d95-9cfa-873eeaed2dfd"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV"
+        ]
+      },
+      "properties": {
+        "deviceId": "d62c714c-73d2-4d95-9cfa-873eeaed2dfd"
+      },
+      "representationProperty": "deviceId",
+      "flag": "NEW",
+      "label": "[LG] webOS TV UH620V Dominik",
+      "timestamp": 1577545459443,
+      "timeToLive": -1
+    }
+  }
+}

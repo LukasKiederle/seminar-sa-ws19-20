@@ -1,0 +1,380 @@
+{
+  "hue:0100:001788af554a:2": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Hue white lamp 2",
+      "bridgeUID": {
+        "segments": [
+          "hue",
+          "bridge",
+          "001788af554a"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0100",
+              "001788af554a",
+              "2",
+              "brightness"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "brightness"
+            ]
+          },
+          "label": "Brightness",
+          "description": "The brightness channel allows to control the brightness of a light. It is also possible to switch the light on and off.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": [
+            "Lighting"
+          ]
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0100",
+              "001788af554a",
+              "2",
+              "alert"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "alert"
+            ]
+          },
+          "label": "Alert",
+          "description": "The alert channel allows a temporary change to the bulb’s state.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "lightId": "2"
+        }
+      },
+      "properties": {
+        "modelId": "LWB010",
+        "firmwareVersion": "1.29.0_r21169",
+        "uniqueId": "00:17:88:01:04:22:bb:85-0b"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "0100",
+          "001788af554a",
+          "2"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "0100"
+        ]
+      }
+    }
+  },
+  "hue:bridge:001788af554a": {
+    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
+    "value": {
+      "label": "Philips hue (192.168.2.126)",
+      "channels": [],
+      "configuration": {
+        "properties": {
+          "ipAddress": "192.168.2.126",
+          "pollingInterval": 10,
+          "sensorPollingInterval": 500,
+          "userName": "ovXulVQPyaftIjgJAM6KLsNfveQkxdVXtPrqW7yo"
+        }
+      },
+      "properties": {
+        "serialNumber": "001788af554a",
+        "vendor": "Philips",
+        "firmwareVersion": "1806051111"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "bridge",
+          "001788af554a"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "bridge"
+        ]
+      }
+    }
+  },
+  "lgwebos:WebOSTV:d62c714c-73d2-4d95-9cfa-873eeaed2dfd": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "[LG] webOS TV UH620V Dominik",
+      "channels": [
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "power"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "powerType"
+            ]
+          },
+          "label": "Power",
+          "description": "Via this binding TV can only be powered off, not on.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "mute"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "muteType"
+            ]
+          },
+          "label": "Mute",
+          "description": "Current Mute Setting",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "volume"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "volumeType"
+            ]
+          },
+          "label": "Volume",
+          "description": "Current Volume Setting",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "channel"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "channelType"
+            ]
+          },
+          "label": "Channel",
+          "description": "Current Channel",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "channelName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "channelNameChannelType"
+            ]
+          },
+          "label": "Channel Name",
+          "description": "Current Channel Name",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "toast"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "toastType"
+            ]
+          },
+          "label": "Toast",
+          "description": "Send a message onto the TV screen.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Player",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "mediaPlayer"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "mediaPlayerType"
+            ]
+          },
+          "label": "Media Control",
+          "description": "Control media (e.g. audio or video) playback",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "mediaStop"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "mediaStopType"
+            ]
+          },
+          "label": "Stop",
+          "description": "Stop Playback",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "lgwebos",
+              "WebOSTV",
+              "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+              "appLauncher"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "lgwebos",
+              "appLauncherChannelType"
+            ]
+          },
+          "label": "Application",
+          "description": "Start application and monitor running applications.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "deviceId": "d62c714c-73d2-4d95-9cfa-873eeaed2dfd"
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d62c714c-73d2-4d95-9cfa-873eeaed2dfd"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV"
+        ]
+      }
+    }
+  }
+}

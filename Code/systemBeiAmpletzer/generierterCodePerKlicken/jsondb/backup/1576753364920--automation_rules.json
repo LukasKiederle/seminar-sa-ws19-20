@@ -1,0 +1,38 @@
+{
+  "88031398-bcd5-413f-9805-7689ca812c6a": {
+    "class": "org.eclipse.smarthome.automation.dto.RuleDTO",
+    "value": {
+      "triggers": [
+        {
+          "id": "1",
+          "label": "an item state changes",
+          "description": "This triggers the rule if an item state has changed.",
+          "configuration": {
+            "itemName": "LGWebOSTVUH620VDominik_Volume"
+          },
+          "type": "core.ItemStateChangeTrigger"
+        }
+      ],
+      "conditions": [],
+      "actions": [
+        {
+          "inputs": {},
+          "id": "2",
+          "label": "send a command",
+          "description": "Sends a command to a specified item.",
+          "configuration": {
+            "itemName": "HueWhiteLamp2_Brightness",
+            "command": "80"
+          },
+          "type": "core.ItemCommandAction"
+        }
+      ],
+      "configuration": {},
+      "configDescriptions": [],
+      "uid": "88031398-bcd5-413f-9805-7689ca812c6a",
+      "name": "TV_TEST",
+      "tags": [],
+      "visibility": "VISIBLE"
+    }
+  }
+}

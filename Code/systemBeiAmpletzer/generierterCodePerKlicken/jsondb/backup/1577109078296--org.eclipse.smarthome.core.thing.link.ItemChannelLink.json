@@ -1,0 +1,99 @@
+{
+  "HueWhiteLamp2_Brightness -\u003e hue:0100:001788af554a:2:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0100",
+          "001788af554a",
+          "2",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HueWhiteLamp2_Brightness"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Volume -\u003e lgwebos:WebOSTV:d62c714c-73d2-4d95-9cfa-873eeaed2dfd:volume": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+          "volume"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Volume"
+    }
+  },
+  "HueWhiteLamp1_Brightness -\u003e hue:0100:001788af554a:1:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0100",
+          "001788af554a",
+          "1",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HueWhiteLamp1_Brightness"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Volume -\u003e lgwebos:WebOSTV:fba680f9-319d-4c62-8ed9-0f635ce46f75:volume": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "fba680f9-319d-4c62-8ed9-0f635ce46f75",
+          "volume"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Volume"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Toast -\u003e lgwebos:WebOSTV:d62c714c-73d2-4d95-9cfa-873eeaed2dfd:toast": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d62c714c-73d2-4d95-9cfa-873eeaed2dfd",
+          "toast"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Toast"
+    }
+  }
+}

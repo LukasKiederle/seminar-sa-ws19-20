@@ -1,0 +1,2054 @@
+{
+  "exec:command:468eaf6b": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Reboot Command",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "468eaf6b",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "468eaf6b",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "468eaf6b",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "468eaf6b",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "468eaf6b",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "sudo reboot",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "468eaf6b"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
+  "exec:command:7f56e525": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Shutdown",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "7f56e525",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "7f56e525",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "7f56e525",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "7f56e525",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "7f56e525",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "sudo poweroff",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "7f56e525"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
+  "spotify:player:efb6b91c": {
+    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
+    "value": {
+      "label": "Spotify Player Bridge",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "accessToken"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "accessToken"
+            ]
+          },
+          "label": "Access Token",
+          "description": "The access token used to authorize calls to the Spotify Web API. It can be used from rules or client-side scripting make call to Web API.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "deviceId"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "activeDeviceId"
+            ]
+          },
+          "label": "Active Device Id",
+          "description": "The Spotify ID of active device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "deviceName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "activeDeviceName"
+            ]
+          },
+          "label": "Active Device Name",
+          "description": "The name of the currently active device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "devices"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "activeDevices"
+            ]
+          },
+          "label": "Active Devices",
+          "description": "List of active devices.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "deviceType"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "activeDeviceType"
+            ]
+          },
+          "label": "Active Device Type",
+          "description": "Currently active device type, such as \"Computer\", \"Smartphone\" or \"Speaker\".",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "deviceVolume"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "volume"
+            ]
+          },
+          "label": "Volume",
+          "description": "Change the sound volume of a device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "deviceShuffle"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "activeDeviceShuffle"
+            ]
+          },
+          "label": "Active Device Shuffle",
+          "description": "If shuffle is on or off on the active device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "playlists"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "playlists"
+            ]
+          },
+          "label": "Playlists",
+          "description": "List of the users playlists",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "playlistName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "playlistName"
+            ]
+          },
+          "label": "Playlist Name",
+          "description": "Name of the active playlist",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackPlay"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "trackPlay"
+            ]
+          },
+          "label": "Track To Play",
+          "description": "Assign track, album, or playlist to play. Accepts Spotify Uri\u0027s and links.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Player",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackPlayer"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "media-control"
+            ]
+          },
+          "label": "Media Control",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackRepeat"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "trackRepeat"
+            ]
+          },
+          "label": "Repeat Mode",
+          "description": "\u0027track\u0027 will repeat the current track. \u0027context\u0027 will repeat the current context. \u0027off\u0027 will turn repeat off.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackId"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackId"
+            ]
+          },
+          "label": "Track Id",
+          "description": "Channel reports track id currently being played.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackHref"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackHref"
+            ]
+          },
+          "label": "Track URL",
+          "description": "",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackUri"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackUri"
+            ]
+          },
+          "label": "Track URI",
+          "description": "The Spotify URI for the track currently played",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "media-title"
+            ]
+          },
+          "label": "Media Title",
+          "description": "Title of a (played) media file",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackType"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackType"
+            ]
+          },
+          "label": "Track Type",
+          "description": "The type of the track currently played track type",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackNumber"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackNumber"
+            ]
+          },
+          "label": "Track Number",
+          "description": "The track number of currently played track",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackDiscNumber"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackDiscNumber"
+            ]
+          },
+          "label": "Track Disc Number",
+          "description": "The disk number of currently played track",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackPopularity"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackPopularity"
+            ]
+          },
+          "label": "Track Popularity",
+          "description": "The populatiry of the currently played track",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackDurationMs"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackDurationMs"
+            ]
+          },
+          "label": "Track Duration ms",
+          "description": "The duration of the currently played track (ms)",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackProgressMs"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackProgressMs"
+            ]
+          },
+          "label": "Track Progress ms",
+          "description": "The progress of the currently played track (ms)",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackDuration"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackDuration"
+            ]
+          },
+          "label": "Track Duration (m:ss)",
+          "description": "The duration currently played track formatted (m:ss)",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "trackProgress"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedTrackProgress"
+            ]
+          },
+          "label": "Track Progress (m:ss)",
+          "description": "The progress of the currently played track formatted (m:ss)",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumId"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumId"
+            ]
+          },
+          "label": "Album Id",
+          "description": "The Spotify ID of the album",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumUri"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumUri"
+            ]
+          },
+          "label": "Album URI",
+          "description": "The Spotify URI for the album",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumHref"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumHref"
+            ]
+          },
+          "label": "Album URL",
+          "description": "A link to the Web API endpoint providing full details of the album",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumType"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumType"
+            ]
+          },
+          "label": "Album Type",
+          "description": "The object type: \"album\"",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Image",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumImage"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumImage"
+            ]
+          },
+          "label": "Album Image",
+          "description": "The cover art for the album in widest size",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "albumName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedAlbumName"
+            ]
+          },
+          "label": "Album Name",
+          "description": "The name of the album",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "artistId"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedArtistId"
+            ]
+          },
+          "label": "Artist Id",
+          "description": "The Spotify ID for the artist",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "artistUri"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedArtistUri"
+            ]
+          },
+          "label": "Artist URI",
+          "description": "A link to the Web API endpoint providing full details of the artist",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "artistHref"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedArtistHref"
+            ]
+          },
+          "label": "Artist URL",
+          "description": "Channel reports currently played artist href",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "artistType"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "currentlyPlayedArtistType"
+            ]
+          },
+          "label": "Artist Type",
+          "description": "The object type: \"artist\"",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "player",
+              "efb6b91c",
+              "artistName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "media-artist"
+            ]
+          },
+          "label": "Media Artist",
+          "description": "Artist of a (played) media file",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "refreshPeriod": 10,
+          "clientSecret": "aea4b4317bbf4727b1db94456aeca395",
+          "clientId": "7e3c1cbcb47b49a9ae8ca1a88da69ec2"
+        }
+      },
+      "properties": {
+        "user": "Daniel Böning"
+      },
+      "uid": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "spotify",
+          "player"
+        ]
+      }
+    }
+  },
+  "spotify:device:efb6b91c:af55": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "MacBook-db",
+      "bridgeUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "trackPlay"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "trackPlay"
+            ]
+          },
+          "label": "Track To Play",
+          "description": "Assign track, album, or playlist to play. Accepts Spotify Uri\u0027s and links.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceId"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceId"
+            ]
+          },
+          "label": "Device Id",
+          "description": "The Spotify ID of the device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceName"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceName"
+            ]
+          },
+          "label": "Device Name",
+          "description": "The name of the device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceType"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceType"
+            ]
+          },
+          "label": "Device Type",
+          "description": "Device type, such as \"Computer\", \"Smartphone\" or \"Speaker\".",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Player",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "devicePlayer"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "media-control"
+            ]
+          },
+          "label": "Media Control",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceVolume"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "system",
+              "volume"
+            ]
+          },
+          "label": "Volume",
+          "description": "Change the sound volume of a device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceActive"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceActive"
+            ]
+          },
+          "label": "Device Active",
+          "description": "If this device is the currently active device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceRestricted"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceRestricted"
+            ]
+          },
+          "label": "Device Restricted",
+          "description": "Whether controlling this device is restricted. At present if this is \"true\" then no Web API commands will be accepted by this device",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "spotify",
+              "device",
+              "efb6b91c",
+              "af55",
+              "deviceShuffle"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "spotify",
+              "deviceShuffle"
+            ]
+          },
+          "label": "Device Shuffle",
+          "description": "If shuffle is on or off",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "deviceName": "MacBook-db"
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "spotify",
+          "device",
+          "efb6b91c",
+          "af55"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "spotify",
+          "device"
+        ]
+      }
+    }
+  },
+  "hue:bridge:ecb5fa062f5e": {
+    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
+    "value": {
+      "label": "Philips hue (192.168.178.49)",
+      "channels": [],
+      "configuration": {
+        "properties": {
+          "sensorPollingInterval": 500,
+          "ipAddress": "192.168.178.49",
+          "pollingInterval": 10,
+          "userName": "YhFqNRn0S8BiI2w-pMclbrePiLpyXAlDBmwPV9HL"
+        }
+      },
+      "properties": {
+        "serialNumber": "ECB5FA062F5E",
+        "vendor": "Philips",
+        "firmwareVersion": "1935144020",
+        "macAddress": "ec:b5:fa:06:2f:5e",
+        "modelId": "BSB002"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "bridge",
+          "ecb5fa062f5e"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "bridge"
+        ]
+      }
+    }
+  },
+  "bluetooth:beacon:hci0:004279b7537b": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "JBL Xtreme 2",
+      "bridgeUID": {
+        "segments": [
+          "bluetooth",
+          "bluez",
+          "hci0"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "bluetooth",
+              "beacon",
+              "hci0",
+              "004279b7537b",
+              "rssi"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "bluetooth",
+              "rssi"
+            ]
+          },
+          "label": "RSSI",
+          "description": "Received signal strength indicator",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "address": "00:42:79:B7:53:7B"
+        }
+      },
+      "properties": {
+        "txpower": "8"
+      },
+      "uid": {
+        "segments": [
+          "bluetooth",
+          "beacon",
+          "hci0",
+          "004279b7537b"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "bluetooth",
+          "beacon"
+        ]
+      }
+    }
+  },
+  "hue:0210:ecb5fa062f5e:3": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Wohnzimmer-Lampe-Decke",
+      "bridgeUID": {
+        "segments": [
+          "hue",
+          "bridge",
+          "ecb5fa062f5e"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "Color",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0210",
+              "ecb5fa062f5e",
+              "3",
+              "color"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "color"
+            ]
+          },
+          "label": "Color",
+          "description": "The color channel allows to control the color of a light. It is also possible to dim values and switch the light on and off.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": [
+            "Lighting"
+          ]
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0210",
+              "ecb5fa062f5e",
+              "3",
+              "color_temperature"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "color_temperature"
+            ]
+          },
+          "label": "Color Temperature",
+          "description": "The color temperature channel allows to set the color temperature of a light from 0 (cold) to 100 (warm).",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0210",
+              "ecb5fa062f5e",
+              "3",
+              "alert"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "alert"
+            ]
+          },
+          "label": "Alert",
+          "description": "The alert channel allows a temporary change to the bulb’s state.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0210",
+              "ecb5fa062f5e",
+              "3",
+              "effect"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "effect"
+            ]
+          },
+          "label": "Color Loop",
+          "description": "The effect channel allows putting the bulb in a color looping mode.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "lightId": "3",
+          "fadetime": 400
+        }
+      },
+      "properties": {
+        "modelId": "Classic_A60_RGBW",
+        "vendor": "OSRAM",
+        "firmwareVersion": "V1.04.12",
+        "uniqueId": "84:18:26:00:00:cb:2a:83-03",
+        "productName": "Extended color light"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "0210",
+          "ecb5fa062f5e",
+          "3"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "0210"
+        ]
+      }
+    }
+  },
+  "hue:0220:ecb5fa062f5e:2": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "HUE Lampe 1",
+      "bridgeUID": {
+        "segments": [
+          "hue",
+          "bridge",
+          "ecb5fa062f5e"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "2",
+              "color_temperature"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "color_temperature"
+            ]
+          },
+          "label": "Color Temperature",
+          "description": "The color temperature channel allows to set the color temperature of a light from 0 (cold) to 100 (warm).",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "2",
+              "brightness"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "brightness"
+            ]
+          },
+          "label": "Brightness",
+          "description": "The brightness channel allows to control the brightness of a light. It is also possible to switch the light on and off.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": [
+            "Lighting"
+          ]
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "2",
+              "alert"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "alert"
+            ]
+          },
+          "label": "Alert",
+          "description": "The alert channel allows a temporary change to the bulb’s state.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "2",
+              "effect"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "effect"
+            ]
+          },
+          "label": "Color Loop",
+          "description": "The effect channel allows putting the bulb in a color looping mode.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "fadetime": 400,
+          "lightId": "2"
+        }
+      },
+      "properties": {
+        "modelId": "LTW012",
+        "firmwareVersion": "1.46.13_r26312",
+        "uniqueId": "00:17:88:01:08:68:97:ff-0b",
+        "productName": "Hue ambiance candle"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "2"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "0220"
+        ]
+      }
+    }
+  },
+  "hue:0220:ecb5fa062f5e:1": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "HUE Lampe 2",
+      "bridgeUID": {
+        "segments": [
+          "hue",
+          "bridge",
+          "ecb5fa062f5e"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "1",
+              "color_temperature"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "color_temperature"
+            ]
+          },
+          "label": "Color Temperature",
+          "description": "The color temperature channel allows to set the color temperature of a light from 0 (cold) to 100 (warm).",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Dimmer",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "1",
+              "brightness"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "brightness"
+            ]
+          },
+          "label": "Brightness",
+          "description": "The brightness channel allows to control the brightness of a light. It is also possible to switch the light on and off.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": [
+            "Lighting"
+          ]
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "1",
+              "alert"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "alert"
+            ]
+          },
+          "label": "Alert",
+          "description": "The alert channel allows a temporary change to the bulb’s state.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "hue",
+              "0220",
+              "ecb5fa062f5e",
+              "1",
+              "effect"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "hue",
+              "effect"
+            ]
+          },
+          "label": "Color Loop",
+          "description": "The effect channel allows putting the bulb in a color looping mode.",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "fadetime": 400,
+          "lightId": "1"
+        }
+      },
+      "properties": {
+        "modelId": "LTW012",
+        "firmwareVersion": "1.46.13_r26312",
+        "uniqueId": "00:17:88:01:08:68:97:4a-0b",
+        "productName": "Hue ambiance candle"
+      },
+      "uid": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "1"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "0220"
+        ]
+      }
+    }
+  },
+  "bluetooth:bluez:hci0": {
+    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
+    "value": {
+      "label": "Bluetooth Interface openhab",
+      "channels": [],
+      "configuration": {
+        "properties": {
+          "discovery": true,
+          "address": "DC:A6:32:00:C3:2A"
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "bluetooth",
+          "bluez",
+          "hci0"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "bluetooth",
+          "bluez"
+        ]
+      }
+    }
+  }
+}

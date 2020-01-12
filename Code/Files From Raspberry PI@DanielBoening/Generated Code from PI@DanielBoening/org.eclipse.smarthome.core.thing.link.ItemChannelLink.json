@@ -1,0 +1,508 @@
+{
+  "SpotifyPlayerBridge_TrackDurationMSs -\u003e spotify:player:efb6b91c:trackDuration": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "trackDuration"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyPlayerBridge_TrackDurationMSs"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Toast -\u003e lgwebos:WebOSTV:d398c062-9644-49a9-9516-4a9481313acf:toast": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d398c062-9644-49a9-9516-4a9481313acf",
+          "toast"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Toast"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Volume -\u003e lgwebos:WebOSTV:d398c062-9644-49a9-9516-4a9481313acf:volume": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d398c062-9644-49a9-9516-4a9481313acf",
+          "volume"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Volume"
+    }
+  },
+  "SpotifyPlayerBridge_AlbumImage -\u003e spotify:player:efb6b91c:albumImage": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "albumImage"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyPlayerBridge_AlbumImage"
+    }
+  },
+  "HUELampe2_ColorTemperature -\u003e hue:0220:ecb5fa062f5e:1:color_temperature": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "1",
+          "color_temperature"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HUELampe2_ColorTemperature"
+    }
+  },
+  "SpotifyPlayerBridge_Volume -\u003e spotify:player:efb6b91c:deviceVolume": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "deviceVolume"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyPlayerBridge_Volume"
+    }
+  },
+  "HUELampe2_Brightness -\u003e hue:0220:ecb5fa062f5e:1:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "1",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HUELampe2_Brightness"
+    }
+  },
+  "SpotifyPlayerBridge_ActiveDeviceName -\u003e spotify:player:efb6b91c:deviceName": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "deviceName"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyPlayerBridge_ActiveDeviceName"
+    }
+  },
+  "Light_switch_wohnzimmer -\u003e hue:0220:ecb5fa062f5e:1:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "1",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Light_switch_wohnzimmer"
+    }
+  },
+  "Shutdown -\u003e exec:command:7f56e525:input": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "7f56e525",
+          "input"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Shutdown"
+    }
+  },
+  "BluetoothDevice_RSSI -\u003e bluetooth:beacon:hci0:004279b7537b:rssi": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "bluetooth",
+          "beacon",
+          "hci0",
+          "004279b7537b",
+          "rssi"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "BluetoothDevice_RSSI"
+    }
+  },
+  "WohnzimmerLampeDecke_Brightness -\u003e hue:0210:ecb5fa062f5e:3:color": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0210",
+          "ecb5fa062f5e",
+          "3",
+          "color"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "WohnzimmerLampeDecke_Brightness"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Volume -\u003e lgwebos:WebOSTV:e583e8df-7c9d-4422-bfb4-fa14e8448c98:volume": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "e583e8df-7c9d-4422-bfb4-fa14e8448c98",
+          "volume"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Volume"
+    }
+  },
+  "SpotifyPlayerBridge_MediaControl -\u003e spotify:player:efb6b91c:trackPlayer": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "trackPlayer"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyPlayerBridge_MediaControl"
+    }
+  },
+  "wohnzimmer_ColorTemperature -\u003e hue:0220:ecb5fa062f5e:1:color_temperature": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "1",
+          "color_temperature"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "wohnzimmer_ColorTemperature"
+    }
+  },
+  "wohnzimmer_ColorTemperature -\u003e hue:0220:ecb5fa062f5e:2:color_temperature": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "2",
+          "color_temperature"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "wohnzimmer_ColorTemperature"
+    }
+  },
+  "Light_switch_wohnzimmer -\u003e hue:0220:ecb5fa062f5e:2:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "2",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Light_switch_wohnzimmer"
+    }
+  },
+  "BluetoothDevice_RSSI -\u003e bluetooth:beacon:hci0:400f885413ad:rssi": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "bluetooth",
+          "beacon",
+          "hci0",
+          "400f885413ad",
+          "rssi"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "BluetoothDevice_RSSI"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Toast -\u003e lgwebos:WebOSTV:e583e8df-7c9d-4422-bfb4-fa14e8448c98:toast": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "e583e8df-7c9d-4422-bfb4-fa14e8448c98",
+          "toast"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Toast"
+    }
+  },
+  "HUELampe1_ColorTemperature -\u003e hue:0220:ecb5fa062f5e:2:color_temperature": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "2",
+          "color_temperature"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HUELampe1_ColorTemperature"
+    }
+  },
+  "WohnzimmerLampeDecke_ColorTemperature -\u003e hue:0210:ecb5fa062f5e:3:color_temperature": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0210",
+          "ecb5fa062f5e",
+          "3",
+          "color_temperature"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "WohnzimmerLampeDecke_ColorTemperature"
+    }
+  },
+  "RebootCommand_Running -\u003e exec:command:468eaf6b:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "468eaf6b",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "RebootCommand_Running"
+    }
+  },
+  "RebootCommand -\u003e exec:command:468eaf6b:input": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "468eaf6b",
+          "input"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "RebootCommand"
+    }
+  },
+  "HUELampe1_Brightness -\u003e hue:0220:ecb5fa062f5e:2:brightness": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "hue",
+          "0220",
+          "ecb5fa062f5e",
+          "2",
+          "brightness"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HUELampe1_Brightness"
+    }
+  },
+  "SpotifyItem -\u003e spotify:player:efb6b91c:trackName": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c",
+          "trackName"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SpotifyItem"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Power -\u003e lgwebos:WebOSTV:d398c062-9644-49a9-9516-4a9481313acf:power": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "lgwebos",
+          "WebOSTV",
+          "d398c062-9644-49a9-9516-4a9481313acf",
+          "power"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "LGWebOSTVUH620VDominik_Power"
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "HUELampe1_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Brightness",
+      "category": "DimmableLight"
+    }
+  },
+  "SpotifyPlayerBridge_ActiveDeviceName": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Active Device Name"
+    }
+  },
+  "RebootCommand": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Input"
+    }
+  },
+  "SpotifyPlayerBridge_AlbumImage": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Image",
+      "tags": [],
+      "label": "Album Image"
+    }
+  },
+  "SpotifyItem": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Spotify Trackname",
+      "category": "Music"
+    }
+  },
+  "SpotifyPlayerBridge_MediaControl": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Player",
+      "tags": [],
+      "label": "Media Control",
+      "category": "MediaControl"
+    }
+  },
+  "SpotifyPlayerBridge_TrackDurationMSs": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Track Duration (m:ss)"
+    }
+  },
+  "Light_switch_wohnzimmer": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Brightness",
+      "category": "DimmableLight"
+    }
+  },
+  "RebootCommand_Running": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Running"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Volume": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Volume",
+      "category": "SoundVolume"
+    }
+  },
+  "WohnzimmerLampeDecke_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Color Temperature",
+      "category": "ColorLight"
+    }
+  },
+  "SpotifyPlayerBridge_Volume": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Volume",
+      "category": "SoundVolume"
+    }
+  },
+  "wohnzimmer_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Color Temperature",
+      "category": "ColorLight"
+    }
+  },
+  "WohnzimmerLampeDecke_Color": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Color",
+      "category": "ColorLight"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Toast": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Toast"
+    }
+  },
+  "BluetoothDevice_RSSI": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "RSSI",
+      "category": "QualityOfService"
+    }
+  },
+  "HUELampe1_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Color Temperature",
+      "category": "ColorLight"
+    }
+  },
+  "Shutdown": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Input"
+    }
+  },
+  "HUELampe2_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Brightness",
+      "category": "DimmableLight"
+    }
+  },
+  "HUELampe2_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Dimmer",
+      "tags": [],
+      "label": "Color Temperature",
+      "category": "ColorLight"
+    }
+  },
+  "WohnzimmerLampeDecke_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Color",
+      "tags": [],
+      "label": "Color",
+      "category": "ColorLight"
+    }
+  },
+  "LGWebOSTVUH620VDominik_Power": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Power"
+    }
+  }
+}

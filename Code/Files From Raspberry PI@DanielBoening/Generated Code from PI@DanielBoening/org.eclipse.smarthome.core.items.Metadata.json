@@ -1,0 +1,262 @@
+{
+  "HUEEMU:LGWebOSTVUH620VDominik_Volume": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "LGWebOSTVUH620VDominik_Volume"
+        ]
+      },
+      "value": "17",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HUELampe2_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HUELampe2_Brightness"
+        ]
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:Rain": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "Rain"
+        ]
+      },
+      "value": "14",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:WohnzimmerLampeDecke_Color": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "WohnzimmerLampeDecke_Color"
+        ]
+      },
+      "value": "3",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:WohnzimmerLampeDecke_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "WohnzimmerLampeDecke_Brightness"
+        ]
+      },
+      "value": "5",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:wohnzimmer_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "wohnzimmer_ColorTemperature"
+        ]
+      },
+      "value": "2",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:SpotifyPlayerBridge_Volume": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "SpotifyPlayerBridge_Volume"
+        ]
+      },
+      "value": "8",
+      "configuration": {}
+    }
+  },
+  "autoupdate:Light_switch_wohnzimmer": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Light_switch_wohnzimmer"
+        ]
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:BluetoothDevice_RSSI": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "BluetoothDevice_RSSI"
+        ]
+      },
+      "value": "10",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:RebootCommand_Running": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "RebootCommand_Running"
+        ]
+      },
+      "value": "16",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:HUELampe2_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "HUELampe2_ColorTemperature"
+        ]
+      },
+      "value": "6",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:HUELampe1_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "HUELampe1_Brightness"
+        ]
+      },
+      "value": "13",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:WohnzimmerLampeDecke_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "WohnzimmerLampeDecke_ColorTemperature"
+        ]
+      },
+      "value": "7",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:Precip_Probability": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "Precip_Probability"
+        ]
+      },
+      "value": "9",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HUELampe1_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HUELampe1_Brightness"
+        ]
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:Light_switch_wohnzimmer": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "Light_switch_wohnzimmer"
+        ]
+      },
+      "value": "18",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:HUELampe1_ColorTemperature": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "HUELampe1_ColorTemperature"
+        ]
+      },
+      "value": "4",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:Wind_Speed": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "Wind_Speed"
+        ]
+      },
+      "value": "15",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:LGWebOSTVUH620VDominik_Power": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "LGWebOSTVUH620VDominik_Power"
+        ]
+      },
+      "value": "12",
+      "configuration": {}
+    }
+  },
+  "HUEEMU:HUELampe2_Brightness": {
+    "class": "org.eclipse.smarthome.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "HUEEMU",
+          "HUELampe2_Brightness"
+        ]
+      },
+      "value": "11",
+      "configuration": {}
+    }
+  }
+}

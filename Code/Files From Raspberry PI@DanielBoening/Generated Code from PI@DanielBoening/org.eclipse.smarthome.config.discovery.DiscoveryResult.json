@@ -1,0 +1,65 @@
+{
+  "spotify:device:efb6b91c:249f": {
+    "class": "org.eclipse.smarthome.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "bridgeUID": {
+        "segments": [
+          "spotify",
+          "player",
+          "efb6b91c"
+        ]
+      },
+      "thingUID": {
+        "segments": [
+          "spotify",
+          "device",
+          "efb6b91c",
+          "249f"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "spotify",
+          "device"
+        ]
+      },
+      "properties": {
+        "deviceName": "Bönings Echo Dot"
+      },
+      "representationProperty": "deviceName",
+      "flag": "NEW",
+      "label": "Bönings Echo Dot",
+      "timestamp": 1578621807646,
+      "timeToLive": -1
+    }
+  },
+  "hue:bridge:8AF46C0DC5F7": {
+    "class": "org.eclipse.smarthome.config.discovery.internal.DiscoveryResultImpl",
+    "value": {
+      "thingUID": {
+        "segments": [
+          "hue",
+          "bridge",
+          "8AF46C0DC5F7"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "hue",
+          "bridge"
+        ]
+      },
+      "properties": {
+        "ipAddress": "192.168.178.50",
+        "protocol": "http",
+        "serialNumber": "8AF46C0DC5F7",
+        "port": 8080
+      },
+      "representationProperty": "serialNumber",
+      "flag": "NEW",
+      "label": "openHAB Hue Emulation (192.168.178.50)",
+      "timestamp": 1578840349416,
+      "timeToLive": -1
+    }
+  }
+}

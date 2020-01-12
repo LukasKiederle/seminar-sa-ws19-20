@@ -1,0 +1,26 @@
+{
+  "spotify:player:efb6b91c.ServiceConfiguration": {
+    "class": "java.lang.String",
+    "value": "{\n  \"handle\": \"spotify:player:efb6b91c\",\n  \"tokenUrl\": \"https://accounts.spotify.com/api/token\",\n  \"authorizationUrl\": \"https://accounts.spotify.com/authorize\",\n  \"clientId\": \"7e3c1cbcb47b49a9ae8ca1a88da69ec2\",\n  \"clientSecret\": \"aea4b4317bbf4727b1db94456aeca395\",\n  \"scope\": \"user-read-playback-state user-modify-playback-state playlist-read-private playlist-read-collaborative\",\n  \"supportsBasicAuth\": true,\n  \"tokenExpiresInSeconds\": 10\n}"
+  },
+  "spotify:player:e52559c9.ServiceConfiguration": {
+    "class": "java.lang.String",
+    "value": "{\n  \"handle\": \"spotify:player:e52559c9\",\n  \"tokenUrl\": \"https://accounts.spotify.com/api/token\",\n  \"authorizationUrl\": \"https://accounts.spotify.com/authorize\",\n  \"clientId\": \"7e3c1cbcb47b49a9ae8ca1a88da69ec2\",\n  \"clientSecret\": \"aea4b4317bbf4727b1db94456aeca395\",\n  \"scope\": \"user-read-playback-state user-modify-playback-state playlist-read-private playlist-read-collaborative\",\n  \"supportsBasicAuth\": true,\n  \"tokenExpiresInSeconds\": 10\n}"
+  },
+  "INDEX_HANDLES": {
+    "class": "java.lang.String",
+    "value": "[\n  \"spotify:player:efb6b91c\"\n]"
+  },
+  "spotify:player:efb6b91c.LastUsed": {
+    "class": "java.lang.String",
+    "value": "\"2020-01-12T15:45:44.715\""
+  },
+  "spotify:player:efb6b91c.AccessTokenResponse": {
+    "class": "java.lang.String",
+    "value": "{\n  \"accessToken\": \"nc4v9/0bz7cpfPSKqu7emv4YiX0mdRNQXlnYNNDuf2Ug732Bq2kKm6xYagHRJVyafxmqt3G0JLbToDFpie/Y8iEaYfEOPeUfWBsOmQZRxTDS8K7HtmDAYePL0n9JtSt/zD/QnrEVb0oHizu4xM1t0cJ4P+Yo4+uftVgnKx6qHb4YWBfR1sZeTwEDXjC2VPtYsdJ0tg0MeiqjnzS9w/VK/v/sr4fNRUBVw/yxZFRMudQhcAIj6+P4hP7ZQ5BQMjCB\",\n  \"tokenType\": \"Bearer\",\n  \"expiresIn\": 3600,\n  \"refreshToken\": \"244qxOKP+uYHxSHJaRSpXYuju5XwnwXvbeLrvQwHyU4Ay9mjfAMaOcul8J4iskEKtIS8WjFF7ErhvgMN9kNk7qamwfbI/A+VhpHOU1BUD4r2GW8PaaVNgLTWs5xi2NLTey5RpvoK41MxEGOtEOWe3/n87xZpH5I3tvw0LKxiG/QIXtvYmVbo/eBsMwwm69wqN8mJzriN/5oWJRh/vV42Mw\\u003d\\u003d\",\n  \"scope\": \"playlist-read-private playlist-read-collaborative user-modify-playback-state user-read-playback-state\",\n  \"createdOn\": \"2020-01-12T15:45:44.677\"\n}"
+  },
+  "spotify:player:e52559c9.LastUsed": {
+    "class": "java.lang.String",
+    "value": "\"2019-12-27T21:35:03.481\""
+  }
+}

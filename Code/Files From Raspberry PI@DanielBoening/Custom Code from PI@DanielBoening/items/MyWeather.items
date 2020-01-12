@@ -1,0 +1,8 @@
+String   Temperatur_MinMax   "Weather Min/Max [%s °C]"   {weather="locationId=home, type=temperature, property=minMax, scale=0"}
+Number   Rain          "Weather Rain [%.2f mm/h]"   {weather="locationId=home, type=precipitation, property=rain"}
+Number   Precip_Probability   "Weather Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
+Number   Wind_Speed           "Weather Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
+
+String   Forecast_1_Temp_MinMax      "Weather Forecast 1 Min/Max [%s °C]"             {weather="locationId=home, forecast=1, type=temperature, property=minMax"}
+String   Forecast_2_Temp_MinMax      "Weather Forecast 2 Min/Max [%s °C]"             {weather="locationId=home, forecast=2, type=temperature, property=minMax"}
+

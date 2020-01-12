@@ -1,0 +1,2 @@
+Switch    system_PIRESTART_sw    "Restart openHABian Server"    <switch> (gPower) ["Power"]
+

@@ -1,0 +1,12 @@
+rule "React on Volume (LGWebOSTVUH620VDominik_Volume) change/update"
+when
+     Item LGWebOSTVUH620VDominik_Volume changed
+then
+    logDebug("React some changes on Volume", "some Message" + LGWebOSTVUH620VDominik_Volume.state.toString)
+    if ( LGWebOSTVUH620VDominik_Volume.state >= 20 ) {
+        HueWhiteLamp2_Brightness.sendCommand(80)
+    }
+    else {
+        HueWhiteLamp2_Brightness.sendCommand(5)
+    }
+end
